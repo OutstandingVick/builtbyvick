@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 
 const links = [
@@ -10,10 +10,48 @@ const links = [
   { label: "contact", href: "#contact" },
 ];
 
+type Theme = "light" | "dark";
+
+const themeEvent = "builtbyvick-theme-change";
+
+function getPreferredTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "dark";
+  }
+
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.dataset.theme = theme;
+  window.localStorage.setItem("theme", theme);
+  window.dispatchEvent(new Event(themeEvent));
+}
+
+function subscribeToTheme(onStoreChange: () => void) {
+  window.addEventListener(themeEvent, onStoreChange);
+  return () => window.removeEventListener(themeEvent, onStoreChange);
+}
+
+function isMobileNav() {
+  return typeof window !== "undefined" && window.innerWidth <= 760;
+}
+
+function subscribeToViewport(onStoreChange: () => void) {
+  window.addEventListener("resize", onStoreChange);
+  return () => window.removeEventListener("resize", onStoreChange);
+}
+
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const theme = useSyncExternalStore(subscribeToTheme, getPreferredTheme, () => "dark");
+  const mobileNav = useSyncExternalStore(subscribeToViewport, isMobileNav, () => false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -32,27 +70,17 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    const preferredTheme =
-      savedTheme === "light" || savedTheme === "dark"
-        ? savedTheme
-        : window.matchMedia("(prefers-color-scheme: light)").matches
-          ? "light"
-          : "dark";
-
-    setTheme(preferredTheme);
-    document.documentElement.dataset.theme = preferredTheme;
-  }, []);
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    document.documentElement.dataset.theme = nextTheme;
-    window.localStorage.setItem("theme", nextTheme);
+    applyTheme(nextTheme);
   };
 
   return (
     <header
+      className="site-header"
       style={{
         position: "fixed",
         top: 0,
@@ -63,7 +91,7 @@ export default function Nav() {
         backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         transition: "all 0.3s ease",
-        padding: "0 2rem",
+        padding: mobileNav ? "0 1rem" : "0 2rem",
       }}
     >
       <nav
@@ -92,7 +120,7 @@ export default function Nav() {
         </a>
 
         {/* Links */}
-        <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+        <div className="site-nav-links" style={{ display: mobileNav ? "none" : "flex", gap: "2rem", alignItems: "center" }}>
           {links.map((l) => (
             <a
               key={l.href}
@@ -132,7 +160,7 @@ export default function Nav() {
           ))}
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+        <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.5rem" : "0.75rem" }}>
           <button
             type="button"
             onClick={toggleTheme}

@@ -81,3 +81,19 @@ body::before {
   background: var(--accent);
   color: var(--bg);
 }
+
+@media (max-width: 760px) {
+  .site-header {
+    padding: 0 1rem !important;
+  }
+
+  .site-nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-nav-actions {
+    gap: 0.5rem !important;
+  }
+}

@@ -80,8 +80,10 @@ export default function Hero() {
         VICTOR
         <br />
         <span style={{ color: "var(--accent)", WebkitTextStroke: "0px" }}>
-          OGUNDIMU
+          POWEIDEI
         </span>
+        <br />
+        OGBONNA
       </h1>
 
       {/* Role tag */}
