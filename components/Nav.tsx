@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
 
 const links = [
   { label: "home", href: "#home" },
@@ -12,6 +13,7 @@ const links = [
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const onScroll = () => {
@@ -29,6 +31,26 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const preferredTheme =
+      savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+
+    setTheme(preferredTheme);
+    document.documentElement.dataset.theme = preferredTheme;
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem("theme", nextTheme);
+  };
+
   return (
     <header
       style={{
@@ -38,7 +60,7 @@ export default function Nav() {
         right: 0,
         zIndex: 100,
         borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
-        backgroundColor: scrolled ? "rgba(10,10,8,0.92)" : "transparent",
+        backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         transition: "all 0.3s ease",
         padding: "0 2rem",
@@ -110,27 +132,60 @@ export default function Nav() {
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="mailto:victor@example.com"
-          className="font-mono"
-          style={{
-            fontSize: "0.65rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            textDecoration: "none",
-            color: "var(--bg)",
-            backgroundColor: "var(--accent)",
-            padding: "6px 14px",
-            borderRadius: "2px",
-            fontWeight: 500,
-            transition: "opacity 0.2s",
-          }}
-          onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.85")}
-          onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
-        >
-          Hire me
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            aria-pressed={theme === "dark"}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            style={{
+              width: "32px",
+              height: "32px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "var(--text)",
+              backgroundColor: "var(--bg-3)",
+              border: "1px solid var(--border-2)",
+              borderRadius: "2px",
+              cursor: "pointer",
+              transition: "border-color 0.2s, color 0.2s, background-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "var(--accent)";
+              e.currentTarget.style.borderColor = "var(--accent)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "var(--text)";
+              e.currentTarget.style.borderColor = "var(--border-2)";
+            }}
+          >
+            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+          </button>
+
+          {/* CTA */}
+          <a
+            href="mailto:victor@example.com"
+            className="font-mono"
+            style={{
+              fontSize: "0.65rem",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              color: "var(--bg)",
+              backgroundColor: "var(--accent)",
+              padding: "6px 14px",
+              borderRadius: "2px",
+              fontWeight: 500,
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.85")}
+            onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
+          >
+            Hire me
+          </a>
+        </div>
       </nav>
     </header>
   );
