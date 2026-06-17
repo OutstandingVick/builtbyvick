@@ -120,7 +120,7 @@ export default function Nav() {
           }}
         >
           <Image
-            src={theme === "dark" ? "/vick-light.png" : "/vick-dark.png"}
+            src={theme === "dark" ? "/vick-light.png" : "/vick-light-mode-transparent.png"}
             alt="Victor Ogundimu logo"
             width={48}
             height={48}
