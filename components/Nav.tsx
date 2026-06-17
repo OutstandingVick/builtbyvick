@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect, useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 
@@ -107,16 +108,30 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="#home"
-          className="font-display"
+          aria-label="Victor Ogundimu home"
           style={{
-            fontSize: "1rem",
-            fontWeight: 700,
-            color: "var(--accent)",
+            width: mobileNav ? "42px" : "48px",
+            height: mobileNav ? "42px" : "48px",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
             textDecoration: "none",
-            letterSpacing: "0.05em",
+            flexShrink: 0,
           }}
         >
-          VO
+          <Image
+            src={theme === "light" ? "/vick-light.png" : "/vick-dark.png"}
+            alt="Victor Ogundimu logo"
+            width={48}
+            height={48}
+            priority
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+              objectFit: "contain",
+            }}
+          />
         </a>
 
         {/* Links */}
