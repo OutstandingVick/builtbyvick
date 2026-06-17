@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const skills = {
   "Languages": ["JavaScript", "TypeScript", "Rust (learning)"],
   "Frontend": ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
@@ -116,8 +118,31 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — skills */}
+        {/* Right — portrait and skills */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "4 / 5",
+              overflow: "hidden",
+              border: "1px solid var(--border)",
+              borderRadius: "4px",
+              backgroundColor: "var(--surface)",
+            }}
+          >
+            <Image
+              src="/victor-portrait.jpg"
+              alt="Portrait of Victor Ogundimu"
+              fill
+              sizes="(max-width: 900px) 100vw, 480px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "50% 36%",
+              }}
+            />
+          </div>
+
           {Object.entries(skills).map(([category, items]) => (
             <div key={category}>
               <div
