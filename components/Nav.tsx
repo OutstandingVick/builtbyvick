@@ -150,15 +150,15 @@ export default function Nav() {
         <div
           className="site-nav-pill"
           style={{
-            minHeight: mobileNav ? "54px" : "64px",
+            minHeight: mobileNav ? "46px" : "52px",
             display: "flex",
             alignItems: "center",
-            gap: mobileNav ? "0.75rem" : "1.75rem",
-            padding: mobileNav ? "0 0.75rem" : "0 1.35rem",
+            gap: mobileNav ? "0.65rem" : "1.35rem",
+            padding: mobileNav ? "0 0.65rem" : "0 1rem",
             backgroundColor: "var(--nav-pill-bg)",
             border: "1px solid var(--nav-pill-border)",
-            borderRadius: "18px",
-            boxShadow: "0 18px 40px rgba(0, 0, 0, 0.18)",
+            borderRadius: "4px",
+            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.16)",
             overflowX: mobileNav ? "auto" : "visible",
             scrollbarWidth: "none",
           }}
@@ -168,7 +168,7 @@ export default function Nav() {
             style={{
               display: "flex",
               alignItems: "stretch",
-              gap: mobileNav ? "0.25rem" : "1.35rem",
+              gap: mobileNav ? "0.25rem" : "1.15rem",
               height: "100%",
               flexShrink: 0,
             }}
@@ -181,15 +181,16 @@ export default function Nav() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="font-display"
+                  className="font-mono"
                   style={{
-                    minHeight: mobileNav ? "54px" : "64px",
+                    minHeight: mobileNav ? "46px" : "52px",
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: "0.6rem",
+                    gap: "0.45rem",
                     color: isActive ? "var(--nav-link-active)" : "var(--nav-link)",
-                    fontSize: mobileNav ? "0.82rem" : "1rem",
-                    fontWeight: 600,
+                    fontSize: mobileNav ? "0.66rem" : "0.72rem",
+                    fontWeight: 400,
+                    letterSpacing: "0.13em",
                     lineHeight: 1,
                     textDecoration: "none",
                     whiteSpace: "nowrap",
@@ -208,8 +209,8 @@ export default function Nav() {
                   {l.label}
                   {l.hasChevron && (
                     <ChevronsUpDown
-                      size={18}
-                      strokeWidth={2.2}
+                      size={14}
+                      strokeWidth={1.8}
                       style={{ color: "var(--nav-link-muted)", flexShrink: 0 }}
                     />
                   )}
@@ -219,11 +220,11 @@ export default function Nav() {
                       style={{
                         position: "absolute",
                         left: 0,
-                        right: l.hasChevron ? "1.7rem" : 0,
+                        right: l.hasChevron ? "1.2rem" : 0,
                         bottom: 0,
-                        height: "10px",
+                        height: "2px",
                         backgroundColor: "var(--nav-active-underline)",
-                        borderRadius: "999px 999px 0 0",
+                        borderRadius: "0",
                       }}
                     />
                   )}
@@ -236,13 +237,13 @@ export default function Nav() {
             aria-hidden="true"
             style={{
               width: "1px",
-              height: mobileNav ? "34px" : "42px",
+              height: mobileNav ? "28px" : "32px",
               backgroundColor: "var(--nav-pill-border)",
               flexShrink: 0,
             }}
           />
 
-          <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.55rem" : "0.9rem", flexShrink: 0 }}>
+          <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.35rem" : "0.55rem", flexShrink: 0 }}>
             <a
               href="https://github.com/outstandingvick"
               target="_blank"
@@ -250,8 +251,8 @@ export default function Nav() {
               aria-label="GitHub"
               title="GitHub"
               style={{
-                width: mobileNav ? "34px" : "42px",
-                height: mobileNav ? "34px" : "42px",
+                width: mobileNav ? "30px" : "34px",
+                height: mobileNav ? "30px" : "34px",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -268,7 +269,7 @@ export default function Nav() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <GitHubMark size={mobileNav ? 25 : 31} />
+              <GitHubMark size={mobileNav ? 20 : 23} />
             </a>
 
             <a
@@ -276,8 +277,8 @@ export default function Nav() {
               aria-label="Email"
               title="Email"
               style={{
-                width: mobileNav ? "34px" : "42px",
-                height: mobileNav ? "34px" : "42px",
+                width: mobileNav ? "30px" : "34px",
+                height: mobileNav ? "30px" : "34px",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -294,7 +295,7 @@ export default function Nav() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              <Mail size={mobileNav ? 26 : 32} fill="currentColor" strokeWidth={0} />
+              <Mail size={mobileNav ? 19 : 22} strokeWidth={1.8} />
             </a>
 
           <button
@@ -312,7 +313,7 @@ export default function Nav() {
               color: "var(--nav-icon)",
               backgroundColor: "transparent",
               border: "1px solid var(--nav-pill-border)",
-              borderRadius: "10px",
+              borderRadius: "2px",
               cursor: "pointer",
               transition: "border-color 0.2s, color 0.2s, background-color 0.2s",
             }}
