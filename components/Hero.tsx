@@ -24,11 +24,13 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
         padding: "0 2rem",
         paddingTop: "80px",
         maxWidth: "1100px",
         margin: "0 auto",
         position: "relative",
+        textAlign: "center",
       }}
     >
       {/* Availability badge */}
@@ -41,7 +43,6 @@ export default function Hero() {
           padding: "6px 14px",
           border: "1px solid var(--border-2)",
           borderRadius: "100px",
-          width: "fit-content",
           backgroundColor: "var(--bg-3)",
         }}
       >
@@ -69,7 +70,7 @@ export default function Hero() {
         ref={nameRef}
         className="font-display"
         style={{
-          fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
+          fontSize: "clamp(2.8rem, 8vw, 7.4rem)",
           fontWeight: 800,
           lineHeight: 0.92,
           letterSpacing: "-0.03em",
@@ -77,10 +78,11 @@ export default function Hero() {
           marginBottom: "1.5rem",
         }}
       >
-        VICTOR
-        <br />
-        <span style={{ color: "var(--accent)", WebkitTextStroke: "0px" }}>
-          POWEIDEI
+        <span style={{ whiteSpace: "nowrap" }}>
+          VICTOR{" "}
+          <span style={{ color: "var(--accent)", WebkitTextStroke: "0px" }}>
+            POWEIDEI
+          </span>
         </span>
         <br />
         OGBONNA
@@ -91,8 +93,10 @@ export default function Hero() {
         style={{
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           gap: "1rem",
           marginBottom: "2rem",
+          flexWrap: "wrap",
         }}
       >
         <span
@@ -147,7 +151,7 @@ export default function Hero() {
       </p>
 
       {/* CTA buttons */}
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
         <a
           href="#projects"
           className="font-mono"
