@@ -1,14 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { Moon, Sun } from "lucide-react";
+import { ChevronsUpDown, Github, Mail, Moon, Sun } from "lucide-react";
 
 const links = [
-  { label: "home", href: "#home" },
-  { label: "about", href: "#about" },
-  { label: "experience", href: "#experience" },
-  { label: "projects", href: "#projects" },
-  { label: "contact", href: "#contact" },
+  { label: "HOME", href: "#home" },
+  { label: "ABOUT", href: "#about", hasChevron: true },
+  { label: "PROJECTS", href: "#projects", hasChevron: true },
+  { label: "CONTACT ME", href: "#contact" },
 ];
 
 type Theme = "light" | "dark";
@@ -88,11 +87,10 @@ export default function Nav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
         backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        transition: "all 0.3s ease",
-        padding: mobileNav ? "0 1rem" : "0 2rem",
+        transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
+        padding: mobileNav ? "0.75rem 1rem" : "1.2rem 2rem",
       }}
     >
       <nav
@@ -102,7 +100,7 @@ export default function Nav() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: "64px",
+          gap: "1rem",
         }}
       >
         {/* Logo */}
@@ -134,48 +132,156 @@ export default function Nav() {
           />
         </a>
 
-        {/* Links */}
-        <div className="site-nav-links" style={{ display: mobileNav ? "none" : "flex", gap: "2rem", alignItems: "center" }}>
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="font-mono"
-              style={{
-                fontSize: "0.7rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                color: active === l.href.slice(1) ? "var(--accent)" : "var(--text-2)",
-                transition: "color 0.2s",
-                position: "relative",
-              }}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--text)")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color =
-                  active === l.href.slice(1) ? "var(--accent)" : "var(--text-2)")
-              }
-            >
-              {active === l.href.slice(1) && (
-                <span
+        <div
+          className="site-nav-pill"
+          style={{
+            minHeight: mobileNav ? "54px" : "64px",
+            display: "flex",
+            alignItems: "center",
+            gap: mobileNav ? "0.75rem" : "1.75rem",
+            padding: mobileNav ? "0 0.75rem" : "0 1.35rem",
+            backgroundColor: "var(--nav-pill-bg)",
+            border: "1px solid var(--nav-pill-border)",
+            borderRadius: "18px",
+            boxShadow: "0 18px 40px rgba(0, 0, 0, 0.18)",
+            overflowX: mobileNav ? "auto" : "visible",
+            scrollbarWidth: "none",
+          }}
+        >
+          <div
+            className="site-nav-links"
+            style={{
+              display: "flex",
+              alignItems: "stretch",
+              gap: mobileNav ? "0.25rem" : "1.35rem",
+              height: "100%",
+              flexShrink: 0,
+            }}
+          >
+            {links.map((l) => {
+              const id = l.href.slice(1);
+              const isActive = active === id;
+
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="font-display"
                   style={{
-                    position: "absolute",
-                    left: "-10px",
-                    color: "var(--accent)",
-                    fontSize: "0.6rem",
+                    minHeight: mobileNav ? "54px" : "64px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.6rem",
+                    color: isActive ? "var(--nav-link-active)" : "var(--nav-link)",
+                    fontSize: mobileNav ? "0.82rem" : "1rem",
+                    fontWeight: 600,
+                    lineHeight: 1,
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                    position: "relative",
+                    transition: "color 0.2s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--nav-link-active)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = isActive
+                      ? "var(--nav-link-active)"
+                      : "var(--nav-link)";
                   }}
                 >
-                  ▸
-                </span>
-              )}
-              {l.label}
-            </a>
-          ))}
-        </div>
+                  {l.label}
+                  {l.hasChevron && (
+                    <ChevronsUpDown
+                      size={18}
+                      strokeWidth={2.2}
+                      style={{ color: "var(--nav-link-muted)", flexShrink: 0 }}
+                    />
+                  )}
+                  {isActive && (
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        left: 0,
+                        right: l.hasChevron ? "1.7rem" : 0,
+                        bottom: 0,
+                        height: "10px",
+                        backgroundColor: "var(--nav-active-underline)",
+                        borderRadius: "999px 999px 0 0",
+                      }}
+                    />
+                  )}
+                </a>
+              );
+            })}
+          </div>
 
-        <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.5rem" : "0.75rem" }}>
+          <div
+            aria-hidden="true"
+            style={{
+              width: "1px",
+              height: mobileNav ? "34px" : "42px",
+              backgroundColor: "var(--nav-pill-border)",
+              flexShrink: 0,
+            }}
+          />
+
+          <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.55rem" : "0.9rem", flexShrink: 0 }}>
+            <a
+              href="https://github.com/outstandingvick"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+              style={{
+                width: mobileNav ? "34px" : "42px",
+                height: mobileNav ? "34px" : "42px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--nav-icon)",
+                textDecoration: "none",
+                transition: "color 0.2s ease, transform 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--nav-link-active)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--nav-icon)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <Github size={mobileNav ? 25 : 31} fill="currentColor" strokeWidth={0} />
+            </a>
+
+            <a
+              href="mailto:victor@outstandingvick.xyz"
+              aria-label="Email"
+              title="Email"
+              style={{
+                width: mobileNav ? "34px" : "42px",
+                height: mobileNav ? "34px" : "42px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "var(--nav-icon)",
+                textDecoration: "none",
+                transition: "color 0.2s ease, transform 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "var(--nav-link-active)";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "var(--nav-icon)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <Mail size={mobileNav ? 26 : 32} fill="currentColor" strokeWidth={0} />
+            </a>
+
           <button
             type="button"
             onClick={toggleTheme}
@@ -188,46 +294,25 @@ export default function Nav() {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "var(--text)",
-              backgroundColor: "var(--bg-3)",
-              border: "1px solid var(--border-2)",
-              borderRadius: "2px",
+              color: "var(--nav-icon)",
+              backgroundColor: "transparent",
+              border: "1px solid var(--nav-pill-border)",
+              borderRadius: "10px",
               cursor: "pointer",
               transition: "border-color 0.2s, color 0.2s, background-color 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = "var(--accent)";
-              e.currentTarget.style.borderColor = "var(--accent)";
+              e.currentTarget.style.color = "var(--nav-link-active)";
+              e.currentTarget.style.borderColor = "var(--nav-link-muted)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--text)";
-              e.currentTarget.style.borderColor = "var(--border-2)";
+              e.currentTarget.style.color = "var(--nav-icon)";
+              e.currentTarget.style.borderColor = "var(--nav-pill-border)";
             }}
           >
             {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
           </button>
-
-          {/* CTA */}
-          <a
-            href="mailto:victor@example.com"
-            className="font-mono"
-            style={{
-              fontSize: "0.65rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-              color: "var(--bg)",
-              backgroundColor: "var(--accent)",
-              padding: "6px 14px",
-              borderRadius: "2px",
-              fontWeight: 500,
-              transition: "opacity 0.2s",
-            }}
-            onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.85")}
-            onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
-          >
-            Hire me
-          </a>
+          </div>
         </div>
       </nav>
     </header>
