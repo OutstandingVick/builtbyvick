@@ -223,7 +223,7 @@ export default function Nav() {
                         right: l.hasChevron ? "1.2rem" : 0,
                         bottom: 0,
                         height: "2px",
-                        backgroundColor: "var(--nav-active-underline)",
+                        backgroundColor: "var(--accent)",
                         borderRadius: "0",
                       }}
                     />
