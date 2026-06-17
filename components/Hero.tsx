@@ -144,10 +144,9 @@ export default function Hero() {
           marginBottom: "3rem",
         }}
       >
-        Based in Lagos, Nigeria. I build fast, thoughtful interfaces and write
-        sharp technical content for the Solana/Web3 ecosystem. Affiliated with{" "}
-        <span style={{ color: "var(--text)" }}>SuperteamNG</span> and a{" "}
-        <span style={{ color: "var(--text)" }}>Solana Turbine</span> graduate.
+        I build responsive and user-focused web applications. My work centers
+        on creating intuitive interfaces, seamless user experiences, and
+        products that scale effectively.
       </p>
 
       {/* CTA buttons */}

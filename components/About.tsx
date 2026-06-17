@@ -57,7 +57,7 @@ export default function About() {
               intersection
             </span>{" "}
             of code,<br />
-            research & writing.
+             & research.
           </h2>
 
           <div
@@ -65,23 +65,14 @@ export default function About() {
             style={{ fontSize: "0.87rem", color: "var(--text-2)", lineHeight: 1.9, display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <p>
-              I&apos;m Victor — a frontend engineer and technical writer embedded in
-              the Solana ecosystem. I split my time between building user-facing
-              products and producing research & content that helps people
-              understand how Web3 actually works.
+              I&apos;m Victor, a frontend engineer focused on creating responsive
+              and scalable digital experiences. I blend research-driven thinking
+              with hands-on development to build products that are both
+              functional and impactful.
             </p>
             <p>
-              As a{" "}
-              <span style={{ color: "var(--text)" }}>Solana Turbine graduate</span> and
-              active member of{" "}
-              <span style={{ color: "var(--text)" }}>SuperteamNG</span>, I&apos;ve
-              competed in multiple hackathons, built DeFi tooling, and written
-              long-form technical articles across the ecosystem.
-            </p>
-            <p>
-              Currently pursuing a self-directed CS curriculum — going deep on
-              fundamentals, Rust, and Solana architecture — while shipping under
-              competition pressure.
+              I&apos;m currently strengthening my software engineering skills
+              through continuous learning and hands-on project development.
             </p>
           </div>
 
