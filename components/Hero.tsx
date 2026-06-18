@@ -118,18 +118,7 @@ export default function Hero() {
             fontStyle: "italic",
           }}
         >
-          Technical Writer
-        </span>
-        <span style={{ color: "var(--border-2)" }}>—</span>
-        <span
-          className="font-serif"
-          style={{
-            fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)",
-            color: "var(--text-2)",
-            fontStyle: "italic",
-          }}
-        >
-          Solana Researcher
+          Technical Writer & Researcher
         </span>
       </div>
 

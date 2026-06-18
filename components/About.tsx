@@ -13,7 +13,7 @@ export default function About() {
     <section
       id="about"
       style={{
-        padding: "4rem 2rem 8rem",
+        padding: "4rem 2rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}
@@ -121,38 +121,6 @@ export default function About() {
               </div>
             ))}
           </div>
-
-          {/* Location / status */}
-          <div
-            style={{
-              display: "flex",
-              gap: "2rem",
-              marginTop: "2.5rem",
-              paddingTop: "2rem",
-              borderTop: "1px solid var(--border)",
-            }}
-          >
-            {[
-              { label: "Location", value: "Lagos, Nigeria" },
-              { label: "Status", value: "Open to roles" },
-              { label: "Cohort", value: "Turbine '24" },
-            ].map((item) => (
-              <div key={item.label}>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.6rem", letterSpacing: "0.15em", color: "var(--text-3)", textTransform: "uppercase", marginBottom: "4px" }}
-                >
-                  {item.label}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.8rem", color: "var(--text)" }}
-                >
-                  {item.value}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right — portrait */}
@@ -161,7 +129,7 @@ export default function About() {
             style={{
               position: "relative",
               width: "100%",
-              aspectRatio: "4 / 5",
+              aspectRatio: "1 / 1",
               overflow: "hidden",
               border: "1px solid var(--border)",
               borderRadius: "4px",
