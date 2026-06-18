@@ -12,16 +12,18 @@ const links = [
 
 type Theme = "light" | "dark";
 
-const themeEvent = "builtbyvick-theme-change";
-
 function getPreferredTheme(): Theme {
   if (typeof window === "undefined") {
     return "dark";
   }
 
-  const savedTheme = window.localStorage.getItem("theme");
-  if (savedTheme === "light" || savedTheme === "dark") {
-    return savedTheme;
+  try {
+    const savedTheme = window.localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
+    }
+  } catch {
+    // Use the system preference when storage is unavailable.
   }
 
   return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -29,13 +31,11 @@ function getPreferredTheme(): Theme {
 
 function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
-  window.localStorage.setItem("theme", theme);
-  window.dispatchEvent(new Event(themeEvent));
-}
-
-function subscribeToTheme(onStoreChange: () => void) {
-  window.addEventListener(themeEvent, onStoreChange);
-  return () => window.removeEventListener(themeEvent, onStoreChange);
+  try {
+    window.localStorage.setItem("theme", theme);
+  } catch {
+    // The visual theme can still change when storage is unavailable.
+  }
 }
 
 function isMobileNav() {
@@ -65,7 +65,7 @@ function GitHubMark({ size }: { size: number }) {
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const theme = useSyncExternalStore(subscribeToTheme, getPreferredTheme, () => "dark");
+  const [theme, setTheme] = useState<Theme>("dark");
   const mobileNav = useSyncExternalStore(subscribeToViewport, isMobileNav, () => false);
 
   useEffect(() => {
@@ -85,11 +85,18 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
+    const frame = window.requestAnimationFrame(() => {
+      const preferredTheme = getPreferredTheme();
+      setTheme(preferredTheme);
+      document.documentElement.dataset.theme = preferredTheme;
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
     applyTheme(nextTheme);
   };
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Victor Ogundimu — Frontend Engineer",
-  description: "Frontend engineer, technical writer & Solana ecosystem researcher based in Lagos, Nigeria.",
+  title: "Victor Ogbonna — Frontend Engineer",
+  description: "Frontend engineer, technical writer & researcher building at the intersection of code and research.",
 };
 
 export default function RootLayout({
