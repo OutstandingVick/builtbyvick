@@ -5,7 +5,6 @@ import Image from "next/image";
 const skills = {
   "Languages": ["JavaScript", "TypeScript", "Rust (learning)"],
   "Frontend": ["React", "Next.js", "Tailwind CSS", "HTML/CSS"],
-  "Web3 / Solana": ["Anchor", "Web3.js", "Solana Programs", "DeFi Protocols"],
   "Tools": ["Git / GitHub", "Figma", "Vercel", "NotebookLM"],
 };
 
@@ -14,7 +13,7 @@ export default function About() {
     <section
       id="about"
       style={{
-        padding: "8rem 2rem",
+        padding: "4rem 2rem 8rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}
@@ -76,6 +75,53 @@ export default function About() {
             </p>
           </div>
 
+          {/* Skills */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
+              gap: "1.5rem",
+              marginTop: "2.75rem",
+            }}
+          >
+            {Object.entries(skills).map(([category, items]) => (
+              <div key={category}>
+                <div
+                  className="font-mono"
+                  style={{
+                    fontSize: "0.6rem",
+                    letterSpacing: "0.18em",
+                    color: "var(--accent)",
+                    textTransform: "uppercase",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  {category}
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                  {items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="font-mono"
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "var(--text-2)",
+                        backgroundColor: "var(--surface)",
+                        border: "1px solid var(--border)",
+                        padding: "4px 10px",
+                        borderRadius: "2px",
+                        letterSpacing: "0.05em",
+                        width: "fit-content",
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Location / status */}
           <div
             style={{
@@ -109,7 +155,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — portrait and skills */}
+        {/* Right — portrait */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <div
             style={{
@@ -133,42 +179,6 @@ export default function About() {
               }}
             />
           </div>
-
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category}>
-              <div
-                className="font-mono"
-                style={{
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.18em",
-                  color: "var(--accent)",
-                  textTransform: "uppercase",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                {category}
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="font-mono"
-                    style={{
-                      fontSize: "0.75rem",
-                      color: "var(--text-2)",
-                      backgroundColor: "var(--surface)",
-                      border: "1px solid var(--border)",
-                      padding: "4px 10px",
-                      borderRadius: "2px",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

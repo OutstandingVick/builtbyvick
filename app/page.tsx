@@ -10,21 +10,9 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ height: "1px", backgroundColor: "var(--border)" }} />
-      </div>
       <About />
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ height: "1px", backgroundColor: "var(--border)" }} />
-      </div>
       <Experience />
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ height: "1px", backgroundColor: "var(--border)" }} />
-      </div>
       <Projects />
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ height: "1px", backgroundColor: "var(--border)" }} />
-      </div>
       <Contact />
     </main>
   );
