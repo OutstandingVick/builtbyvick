@@ -70,13 +70,13 @@ export default function Contact() {
               style={{ fontSize: "0.87rem", color: "var(--text-2)", lineHeight: 1.85, marginBottom: "3rem" }}
             >
               Whether you&apos;re building a product, need technical writing, or want a
-              researcher embedded in your Solana team — I&apos;m interested in hearing
+              researcher embedded in your Startup—I&apos;m interested in hearing
               about it. Drop me a message or reach out directly.
             </p>
 
             {/* Email */}
             <a
-              href="mailto:victor@outstandingvick.xyz"
+              href="mailto:victor.ogbonna@hotmail.com"
               className="font-mono"
               style={{
                 display: "block",
@@ -93,7 +93,7 @@ export default function Contact() {
               onMouseEnter={(e) => ((e.currentTarget).style.borderColor = "var(--accent)")}
               onMouseLeave={(e) => ((e.currentTarget).style.borderColor = "var(--border-2)")}
             >
-              victor@outstandingvick.xyz ↗
+              victor.ogbonna@hotmail.com ↗
             </a>
 
             {/* Socials */}
@@ -272,13 +272,13 @@ export default function Contact() {
           className="font-mono"
           style={{ fontSize: "0.68rem", color: "var(--text-3)", letterSpacing: "0.08em" }}
         >
-          © 2025 Victor Ogundimu
+          © 2025 Victor Ogbonna
         </span>
         <span
           className="font-mono"
           style={{ fontSize: "0.65rem", color: "var(--text-3)" }}
         >
-          Lagos, Nigeria · Built with Next.js & Tailwind
+          Built with Next.js & Tailwind CSS
         </span>
       </footer>
     </>
