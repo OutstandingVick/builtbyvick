@@ -148,7 +148,7 @@ export default function Experience() {
                     <li
                       key={j}
                       className="font-mono"
-                      style={{ fontSize: "0.82rem", color: "var(--text-2)", lineHeight: 1.75, paddingLeft: "1rem", position: "relative" }}
+                      style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6, paddingLeft: "1rem", position: "relative" }}
                     >
                       <span style={{ position: "absolute", left: 0, color: "var(--border-2)" }}>—</span>
                       {b}
@@ -198,7 +198,7 @@ export default function Experience() {
                 </div>
                 <p
                   className="font-mono"
-                  style={{ fontSize: "0.82rem", color: "var(--text-2)", lineHeight: 1.75 }}
+                  style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6 }}
                 >
                   {item.desc}
                 </p>

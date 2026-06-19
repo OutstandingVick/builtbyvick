@@ -61,7 +61,7 @@ export default function About() {
 
           <div
             className="font-mono"
-            style={{ fontSize: "0.87rem", color: "var(--text-2)", lineHeight: 1.9, display: "flex", flexDirection: "column", gap: "1rem" }}
+            style={{ fontSize: "1.3rem", color: "var(--text-2)", lineHeight: 1.7, display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <p>
               I&apos;m Victor, a frontend engineer focused on creating responsive

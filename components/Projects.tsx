@@ -140,7 +140,7 @@ export default function Projects() {
 
               <p
                 className="font-mono"
-                style={{ fontSize: "0.85rem", color: "var(--text-2)", lineHeight: 1.8, marginBottom: "1.5rem" }}
+                style={{ fontSize: "1.27rem", color: "var(--text-2)", lineHeight: 1.6, marginBottom: "1.5rem" }}
               >
                 {p.desc}
               </p>
@@ -150,7 +150,7 @@ export default function Projects() {
                   <li
                     key={j}
                     className="font-mono"
-                    style={{ fontSize: "0.78rem", color: "var(--text-3)", paddingLeft: "1rem", position: "relative" }}
+                    style={{ fontSize: "1.16rem", color: "var(--text-3)", paddingLeft: "1rem", position: "relative" }}
                   >
                     <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>›</span>
                     {b}
@@ -300,7 +300,7 @@ export default function Projects() {
               </h4>
               <p
                 className="font-mono"
-                style={{ fontSize: "0.78rem", color: "var(--text-3)", lineHeight: 1.7, marginBottom: "1rem" }}
+                style={{ fontSize: "1.01rem", color: "var(--text-3)", lineHeight: 1.6, marginBottom: "1rem" }}
               >
                 {p.desc}
               </p>

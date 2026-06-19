@@ -67,7 +67,7 @@ export default function Contact() {
 
             <p
               className="font-mono"
-              style={{ fontSize: "0.87rem", color: "var(--text-2)", lineHeight: 1.85, marginBottom: "3rem" }}
+              style={{ fontSize: "1.3rem", color: "var(--text-2)", lineHeight: 1.65, marginBottom: "3rem" }}
             >
               Whether you&apos;re building a product, need technical writing, or want a
               researcher embedded in your Startup—I&apos;m interested in hearing
@@ -158,7 +158,7 @@ export default function Contact() {
                 </h3>
                 <p
                   className="font-mono"
-                  style={{ fontSize: "0.8rem", color: "var(--text-2)", lineHeight: 1.75 }}
+                  style={{ fontSize: "0.92rem", color: "var(--text-2)", lineHeight: 1.7 }}
                 >
                   I aim to respond within 24 hours. Talk soon.
                 </p>

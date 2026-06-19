@@ -126,10 +126,10 @@ export default function Hero() {
       <p
         className="font-mono"
         style={{
-          fontSize: "0.9rem",
+          fontSize: "1.35rem",
           color: "var(--text-2)",
-          maxWidth: "560px",
-          lineHeight: 1.85,
+          maxWidth: "760px",
+          lineHeight: 1.75,
           marginBottom: "3rem",
         }}
       >
