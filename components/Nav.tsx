@@ -165,7 +165,7 @@ export default function Nav() {
             backgroundColor: "var(--nav-pill-bg)",
             border: "1px solid var(--nav-pill-border)",
             borderRadius: "4px",
-            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.16)",
+            boxShadow: "0 10px 30px rgba(107, 75, 62, 0.26)",
             overflowX: mobileNav ? "auto" : "visible",
             scrollbarWidth: "none",
           }}
