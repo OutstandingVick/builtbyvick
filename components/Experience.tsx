@@ -57,6 +57,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
+      className="content-section experience-section"
       style={{
         padding: "8rem 2rem",
         maxWidth: "1100px",
@@ -64,7 +65,7 @@ export default function Experience() {
       }}
     >
       {/* Section label */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
+      <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
         <span
           className="font-mono"
           style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
@@ -75,7 +76,7 @@ export default function Experience() {
       </div>
 
       {/* Tabs */}
-      <div style={{ display: "flex", gap: "0", marginBottom: "3.5rem", borderBottom: "1px solid var(--border)" }}>
+      <div className="experience-tabs" style={{ display: "flex", gap: "0", marginBottom: "3.5rem", borderBottom: "1px solid var(--border)" }}>
         {(["work", "certs"] as const).map((t) => (
           <button
             key={t}
@@ -106,6 +107,7 @@ export default function Experience() {
           {work.map((item, i) => (
             <div
               key={i}
+              className="experience-item"
               style={{
                 display: "grid",
                 gridTemplateColumns: "200px 1fr",
@@ -147,7 +149,7 @@ export default function Experience() {
                   {item.bullets.map((b, j) => (
                     <li
                       key={j}
-                      className="font-mono"
+                      className="font-mono experience-body"
                       style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6, paddingLeft: "1rem", position: "relative" }}
                     >
                       <span style={{ position: "absolute", left: 0, color: "var(--border-2)" }}>—</span>
@@ -167,6 +169,7 @@ export default function Experience() {
           {certs.map((item, i) => (
             <div
               key={i}
+              className="experience-item"
               style={{
                 display: "grid",
                 gridTemplateColumns: "200px 1fr",
@@ -197,7 +200,7 @@ export default function Experience() {
                   @ {item.issuer}
                 </div>
                 <p
-                  className="font-mono"
+                  className="font-mono experience-body"
                   style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6 }}
                 >
                   {item.desc}
