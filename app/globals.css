@@ -106,8 +106,189 @@ body::before {
   }
 }
 
+@media (max-width: 980px) {
+  .hero-section,
+  .content-section,
+  .site-footer {
+    max-width: 760px !important;
+  }
+
+  .about-grid,
+  .contact-grid,
+  .project-featured-item {
+    grid-template-columns: 1fr !important;
+    gap: 2.75rem !important;
+  }
+
+  .portrait-column {
+    max-width: 560px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .experience-item {
+    grid-template-columns: 150px 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .projects-more-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-section {
+    min-height: auto !important;
+    padding: 7.5rem 1rem 4.5rem !important;
+  }
+
+  .hero-badge {
+    margin-bottom: 2rem !important;
+  }
+
+  .hero-title {
+    font-size: 2.55rem !important;
+    line-height: 0.95 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-roles {
+    gap: 0.55rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .hero-bio,
+  .about-copy,
+  .contact-copy,
+  .project-description,
+  .experience-body {
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .project-bullet {
+    font-size: 0.96rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .more-project-description {
+    font-size: 0.92rem !important;
+  }
+
+  .hero-actions {
+    width: 100% !important;
+    max-width: 360px !important;
+  }
+
+  .hero-actions a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hero-scroll {
+    display: none !important;
+  }
+
+  .content-section {
+    padding: 4.5rem 1rem !important;
+  }
+
+  .about-section {
+    padding-top: 3rem !important;
+  }
+
+  .section-label {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .section-heading {
+    font-size: 2rem !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .experience-tabs {
+    margin-bottom: 2rem !important;
+    overflow-x: auto !important;
+  }
+
+  .experience-tabs button {
+    flex: 1 0 auto !important;
+    padding: 10px 14px !important;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 2rem 0 !important;
+  }
+
+  .project-featured-item {
+    padding: 2.25rem 0 !important;
+  }
+
+  .project-meta {
+    flex-wrap: wrap !important;
+    row-gap: 0.35rem !important;
+  }
+
+  .project-stack-card {
+    padding: 1.25rem !important;
+  }
+
+  .project-stack-card .font-display {
+    font-size: 3.5rem !important;
+  }
+
+  .project-links {
+    flex-direction: column !important;
+  }
+
+  .project-links a {
+    text-align: center !important;
+  }
+
+  .site-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 2rem 1rem !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-nav-pill {
+    min-height: 42px !important;
+    gap: 0.5rem !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .hero-title {
+    font-size: 2.1rem !important;
+  }
+
+  .hero-bio {
+    margin-bottom: 2rem !important;
+  }
+
+  .section-heading {
+    font-size: 1.75rem !important;
+  }
+
+  .contact-grid a[href^="mailto:"] {
+    overflow-wrap: anywhere !important;
+  }
+}
+
 @media (max-width: 380px) {
   .site-nav-actions {
     gap: 0.5rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.85rem !important;
   }
 }
