@@ -12,6 +12,7 @@ export default function About() {
   return (
     <section
       id="about"
+      className="content-section about-section"
       style={{
         padding: "4rem 2rem",
         maxWidth: "1100px",
@@ -19,7 +20,7 @@ export default function About() {
       }}
     >
       {/* Section label */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
+      <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
         <span
           className="font-mono"
           style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
@@ -30,6 +31,7 @@ export default function About() {
       </div>
 
       <div
+        className="about-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
@@ -40,7 +42,7 @@ export default function About() {
         {/* Left — text */}
         <div>
           <h2
-            className="font-display"
+            className="font-display section-heading"
             style={{
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
@@ -60,7 +62,7 @@ export default function About() {
           </h2>
 
           <div
-            className="font-mono"
+            className="font-mono about-copy"
             style={{ fontSize: "1.3rem", color: "var(--text-2)", lineHeight: 1.7, display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <p>
@@ -77,6 +79,7 @@ export default function About() {
 
           {/* Skills */}
           <div
+            className="skills-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
@@ -124,7 +127,7 @@ export default function About() {
         </div>
 
         {/* Right — portrait */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+        <div className="portrait-column" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <div
             style={{
               position: "relative",
