@@ -76,6 +76,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      className="content-section projects-section"
       style={{
         padding: "8rem 2rem",
         maxWidth: "1100px",
@@ -83,7 +84,7 @@ export default function Projects() {
       }}
     >
       {/* Section label */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
+      <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
         <span
           className="font-mono"
           style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
@@ -98,6 +99,7 @@ export default function Projects() {
         {featured.map((p, i) => (
           <div
             key={i}
+            className="project-featured-item"
             style={{
               padding: "3rem 0",
               borderBottom: "1px solid var(--border)",
@@ -109,7 +111,7 @@ export default function Projects() {
           >
             {/* Left */}
             <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1rem" }}>
+              <div className="project-meta" style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "1rem" }}>
                 <span
                   className="font-mono"
                   style={{ fontSize: "0.62rem", letterSpacing: "0.15em", color: "var(--text-3)", textTransform: "uppercase" }}
@@ -140,6 +142,7 @@ export default function Projects() {
 
               <p
                 className="font-mono"
+                
                 style={{ fontSize: "1.27rem", color: "var(--text-2)", lineHeight: 1.6, marginBottom: "1.5rem" }}
               >
                 {p.desc}
@@ -149,7 +152,7 @@ export default function Projects() {
                 {p.bullets.map((b, j) => (
                   <li
                     key={j}
-                    className="font-mono"
+                    className="font-mono project-bullet"
                     style={{ fontSize: "1.16rem", color: "var(--text-3)", paddingLeft: "1rem", position: "relative" }}
                   >
                     <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>›</span>
@@ -159,7 +162,7 @@ export default function Projects() {
               </ul>
 
               {/* Links */}
-              <div style={{ display: "flex", gap: "1rem" }}>
+              <div className="project-links" style={{ display: "flex", gap: "1rem" }}>
                 <a
                   href={p.url}
                   target="_blank"
@@ -214,6 +217,7 @@ export default function Projects() {
 
             {/* Right — stack */}
             <div
+              className="project-stack-card"
               style={{
                 backgroundColor: "var(--bg-3)",
                 border: "1px solid var(--border)",
@@ -273,6 +277,7 @@ export default function Projects() {
           More work
         </h3>
         <div
+          className="projects-more-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
@@ -300,6 +305,7 @@ export default function Projects() {
               </h4>
               <p
                 className="font-mono"
+                
                 style={{ fontSize: "1.01rem", color: "var(--text-3)", lineHeight: 1.6, marginBottom: "1rem" }}
               >
                 {p.desc}
