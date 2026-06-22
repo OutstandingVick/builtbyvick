@@ -19,6 +19,7 @@ export default function Hero() {
   return (
     <section
       id="home"
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -35,6 +36,7 @@ export default function Hero() {
     >
       {/* Availability badge */}
       <div
+        className="hero-badge"
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -68,7 +70,7 @@ export default function Hero() {
       {/* Big name */}
       <h1
         ref={nameRef}
-        className="font-display"
+        className="font-display hero-title"
         style={{
           fontSize: "clamp(2.8rem, 8vw, 7.4rem)",
           fontWeight: 800,
@@ -90,6 +92,7 @@ export default function Hero() {
 
       {/* Role tag */}
       <div
+        className="hero-roles"
         style={{
           display: "flex",
           alignItems: "center",
@@ -124,7 +127,7 @@ export default function Hero() {
 
       {/* Bio */}
       <p
-        className="font-mono"
+        className="font-mono hero-bio"
         style={{
           fontSize: "1.35rem",
           color: "var(--text-2)",
@@ -139,7 +142,7 @@ export default function Hero() {
       </p>
 
       {/* CTA buttons */}
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
+      <div className="hero-actions" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
         <a
           href="#projects"
           className="font-mono"
@@ -188,6 +191,7 @@ export default function Hero() {
 
       {/* Scroll hint */}
       <div
+        className="hero-scroll"
         style={{
           position: "absolute",
           bottom: "2.5rem",
