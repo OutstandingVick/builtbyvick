@@ -21,6 +21,7 @@ export default function Contact() {
     <>
       <section
         id="contact"
+        className="content-section contact-section"
         style={{
           padding: "8rem 2rem",
           maxWidth: "1100px",
@@ -28,7 +29,7 @@ export default function Contact() {
         }}
       >
         {/* Section label */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
+        <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
           <span
             className="font-mono"
             style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
@@ -39,6 +40,7 @@ export default function Contact() {
         </div>
 
         <div
+          className="contact-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -48,7 +50,7 @@ export default function Contact() {
           {/* Left */}
           <div>
             <h2
-              className="font-display"
+              className="font-display section-heading"
               style={{
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 fontWeight: 700,
@@ -66,7 +68,7 @@ export default function Contact() {
             </h2>
 
             <p
-              className="font-mono"
+              className="font-mono contact-copy"
               style={{ fontSize: "1.3rem", color: "var(--text-2)", lineHeight: 1.65, marginBottom: "3rem" }}
             >
               Whether you&apos;re building a product, need technical writing, or want a
@@ -258,6 +260,7 @@ export default function Contact() {
 
       {/* Footer */}
       <footer
+        className="site-footer"
         style={{
           borderTop: "1px solid var(--border)",
           padding: "2.5rem 2rem",

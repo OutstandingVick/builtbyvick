@@ -141,8 +141,7 @@ export default function Projects() {
               </h3>
 
               <p
-                className="font-mono"
-                
+                className="font-mono project-description"
                 style={{ fontSize: "1.27rem", color: "var(--text-2)", lineHeight: 1.6, marginBottom: "1.5rem" }}
               >
                 {p.desc}
@@ -304,8 +303,7 @@ export default function Projects() {
                 {p.name}
               </h4>
               <p
-                className="font-mono"
-                
+                className="font-mono more-project-description"
                 style={{ fontSize: "1.01rem", color: "var(--text-3)", lineHeight: 1.6, marginBottom: "1rem" }}
               >
                 {p.desc}
