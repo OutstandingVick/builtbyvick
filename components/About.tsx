@@ -39,7 +39,33 @@ export default function About() {
           alignItems: "start",
         }}
       >
-        {/* Left — text */}
+        {/* Left — portrait */}
+        <div className="portrait-column" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "1 / 1",
+              overflow: "hidden",
+              border: "1px solid var(--border)",
+              borderRadius: "4px",
+              backgroundColor: "var(--surface)",
+            }}
+          >
+            <Image
+              src="/victor-portrait.jpg"
+              alt="Portrait of Victor Ogundimu"
+              fill
+              sizes="(max-width: 900px) 100vw, 480px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "50% 36%",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Right — text */}
         <div>
           <h2
             className="font-display section-heading"
@@ -88,7 +114,7 @@ export default function About() {
             }}
           >
             {Object.entries(skills).map(([category, items]) => (
-              <div key={category}>
+              <div key={category} className="skill-group">
                 <div
                   className="font-mono"
                   style={{
@@ -101,7 +127,7 @@ export default function About() {
                 >
                   {category}
                 </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                <div className="skill-list" style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                   {items.map((skill) => (
                     <span
                       key={skill}
@@ -126,31 +152,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — portrait */}
-        <div className="portrait-column" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              aspectRatio: "1 / 1",
-              overflow: "hidden",
-              border: "1px solid var(--border)",
-              borderRadius: "4px",
-              backgroundColor: "var(--surface)",
-            }}
-          >
-            <Image
-              src="/victor-portrait.jpg"
-              alt="Portrait of Victor Ogundimu"
-              fill
-              sizes="(max-width: 900px) 100vw, 480px"
-              style={{
-                objectFit: "cover",
-                objectPosition: "50% 36%",
-              }}
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

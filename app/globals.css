@@ -206,8 +206,21 @@ body::before {
   }
 
   .skills-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.65rem !important;
+  }
+
+  .skill-list {
+    flex-direction: column !important;
+  }
+
+  .skill-list > span {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 3px 5px !important;
+    font-size: 0.54rem !important;
+    text-align: center !important;
+    overflow-wrap: anywhere !important;
   }
 
   .experience-tabs {
@@ -290,5 +303,14 @@ body::before {
 
   .hero-title {
     font-size: 1.85rem !important;
+  }
+
+  .skills-grid {
+    gap: 0.45rem !important;
+  }
+
+  .skill-list > span {
+    font-size: 0.5rem !important;
+    padding: 3px 4px !important;
   }
 }
