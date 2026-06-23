@@ -130,15 +130,14 @@ export default function About() {
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="font-mono"
+                      className="font-mono skill-chip"
                       style={{
-                        fontSize: "0.75rem",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.65rem",
+                        fontSize: "0.95rem",
                         color: "var(--text-2)",
-                        backgroundColor: "var(--surface)",
-                        border: "1px solid var(--border)",
-                        padding: "4px 10px",
-                        borderRadius: "2px",
-                        letterSpacing: "0.05em",
+                        letterSpacing: "0",
                         width: "fit-content",
                       }}
                     >
