@@ -210,6 +210,11 @@ body::before {
     gap: 0.65rem !important;
   }
 
+  .portrait-column {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
   .skill-list {
     flex-direction: column !important;
   }
@@ -312,5 +317,9 @@ body::before {
   .skill-list > span {
     font-size: 0.5rem !important;
     padding: 3px 4px !important;
+  }
+
+  .portrait-column {
+    max-width: 240px !important;
   }
 }
