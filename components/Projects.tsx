@@ -19,17 +19,13 @@ const featured = [
   },
   {
     name: "Edged",
-    url: "#",
-    github: "#",
+    url: "http://edged.vercel.app/",
+    github: "https://github.com/OutstandingVick/edged",
     category: "Circle Agent Stack × Arc Testnet",
     period: "2026",
     stack: ["Circle Agent Stack", "Arc Testnet", "Polymarket", "Circle Wallets", "TypeScript"],
     desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
-    bullets: [
-      "Built an agent-focused interface for monitoring markets, wallets, and Arc settlement flows.",
-      "Designed responsive desktop and mobile views around a bold product-led landing experience.",
-      "Integrated the project narrative around live market scanning, thesis generation, and testnet settlement.",
-    ],
+    bullets: [],
     preview: {
       desktop: "/edged-desktop.png",
       mobile: "/edged-mobile.jpg",
@@ -105,7 +101,7 @@ export default function Projects() {
         {featured.map((p, i) => (
           <div
             key={i}
-            className="project-featured-item"
+            className={`project-featured-item${p.preview ? " project-featured-preview" : ""}`}
             style={{
               padding: "3rem 0",
               borderBottom: "1px solid var(--border)",
@@ -153,18 +149,20 @@ export default function Projects() {
                 {p.desc}
               </p>
 
-              <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginBottom: "2rem" }}>
-                {p.bullets.map((b, j) => (
-                  <li
-                    key={j}
-                    className="font-mono project-bullet"
-                    style={{ fontSize: "1.16rem", color: "var(--text-3)", paddingLeft: "1rem", position: "relative" }}
-                  >
-                    <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>›</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
+              {p.bullets.length > 0 && (
+                <ul style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginBottom: "2rem" }}>
+                  {p.bullets.map((b, j) => (
+                    <li
+                      key={j}
+                      className="font-mono project-bullet"
+                      style={{ fontSize: "1.16rem", color: "var(--text-3)", paddingLeft: "1rem", position: "relative" }}
+                    >
+                      <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>›</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               {/* Links */}
               <div className="project-links" style={{ display: "flex", gap: "1rem" }}>
@@ -233,23 +231,35 @@ export default function Projects() {
             >
               {p.preview ? (
                 <div className="project-preview">
-                  <div className="project-preview-desktop">
-                    <Image
-                      src={p.preview.desktop}
-                      alt={`${p.name} desktop website screenshot`}
-                      fill
-                      sizes="(max-width: 760px) 100vw, 260px"
-                      style={{ objectFit: "cover", objectPosition: "top left" }}
-                    />
+                  <div className="project-preview-corner project-preview-corner-tl" />
+                  <div className="project-preview-corner project-preview-corner-tr" />
+                  <div className="project-preview-corner project-preview-corner-bl" />
+                  <div className="project-preview-corner project-preview-corner-br" />
+
+                  <div className="project-preview-device project-preview-device-desktop">
+                    <div className="project-preview-label font-display">Show Desktop</div>
+                    <div className="project-preview-screen project-preview-desktop">
+                      <Image
+                        src={p.preview.desktop}
+                        alt={`${p.name} desktop website screenshot`}
+                        fill
+                        sizes="(max-width: 760px) 100vw, 460px"
+                        style={{ objectFit: "cover", objectPosition: "top left" }}
+                      />
+                    </div>
                   </div>
-                  <div className="project-preview-mobile">
-                    <Image
-                      src={p.preview.mobile}
-                      alt={`${p.name} mobile website screenshot`}
-                      fill
-                      sizes="(max-width: 760px) 38vw, 94px"
-                      style={{ objectFit: "cover", objectPosition: "top center" }}
-                    />
+
+                  <div className="project-preview-device project-preview-device-mobile">
+                    <div className="project-preview-label font-display">Show Mobile</div>
+                    <div className="project-preview-screen project-preview-mobile">
+                      <Image
+                        src={p.preview.mobile}
+                        alt={`${p.name} mobile website screenshot`}
+                        fill
+                        sizes="(max-width: 760px) 42vw, 150px"
+                        style={{ objectFit: "cover", objectPosition: "top center" }}
+                      />
+                    </div>
                   </div>
                 </div>
               ) : (
