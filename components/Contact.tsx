@@ -2,10 +2,9 @@
 import { useState } from "react";
 
 const socials = [
-  { label: "Twitter / X", handle: "@outstandingvick", url: "https://x.com/outstandingvick" },
-  { label: "GitHub", handle: "outstandingvick", url: "https://github.com/outstandingvick" },
-  { label: "LinkedIn", handle: "Victor Ogundimu", url: "https://linkedin.com/in/outstandingvick" },
-  { label: "Resume", handle: "Request", url: "mailto:victor.ogbonna@hotmail.com?subject=Resume%20request" },
+  { label: "GitHub", handle: "OutstandingvVick", url: "https://github.com/outstandingvick" },
+  { label: "LinkedIn", handle: "Victor Ogbonna", url: "https://www.linkedin.com/in/victorpogbonna/" },
+  { label: "Resume", handle: "Check out", url: "https://docs.google.com/document/d/1jHvJmdzc50TVhIdudjX_mA7PWtT6FKVpe-cUPNCTkQg/edit" },
 ];
 
 export default function Contact() {
@@ -79,7 +78,7 @@ export default function Contact() {
             {/* Email */}
             <a
               href="mailto:victor.ogbonna@hotmail.com"
-              className="font-mono"
+              className="font-mono contact-email"
               style={{
                 display: "block",
                 fontSize: "0.75rem",
@@ -106,6 +105,7 @@ export default function Contact() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="social-link"
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -129,7 +129,7 @@ export default function Contact() {
                     {s.label}
                   </span>
                   <span
-                    className="font-mono"
+                    className="font-mono social-handle"
                     style={{ fontSize: "0.72rem", color: "var(--text-3)" }}
                   >
                     {s.handle} ↗
@@ -232,7 +232,7 @@ export default function Contact() {
                 </div>
                 <button
                   onClick={handleSubmit}
-                  className="font-mono"
+                  className="font-mono contact-submit"
                   style={{
                     backgroundColor: "var(--accent)",
                     color: "var(--bg)",

@@ -128,7 +128,7 @@ export default function Projects() {
               </div>
 
               <h3
-                className="font-display"
+                className="font-display project-title"
                 style={{
                   fontSize: "clamp(1.4rem, 3vw, 2rem)",
                   fontWeight: 700,
@@ -225,7 +225,7 @@ export default function Projects() {
               }}
             >
               <div
-                className="font-mono"
+                className="font-mono project-stack-label"
                 style={{ fontSize: "0.6rem", letterSpacing: "0.18em", color: "var(--text-3)", textTransform: "uppercase", marginBottom: "1rem" }}
               >
                 Stack
@@ -234,7 +234,7 @@ export default function Projects() {
                 {p.stack.map((s) => (
                   <span
                     key={s}
-                    className="font-mono"
+                    className="font-mono project-stack-chip"
                     style={{
                       fontSize: "0.72rem",
                       color: "var(--text-2)",
@@ -250,7 +250,7 @@ export default function Projects() {
               </div>
               {/* Number */}
               <div
-                className="font-display"
+                className="font-display project-number"
                 style={{
                   fontSize: "5rem",
                   fontWeight: 800,
@@ -297,7 +297,7 @@ export default function Projects() {
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg)")}
             >
               <h4
-                className="font-display"
+                className="font-display more-project-title"
                 style={{ fontSize: "0.92rem", fontWeight: 600, color: "var(--text)", marginBottom: "0.5rem" }}
               >
                 {p.name}

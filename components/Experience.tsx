@@ -87,13 +87,13 @@ export default function Experience() {
             {/* Right */}
             <div>
               <div
-                className="font-display"
+                className="font-display experience-role"
                 style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "4px" }}
               >
                 {item.role}
               </div>
               <div
-                className="font-mono"
+                className="font-mono experience-org"
                 style={{ fontSize: "0.72rem", color: "var(--accent)", marginBottom: "1.2rem", letterSpacing: "0.08em" }}
               >
                 @ {item.org}
