@@ -5,7 +5,7 @@ const socials = [
   { label: "Twitter / X", handle: "@outstandingvick", url: "https://x.com/outstandingvick" },
   { label: "GitHub", handle: "outstandingvick", url: "https://github.com/outstandingvick" },
   { label: "LinkedIn", handle: "Victor Ogundimu", url: "https://linkedin.com/in/outstandingvick" },
-  { label: "SuperteamNG", handle: "Profile", url: "https://superteam.fun/members/outstandingvick" },
+  { label: "Resume", handle: "Request", url: "mailto:victor.ogbonna@hotmail.com?subject=Resume%20request" },
 ];
 
 export default function Contact() {

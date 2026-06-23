@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 const skills = {
-  "Languages": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
+  "Languages & Technologies": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
   "Tools": ["Git / GitHub", "Figma", "Vercel", "NotebookLM"],
 };
 

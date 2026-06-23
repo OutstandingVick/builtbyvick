@@ -215,8 +215,8 @@ body::before {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 0.65rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
   }
 
   .portrait-column {
@@ -320,7 +320,7 @@ body::before {
   }
 
   .skills-grid {
-    gap: 0.45rem !important;
+    gap: 1.5rem !important;
   }
 
   .skill-list > span {
