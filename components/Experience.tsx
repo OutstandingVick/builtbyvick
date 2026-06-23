@@ -1,6 +1,3 @@
-"use client";
-import { useState } from "react";
-
 const work = [
   {
     role: "Ecosystem Researcher & Technical Writer",
@@ -36,24 +33,7 @@ const work = [
   },
 ];
 
-const certs = [
-  {
-    title: "Solana Turbine Program",
-    issuer: "Solana Foundation",
-    year: "2024",
-    desc: "Intensive cohort for Solana builders covering programs, PDAs, CPIs, and full-stack dApp development.",
-  },
-  {
-    title: "Project Sinan Research Fellowship",
-    issuer: "SuperteamNG",
-    year: "2025",
-    desc: "Structured research mentorship covering user research methodology, study design, ethics, and usability testing.",
-  },
-];
-
 export default function Experience() {
-  const [tab, setTab] = useState<"work" | "certs">("work");
-
   return (
     <section
       id="experience"
@@ -75,141 +55,65 @@ export default function Experience() {
         <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
       </div>
 
-      {/* Tabs */}
-      <div className="experience-tabs" style={{ display: "flex", gap: "0", marginBottom: "3.5rem", borderBottom: "1px solid var(--border)" }}>
-        {(["work", "certs"] as const).map((t) => (
-          <button
-            key={t}
-            onClick={() => setTab(t)}
-            className="font-mono"
+      {/* Work list */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        {work.map((item, i) => (
+          <div
+            key={i}
+            className="experience-item"
             style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: "10px 20px",
-              fontSize: "0.68rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: tab === t ? "var(--accent)" : "var(--text-3)",
-              borderBottom: tab === t ? "2px solid var(--accent)" : "2px solid transparent",
-              marginBottom: "-1px",
-              transition: "color 0.2s",
+              display: "grid",
+              gridTemplateColumns: "200px 1fr",
+              gap: "3rem",
+              padding: "2.5rem 0",
+              borderBottom: "1px solid var(--border)",
             }}
           >
-            {t === "work" ? "Work" : "Certifications"}
-          </button>
+            {/* Left */}
+            <div>
+              <div
+                className="font-mono"
+                style={{ fontSize: "0.72rem", color: "var(--text-2)", marginBottom: "6px" }}
+              >
+                {item.period}
+              </div>
+              <div
+                className="font-mono"
+                style={{ fontSize: "0.68rem", color: "var(--text-3)", letterSpacing: "0.05em" }}
+              >
+                {item.location}
+              </div>
+            </div>
+            {/* Right */}
+            <div>
+              <div
+                className="font-display"
+                style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "4px" }}
+              >
+                {item.role}
+              </div>
+              <div
+                className="font-mono"
+                style={{ fontSize: "0.72rem", color: "var(--accent)", marginBottom: "1.2rem", letterSpacing: "0.08em" }}
+              >
+                @ {item.org}
+              </div>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none" }}>
+                {item.bullets.map((b, j) => (
+                  <li
+                    key={j}
+                    className="font-mono experience-body"
+                    style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6, paddingLeft: "1rem", position: "relative" }}
+                  >
+                    <span style={{ position: "absolute", left: 0, color: "var(--border-2)" }}>—</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         ))}
       </div>
-
-      {/* Work list */}
-      {tab === "work" && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-          {work.map((item, i) => (
-            <div
-              key={i}
-              className="experience-item"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "200px 1fr",
-                gap: "3rem",
-                padding: "2.5rem 0",
-                borderBottom: "1px solid var(--border)",
-              }}
-            >
-              {/* Left */}
-              <div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.72rem", color: "var(--text-2)", marginBottom: "6px" }}
-                >
-                  {item.period}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.68rem", color: "var(--text-3)", letterSpacing: "0.05em" }}
-                >
-                  {item.location}
-                </div>
-              </div>
-              {/* Right */}
-              <div>
-                <div
-                  className="font-display"
-                  style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "4px" }}
-                >
-                  {item.role}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.72rem", color: "var(--accent)", marginBottom: "1.2rem", letterSpacing: "0.08em" }}
-                >
-                  @ {item.org}
-                </div>
-                <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none" }}>
-                  {item.bullets.map((b, j) => (
-                    <li
-                      key={j}
-                      className="font-mono experience-body"
-                      style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6, paddingLeft: "1rem", position: "relative" }}
-                    >
-                      <span style={{ position: "absolute", left: 0, color: "var(--border-2)" }}>—</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Certs list */}
-      {tab === "certs" && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-          {certs.map((item, i) => (
-            <div
-              key={i}
-              className="experience-item"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "200px 1fr",
-                gap: "3rem",
-                padding: "2.5rem 0",
-                borderBottom: "1px solid var(--border)",
-              }}
-            >
-              <div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.72rem", color: "var(--text-2)" }}
-                >
-                  {item.year}
-                </div>
-              </div>
-              <div>
-                <div
-                  className="font-display"
-                  style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "4px" }}
-                >
-                  {item.title}
-                </div>
-                <div
-                  className="font-mono"
-                  style={{ fontSize: "0.72rem", color: "var(--accent)", marginBottom: "1rem", letterSpacing: "0.08em" }}
-                >
-                  @ {item.issuer}
-                </div>
-                <p
-                  className="font-mono experience-body"
-                  style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6 }}
-                >
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
     </section>
   );
 }

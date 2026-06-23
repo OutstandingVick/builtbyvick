@@ -70,7 +70,7 @@ export default function About() {
           <h2
             className="font-display section-heading"
             style={{
-              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontSize: "clamp(1.5rem, 4vw, 2rem)",
               fontWeight: 700,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",
@@ -89,7 +89,7 @@ export default function About() {
 
           <div
             className="font-mono about-copy"
-            style={{ fontSize: "1.3rem", color: "var(--text-2)", lineHeight: 1.7, display: "flex", flexDirection: "column", gap: "1rem" }}
+            style={{ fontSize: "1rem", color: "var(--text-2)", lineHeight: 1.7, display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <p>
               I&apos;m Victor, a frontend engineer focused on creating responsive
