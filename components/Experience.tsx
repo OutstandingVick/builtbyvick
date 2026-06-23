@@ -1,9 +1,18 @@
+"use client";
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
 const work = [
   {
     role: "Frontend Engineer — React / Web3",
     org: "Bounsser",
-    period: "Q2 2025 — Present",
+    period: "Q2 2025 — Q4 2025",
+    startMonth: "Q2",
+    endMonth: "Q4",
+    year: "2025",
     location: "Remote",
+    initials: "BO",
     bullets: [
       "Build and maintain secure dashboard interfaces for a decentralized identity and authentication platform using React and TypeScript, shipping features directly to production.",
       "Introduced a reusable component library and standardized state management patterns, reducing UI development overhead and improving consistency across security-sensitive flows.",
@@ -14,7 +23,11 @@ const work = [
     role: "Frontend Engineer — Solana Ecosystem",
     org: "HotOdds",
     period: "Sep 2024 — Feb 2025",
+    startMonth: "Sep",
+    endMonth: "Feb",
+    year: "2024",
     location: "Delta, Nigeria",
+    initials: "HO",
     bullets: [
       "Delivered production-ready real-time dashboards and Solana-integrated data interfaces for the Solana Radar Hackathon (Q4 2024), shipping a working demo under competition deadline.",
       "Integrated frontend with Solana APIs and WebSocket services to achieve low-latency data flow across high-frequency trading interfaces.",
@@ -25,7 +38,11 @@ const work = [
     role: "Frontend Engineer & Web Design Tutor",
     org: "AGM Techpulse",
     period: "Jan 2020 — Oct 2024",
+    startMonth: "Jan",
+    endMonth: "Oct",
+    year: "2020",
     location: "Bayelsa, Nigeria",
+    initials: "AG",
     bullets: [
       "Designed and shipped responsive, accessible web applications using React, JavaScript, and Tailwind CSS, translating Figma specs to production UI.",
       "Led code reviews and mentored junior developers, raising team standards on accessibility compliance, performance optimization, and code quality.",
@@ -34,8 +51,12 @@ const work = [
   {
     role: "Freelance Frontend Engineer",
     org: "Independent",
-    period: "Aug 2019 — Jan 2023",
+    period: "Jan 2023 — Present",
+    startMonth: "Jan",
+    endMonth: "Now",
+    year: "2023",
     location: "Remote",
+    initials: "IN",
     bullets: [
       "Built a React product showcase for a luxury watch platform (The Uglee One), prioritizing visual performance and responsive cross-device design.",
       "Delivered a mobile-friendly HTML/CSS/JS e-commerce prototype for Nonis Designs, used in partner demos and investor pitches.",
@@ -44,6 +65,12 @@ const work = [
 ];
 
 export default function Experience() {
+  const [active, setActive] = useState(0);
+  const item = work[active];
+
+  const goPrevious = () => setActive((current) => (current === 0 ? work.length - 1 : current - 1));
+  const goNext = () => setActive((current) => (current === work.length - 1 ? 0 : current + 1));
+
   return (
     <section
       id="experience"
@@ -54,75 +81,72 @@ export default function Experience() {
         margin: "0 auto",
       }}
     >
-      {/* Section label */}
       <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
         <span
           className="font-mono"
           style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
         >
-          02 / Experience
+          02 / Work Experience
         </span>
         <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
       </div>
 
-      {/* Work list */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-        {work.map((item, i) => (
-          <div
-            key={i}
-            className="experience-item"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "200px 1fr",
-              gap: "3rem",
-              padding: "2.5rem 0",
-              borderBottom: "1px solid var(--border)",
-            }}
-          >
-            {/* Left */}
+      <div className="experience-carousel">
+        <div className="experience-rail" aria-hidden="true">
+          <div className="experience-rail-rule" />
+          <div className="experience-rail-year font-mono">{item.year}</div>
+          <div className="experience-month experience-month-start font-mono">
+            <span className="experience-node" />
+            {item.startMonth}
+          </div>
+          <div className="experience-month experience-month-end font-mono">
+            <span className="experience-node" />
+            {item.endMonth}
+          </div>
+        </div>
+
+        <article className="experience-card">
+          <div className="experience-card-header">
+            <div className="experience-logo font-display">{item.initials}</div>
             <div>
-              <div
-                className="font-mono"
-                style={{ fontSize: "0.72rem", color: "var(--text-2)", marginBottom: "6px" }}
-              >
-                {item.period}
-              </div>
-              <div
-                className="font-mono"
-                style={{ fontSize: "0.68rem", color: "var(--text-3)", letterSpacing: "0.05em" }}
-              >
-                {item.location}
-              </div>
-            </div>
-            {/* Right */}
-            <div>
-              <div
-                className="font-display experience-role"
-                style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--text)", marginBottom: "4px" }}
-              >
-                {item.role}
-              </div>
-              <div
-                className="font-mono experience-org"
-                style={{ fontSize: "0.72rem", color: "var(--accent)", marginBottom: "1.2rem", letterSpacing: "0.08em" }}
-              >
-                @ {item.org}
-              </div>
-              <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none" }}>
-                {item.bullets.map((b, j) => (
-                  <li
-                    key={j}
-                    className="font-mono experience-body"
-                    style={{ fontSize: "1.23rem", color: "var(--text-2)", lineHeight: 1.6, paddingLeft: "1rem", position: "relative" }}
-                  >
-                    <span style={{ position: "absolute", left: 0, color: "var(--border-2)" }}>—</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
+              <h3 className="font-display experience-role">{item.org}</h3>
+              <p className="font-mono experience-job-title">{item.role}</p>
+              <p className="font-mono experience-meta">
+                {item.period} · {item.location}
+              </p>
             </div>
           </div>
-        ))}
+
+          <div className="experience-copy">
+            {item.bullets.map((bullet) => (
+              <p key={bullet} className="font-mono experience-body">
+                {bullet}
+              </p>
+            ))}
+          </div>
+        </article>
+
+        <div className="experience-controls">
+          <button type="button" onClick={goPrevious} aria-label="Previous experience" className="experience-arrow">
+            <ChevronLeft size={26} strokeWidth={1.8} />
+          </button>
+          <button type="button" onClick={goNext} aria-label="Next experience" className="experience-arrow">
+            <ChevronRight size={26} strokeWidth={1.8} />
+          </button>
+        </div>
+
+        <div className="experience-dots" aria-label="Experience entries">
+          {work.map((entry, index) => (
+            <button
+              key={entry.org}
+              type="button"
+              onClick={() => setActive(index)}
+              aria-label={`Show ${entry.org} experience`}
+              aria-current={active === index}
+              className="experience-dot"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

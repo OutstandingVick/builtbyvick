@@ -125,6 +125,218 @@ body::before {
   overflow-wrap: anywhere;
 }
 
+.project-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34%;
+  gap: 0.6rem;
+  align-items: stretch;
+  height: 100%;
+}
+
+.project-preview-desktop,
+.project-preview-mobile {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-3);
+}
+
+.project-preview-desktop {
+  aspect-ratio: 16 / 9;
+}
+
+.project-preview-mobile {
+  aspect-ratio: 9 / 16;
+}
+
+.project-shot-card {
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.experience-carousel {
+  min-height: 620px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.experience-rail {
+  position: relative;
+  min-height: 560px;
+}
+
+.experience-rail-rule {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 72px;
+  width: 1px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      var(--border-2) 0 1px,
+      transparent 1px 42px
+    ),
+    linear-gradient(var(--border), var(--border));
+}
+
+.experience-rail-year {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.experience-month {
+  position: absolute;
+  left: 108px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.experience-month-start {
+  top: 86px;
+}
+
+.experience-month-end {
+  bottom: 86px;
+}
+
+.experience-node {
+  position: absolute;
+  left: -37px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: var(--bg);
+  box-shadow: 0 0 0 5px var(--bg);
+}
+
+.experience-card {
+  max-width: 760px;
+}
+
+.experience-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.experience-logo {
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.experience-card .experience-role {
+  color: var(--text);
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1;
+  margin-bottom: 0.35rem !important;
+}
+
+.experience-job-title {
+  color: var(--text-2);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.experience-meta {
+  color: var(--text-3);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin-top: 0.45rem;
+}
+
+.experience-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.experience-copy .experience-body {
+  color: var(--text-2);
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  padding-left: 0 !important;
+}
+
+.experience-controls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.experience-arrow {
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-3);
+  color: var(--text-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.experience-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface);
+}
+
+.experience-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.experience-dot {
+  width: 11px;
+  height: 11px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--border-2);
+  cursor: pointer;
+  padding: 0;
+}
+
+.experience-dot[aria-current="true"] {
+  background: var(--accent);
+}
+
 /* Selection */
 ::selection {
   background: var(--accent);
@@ -291,6 +503,104 @@ body::before {
     padding: 1.75rem 0 !important;
   }
 
+  .experience-carousel {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .experience-rail {
+    min-height: 88px;
+  }
+
+  .experience-rail-rule {
+    left: 12px;
+    right: 12px;
+    top: 32px;
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    background:
+      repeating-linear-gradient(
+        to right,
+        var(--border-2) 0 1px,
+        transparent 1px 28px
+      ),
+      linear-gradient(var(--border), var(--border));
+  }
+
+  .experience-rail-year {
+    left: 0;
+    top: 64px;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.78rem;
+  }
+
+  .experience-month {
+    top: 22px;
+    bottom: auto;
+    left: auto;
+    gap: 0.55rem;
+    font-size: 0.78rem;
+  }
+
+  .experience-month-start {
+    left: 0;
+  }
+
+  .experience-month-end {
+    right: 0;
+  }
+
+  .experience-node {
+    position: static;
+    width: 13px;
+    height: 13px;
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .experience-card-header {
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .experience-logo {
+    width: 54px;
+    height: 54px;
+    font-size: 0.9rem;
+  }
+
+  .experience-card .experience-role {
+    font-size: 1.15rem !important;
+  }
+
+  .experience-job-title {
+    font-size: 0.9rem;
+  }
+
+  .experience-copy .experience-body {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .experience-controls {
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+  }
+
+  .experience-arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .experience-dots {
+    bottom: 1rem;
+  }
+
   .experience-org {
     margin-bottom: 1rem !important;
   }
@@ -306,6 +616,10 @@ body::before {
 
   .project-stack-card {
     padding: 1rem !important;
+  }
+
+  .project-shot-card {
+    min-height: auto !important;
   }
 
   .project-number {
@@ -324,6 +638,12 @@ body::before {
 
   .project-links a {
     text-align: center !important;
+  }
+
+  .project-preview {
+    grid-template-columns: minmax(0, 1fr) 34%;
+    gap: 0.65rem;
+    height: auto;
   }
 
   .site-footer {
@@ -372,6 +692,16 @@ body::before {
     align-items: flex-start !important;
     flex-direction: column !important;
     gap: 0.35rem !important;
+  }
+
+  .project-preview {
+    grid-template-columns: minmax(0, 1fr) 34%;
+  }
+
+  .project-preview-mobile {
+    max-width: none;
+    width: auto;
+    justify-self: stretch;
   }
 }
 

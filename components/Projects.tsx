@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const featured = [
   {
     name: "Tei Markets",
@@ -16,18 +18,22 @@ const featured = [
     ],
   },
   {
-    name: "AgentOracle",
-    url: "https://github.com/outstandingvick/agent-oracle",
-    github: "https://github.com/outstandingvick/agent-oracle",
-    category: "AI Agent / Hackathon",
+    name: "Edged",
+    url: "#",
+    github: "#",
+    category: "Circle Agent Stack × Arc Testnet",
     period: "2026",
-    stack: ["Gemini 1.5 Flash", "Polymarket", "Arc/Circle", "TypeScript"],
-    desc: "Autonomous AI prediction market trader built for the Agora Agents Hackathon. Uses Gemini to analyze market signals and execute positions on Polymarket.",
+    stack: ["Circle Agent Stack", "Arc Testnet", "Polymarket", "Circle Wallets", "TypeScript"],
+    desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
     bullets: [
-      "Fully autonomous — no human-in-the-loop required",
-      "Integrated Arc/Circle infrastructure for on-chain settlement",
-      "Research-first build strategy, reverse-engineered past winners",
+      "Built an agent-focused interface for monitoring markets, wallets, and Arc settlement flows.",
+      "Designed responsive desktop and mobile views around a bold product-led landing experience.",
+      "Integrated the project narrative around live market scanning, thesis generation, and testnet settlement.",
     ],
+    preview: {
+      desktop: "/edged-desktop.png",
+      mobile: "/edged-mobile.jpg",
+    },
   },
   {
     name: "LP Intelligence Dashboard",
@@ -212,11 +218,12 @@ export default function Projects() {
                   GitHub
                 </a>
               </div>
+
             </div>
 
-            {/* Right — stack */}
+            {/* Right — stack / preview */}
             <div
-              className="project-stack-card"
+              className={`project-stack-card${p.preview ? " project-shot-card" : ""}`}
               style={{
                 backgroundColor: "var(--bg-3)",
                 border: "1px solid var(--border)",
@@ -224,44 +231,69 @@ export default function Projects() {
                 padding: "1.75rem",
               }}
             >
-              <div
-                className="font-mono project-stack-label"
-                style={{ fontSize: "0.6rem", letterSpacing: "0.18em", color: "var(--text-3)", textTransform: "uppercase", marginBottom: "1rem" }}
-              >
-                Stack
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                {p.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="font-mono project-stack-chip"
+              {p.preview ? (
+                <div className="project-preview">
+                  <div className="project-preview-desktop">
+                    <Image
+                      src={p.preview.desktop}
+                      alt={`${p.name} desktop website screenshot`}
+                      fill
+                      sizes="(max-width: 760px) 100vw, 260px"
+                      style={{ objectFit: "cover", objectPosition: "top left" }}
+                    />
+                  </div>
+                  <div className="project-preview-mobile">
+                    <Image
+                      src={p.preview.mobile}
+                      alt={`${p.name} mobile website screenshot`}
+                      fill
+                      sizes="(max-width: 760px) 38vw, 94px"
+                      style={{ objectFit: "cover", objectPosition: "top center" }}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div
+                    className="font-mono project-stack-label"
+                    style={{ fontSize: "0.6rem", letterSpacing: "0.18em", color: "var(--text-3)", textTransform: "uppercase", marginBottom: "1rem" }}
+                  >
+                    Stack
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    {p.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="font-mono project-stack-chip"
+                        style={{
+                          fontSize: "0.72rem",
+                          color: "var(--text-2)",
+                          backgroundColor: "var(--surface)",
+                          border: "1px solid var(--border-2)",
+                          padding: "4px 10px",
+                          borderRadius: "2px",
+                        }}
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Number */}
+                  <div
+                    className="font-display project-number"
                     style={{
-                      fontSize: "0.72rem",
-                      color: "var(--text-2)",
-                      backgroundColor: "var(--surface)",
-                      border: "1px solid var(--border-2)",
-                      padding: "4px 10px",
-                      borderRadius: "2px",
+                      fontSize: "5rem",
+                      fontWeight: 800,
+                      color: "var(--border)",
+                      lineHeight: 1,
+                      marginTop: "2rem",
+                      letterSpacing: "-0.04em",
                     }}
                   >
-                    {s}
-                  </span>
-                ))}
-              </div>
-              {/* Number */}
-              <div
-                className="font-display project-number"
-                style={{
-                  fontSize: "5rem",
-                  fontWeight: 800,
-                  color: "var(--border)",
-                  lineHeight: 1,
-                  marginTop: "2rem",
-                  letterSpacing: "-0.04em",
-                }}
-              >
-                0{i + 1}
-              </div>
+                    0{i + 1}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}
