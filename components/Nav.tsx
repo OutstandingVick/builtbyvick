@@ -164,7 +164,7 @@ export default function Nav() {
             padding: mobileNav ? "0 0.65rem" : "0 1rem",
             backgroundColor: "var(--nav-pill-bg)",
             border: "1px solid var(--nav-pill-border)",
-            borderRadius: "4px",
+            borderRadius: "999px",
             boxShadow: "0 10px 30px rgba(39, 24, 126, 0.18)",
             overflowX: mobileNav ? "auto" : "visible",
             scrollbarWidth: "none",
@@ -320,7 +320,7 @@ export default function Nav() {
               color: "var(--nav-icon)",
               backgroundColor: "transparent",
               border: "1px solid var(--nav-pill-border)",
-              borderRadius: "2px",
+              borderRadius: "999px",
               cursor: "pointer",
               transition: "border-color 0.2s, color 0.2s, background-color 0.2s",
             }}
