@@ -148,14 +148,14 @@ export default function Hero() {
           className="font-mono"
           style={{
             fontSize: "0.72rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
+            letterSpacing: "0",
+            textTransform: "none",
             textDecoration: "none",
             color: "var(--bg)",
             backgroundColor: "var(--accent)",
             padding: "12px 24px",
-            borderRadius: "2px",
-            fontWeight: 500,
+            borderRadius: "999px",
+            fontWeight: 800,
             transition: "opacity 0.2s",
           }}
           onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.82")}
@@ -168,14 +168,14 @@ export default function Hero() {
           className="font-mono"
           style={{
             fontSize: "0.72rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
+            letterSpacing: "0",
+            textTransform: "none",
             textDecoration: "none",
             color: "var(--text)",
             backgroundColor: "transparent",
             padding: "12px 24px",
             border: "1px solid var(--border-2)",
-            borderRadius: "2px",
+            borderRadius: "999px",
             transition: "border-color 0.2s, color 0.2s",
           }}
           onMouseEnter={(e) => {
