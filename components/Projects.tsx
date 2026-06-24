@@ -163,13 +163,13 @@ export default function Projects() {
                   className="font-mono"
                   style={{
                     fontSize: "0.68rem",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
+                    letterSpacing: "0",
+                    textTransform: "none",
                     textDecoration: "none",
                     color: "var(--bg)",
                     backgroundColor: "var(--accent)",
                     padding: "8px 16px",
-                    borderRadius: "2px",
+                    borderRadius: "999px",
                     transition: "opacity 0.2s",
                   }}
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.8")}
@@ -184,14 +184,14 @@ export default function Projects() {
                   className="font-mono"
                   style={{
                     fontSize: "0.68rem",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
+                    letterSpacing: "0",
+                    textTransform: "none",
                     textDecoration: "none",
                     color: "var(--text-2)",
                     backgroundColor: "transparent",
                     padding: "8px 16px",
                     border: "1px solid var(--border-2)",
-                    borderRadius: "2px",
+                    borderRadius: "999px",
                     transition: "color 0.2s, border-color 0.2s",
                   }}
                   onMouseEnter={(e) => {
