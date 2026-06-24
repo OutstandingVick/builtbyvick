@@ -24,6 +24,8 @@
   --nav-link-muted: var(--text-3);
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
+  --project-preview-bg: #f7f5ff;
+  --project-preview-dot: rgba(39, 24, 126, 0.16);
 }
 
 html[data-theme="light"] {
@@ -48,6 +50,13 @@ html[data-theme="light"] {
   --nav-link-muted: var(--text-3);
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
+  --project-preview-bg: #0d0826;
+  --project-preview-dot: rgba(174, 184, 254, 0.14);
+}
+
+html[data-theme="dark"] {
+  --project-preview-bg: #f7f5ff;
+  --project-preview-dot: rgba(39, 24, 126, 0.16);
 }
 
 * {
@@ -137,8 +146,8 @@ body::before {
   overflow: hidden;
   border: 1px solid rgba(174, 184, 254, 0.28);
   background:
-    radial-gradient(circle, rgba(174, 184, 254, 0.12) 2px, transparent 3px) 0 0 / 24px 24px,
-    #020205;
+    radial-gradient(circle, var(--project-preview-dot) 2px, transparent 3px) 0 0 / 24px 24px,
+    var(--project-preview-bg);
 }
 
 .project-preview::before {
@@ -150,20 +159,24 @@ body::before {
 }
 
 .project-preview-device {
-  position: absolute;
+  position: relative;
   z-index: 1;
 }
 
+.project-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(110px, 24%);
+  gap: 1rem;
+  align-items: center;
+  padding: 3.25rem 2rem 2rem;
+}
+
 .project-preview-device-desktop {
-  left: 7%;
-  right: 23%;
-  bottom: 13%;
+  min-width: 0;
 }
 
 .project-preview-device-mobile {
-  right: 7%;
-  top: 13%;
-  width: 25%;
+  min-width: 0;
 }
 
 .project-preview-label {
@@ -172,7 +185,7 @@ body::before {
   justify-content: center;
   min-height: 42px;
   padding: 0 1.25rem;
-  margin: 0 0 1.1rem 9%;
+  margin: 0 auto 1.1rem;
   color: #f4f1ff;
   background: rgba(244, 241, 255, 0.18);
   border: 1px solid rgba(244, 241, 255, 0.34);
@@ -183,7 +196,6 @@ body::before {
 }
 
 .project-preview-device-mobile .project-preview-label {
-  margin-left: 0;
   margin-bottom: 1rem;
   padding: 0 0.95rem;
   font-size: 0.8rem;
@@ -212,7 +224,7 @@ body::before {
   min-height: 430px;
   overflow: hidden;
   padding: 0 !important;
-  background: #020205 !important;
+  background: var(--project-preview-bg) !important;
 }
 
 .project-preview-corner {
@@ -446,6 +458,282 @@ body::before {
   background: var(--accent);
 }
 
+.collaboration-section {
+  margin-top: 6rem;
+  padding: 5rem 0 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.collaboration-heading {
+  max-width: 760px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.collaboration-heading h3 {
+  color: var(--text);
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+}
+
+.collaboration-heading h3 span {
+  color: var(--accent);
+}
+
+.collaboration-heading p {
+  color: var(--text-3);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.collaboration-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 0.8fr);
+  align-items: center;
+  gap: 5rem;
+}
+
+.collaboration-map {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 1.7;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--border) 30%, transparent) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(0deg, color-mix(in srgb, var(--border) 30%, transparent) 1px, transparent 1px) 0 0 / 64px 64px,
+    radial-gradient(circle at 52% 52%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 74%, transparent), var(--bg));
+}
+
+.collaboration-map::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid color-mix(in srgb, var(--border-2) 52%, transparent);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.world-map-real,
+.world-map-overlay {
+  position: absolute;
+  inset: 6%;
+  width: 88%;
+  height: 88%;
+}
+
+.world-map-real {
+  background: color-mix(in srgb, var(--text-3) 38%, transparent);
+  mask: url("/world-map.svg") center / contain no-repeat;
+  -webkit-mask: url("/world-map.svg") center / contain no-repeat;
+  filter: drop-shadow(0 0 18px color-mix(in srgb, var(--accent) 14%, transparent));
+  animation: map-land-breathe 6s ease-in-out infinite;
+}
+
+.world-map-overlay {
+  overflow: visible;
+}
+
+.map-land {
+  fill: color-mix(in srgb, var(--text-3) 26%, transparent);
+  stroke: color-mix(in srgb, var(--accent) 32%, transparent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  animation: map-land-breathe 6s ease-in-out infinite;
+}
+
+.map-route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 9 12;
+  vector-effect: non-scaling-stroke;
+  animation: map-route-travel 1.8s linear infinite;
+}
+
+.map-route-delay {
+  animation-delay: 0.6s;
+}
+
+.map-pin {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 4;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 55%, transparent));
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pin-pulse 2.4s ease-in-out infinite;
+}
+
+.map-pin-delay {
+  animation-delay: 0.8s;
+}
+
+.map-pin-home {
+  fill: var(--accent);
+  stroke: var(--bg);
+}
+
+.map-label {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.65rem;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  color: var(--text-2);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.map-label-home {
+  left: 49%;
+  top: 53%;
+}
+
+.map-label-left {
+  left: 25%;
+  top: 24%;
+}
+
+.map-label-right {
+  right: 16%;
+  top: 54%;
+}
+
+.collaboration-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 86%, transparent), var(--bg));
+  animation: collaboration-card-float 8s ease-in-out infinite;
+}
+
+.collaboration-quote-mark {
+  position: absolute;
+  right: 1.7rem;
+  top: 0.5rem;
+  color: color-mix(in srgb, var(--accent) 28%, transparent);
+  font-family: 'Syne', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  animation: quote-drift 5s ease-in-out infinite;
+}
+
+.collaboration-card-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.collaboration-avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  color: var(--bg);
+  background: var(--accent);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.collaboration-card h4 {
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.collaboration-card-header p {
+  color: var(--text-3);
+  font-size: 0.78rem;
+}
+
+.collaboration-copy {
+  position: relative;
+  z-index: 1;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.collaboration-copy + .collaboration-copy {
+  margin-top: 1rem;
+}
+
+@keyframes map-land-breathe {
+  0%, 100% {
+    opacity: 0.58;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+@keyframes map-route-travel {
+  to {
+    stroke-dashoffset: -42;
+  }
+}
+
+@keyframes map-pin-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.28);
+  }
+}
+
+@keyframes collaboration-card-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes quote-drift {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-land,
+  .world-map-real,
+  .map-route,
+  .map-pin,
+  .collaboration-card,
+  .collaboration-quote-mark {
+    animation: none !important;
+  }
+}
+
 /* Selection */
 ::selection {
   background: var(--accent);
@@ -483,6 +771,15 @@ body::before {
 
   .projects-more-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  .collaboration-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .collaboration-map {
+    max-width: 560px;
   }
 }
 
@@ -755,18 +1052,17 @@ body::before {
 
   .project-preview {
     min-height: 360px;
+    grid-template-columns: minmax(0, 1fr) minmax(92px, 27%);
+    gap: 0.75rem;
+    padding: 2.5rem 1.35rem 1.35rem;
   }
 
   .project-preview-device-desktop {
-    left: 6%;
-    right: 27%;
-    bottom: 14%;
+    min-width: 0;
   }
 
   .project-preview-device-mobile {
-    right: 6%;
-    top: 18%;
-    width: 27%;
+    min-width: 0;
   }
 
   .project-preview-label {
@@ -792,6 +1088,35 @@ body::before {
   .contact-email,
   .contact-submit {
     font-size: 0.7rem !important;
+  }
+
+  .collaboration-section {
+    margin-top: 4rem;
+    padding-top: 3.5rem;
+  }
+
+  .collaboration-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .collaboration-heading h3 {
+    font-size: 1.65rem;
+  }
+
+  .collaboration-heading p,
+  .collaboration-copy {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .collaboration-card {
+    padding: 1.4rem;
+  }
+
+  .collaboration-avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 0.85rem;
   }
 }
 
@@ -826,28 +1151,26 @@ body::before {
 
   .project-preview {
     min-height: 420px;
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 2.25rem 1.15rem 1.25rem;
   }
 
   .project-preview-device-desktop {
-    left: 7%;
-    right: 7%;
-    top: 7%;
-    bottom: auto;
+    min-width: 0;
   }
 
   .project-preview-device-mobile {
-    right: 8%;
-    top: auto;
-    bottom: 8%;
-    width: 29%;
+    width: min(46%, 155px);
+    justify-self: center;
   }
 
   .project-preview-device-desktop .project-preview-label {
-    margin-left: 0;
+    margin-left: auto;
   }
 
   .project-preview-device-mobile .project-preview-label {
-    display: none;
+    display: inline-flex;
   }
 
   .project-preview-corner {

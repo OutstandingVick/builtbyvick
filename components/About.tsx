@@ -69,7 +69,7 @@ export default function About() {
           <h2
             className="font-display section-heading"
             style={{
-              fontSize: "clamp(1.5rem, 4vw, 2rem)",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: 700,
               lineHeight: 1.1,
               letterSpacing: "-0.02em",

@@ -11,11 +11,7 @@ const featured = [
     period: "2025",
     stack: ["Next.js", "Solana", "Anchor", "Tailwind"],
     desc: "A peer-to-peer football prediction market on Solana using a constant-product AMM. Users stake SOL on match outcomes; prices update automatically via the AMM formula.",
-    bullets: [
-      "Deployed to Solana devnet with working on-chain program logic",
-      "Custom brand identity system — cream/lilac palette",
-      "Full pitch deck and product documentation",
-    ],
+    bullets: [ ],
   },
   {
     name: "Edged",
@@ -64,12 +60,6 @@ const more = [
     name: "CLOUD DAO Governance Proposal",
     stack: ["Governance", "Writing", "Substack"],
     desc: "Full DAO governance proposal for $CLOUD token, including Substack article and promotional flyer.",
-    url: "#",
-  },
-  {
-    name: "Solana Summit KZ Promo Script",
-    stack: ["Scriptwriting", "Video"],
-    desc: "Promotional video script for Solana Summit Kazakhstan — structured narrative for the ecosystem event.",
     url: "#",
   },
 ];
@@ -315,13 +305,13 @@ export default function Projects() {
           className="font-display"
           style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-2)", marginBottom: "2rem", letterSpacing: "0.02em" }}
         >
-          More work
+          More Projects
         </h3>
         <div
           className="projects-more-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
             gap: "1px",
             backgroundColor: "var(--border)",
             border: "1px solid var(--border)",
@@ -363,6 +353,53 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="collaboration-section">
+        <div className="collaboration-heading">
+          <h3 className="font-display">
+            Collaborating <span>remotely</span> with teams across the globe
+          </h3>
+          <p className="font-mono">
+            Remote-friendly frontend engineering for product teams that value clear communication,
+            reliable delivery, and thoughtful user experiences.
+          </p>
+        </div>
+
+        <div className="collaboration-layout">
+          <div className="collaboration-map" aria-hidden="true">
+            <div className="world-map-real" />
+            <svg className="world-map-overlay" viewBox="0 0 1000 500" role="img">
+              <path className="map-route" d="M509 232 C438 135 340 106 280 129" />
+              <path className="map-route map-route-delay" d="M509 232 C606 177 707 194 788.4 246.2" />
+              <circle className="map-pin map-pin-home" cx="509" cy="232" r="8" />
+              <circle className="map-pin" cx="280" cy="129" r="7" />
+              <circle className="map-pin map-pin-delay" cx="788.4" cy="246.2" r="7" />
+            </svg>
+            <span className="map-label map-label-home font-mono">Lagos</span>
+            <span className="map-label map-label-left font-mono">Remote</span>
+            <span className="map-label map-label-right font-mono">Singapore</span>
+          </div>
+
+          <div className="collaboration-card">
+            <div className="collaboration-quote-mark">”</div>
+            <div className="collaboration-card-header">
+              <div className="collaboration-avatar font-display">VO</div>
+              <div>
+                <h4 className="font-display">What teams can expect</h4>
+                <p className="font-mono">Frontend Engineer · Remote</p>
+              </div>
+            </div>
+            <p className="font-mono collaboration-copy">
+              I work well across time zones, translating product goals into clean, responsive
+              interfaces while keeping communication direct and implementation details visible.
+            </p>
+            <p className="font-mono collaboration-copy">
+              My process is research-aware, delivery-focused, and built around shipping stable
+              frontend experiences without losing the human context behind the product.
+            </p>
+          </div>
         </div>
       </div>
     </section>
