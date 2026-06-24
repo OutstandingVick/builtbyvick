@@ -242,6 +242,10 @@ body::before {
   display: none !important;
 }
 
+body .section-label div {
+  display: none !important;
+}
+
 .section-label > span {
   display: inline-flex !important;
   align-items: center !important;
