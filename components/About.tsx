@@ -13,7 +13,7 @@ export default function About() {
       id="about"
       className="content-section about-section"
       style={{
-        padding: "4rem 2rem",
+        padding: "4rem 1.6rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}

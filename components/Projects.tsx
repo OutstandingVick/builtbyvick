@@ -70,7 +70,7 @@ export default function Projects() {
       id="projects"
       className="content-section projects-section"
       style={{
-        padding: "8rem 2rem",
+        padding: "8rem 1.6rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}

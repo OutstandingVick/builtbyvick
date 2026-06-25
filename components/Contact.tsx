@@ -22,7 +22,7 @@ export default function Contact() {
         id="contact"
         className="content-section contact-section"
         style={{
-          padding: "8rem 2rem",
+          padding: "8rem 1.6rem",
           maxWidth: "1100px",
           margin: "0 auto",
         }}
@@ -263,7 +263,7 @@ export default function Contact() {
         className="site-footer"
         style={{
           borderTop: "1px solid var(--border)",
-          padding: "2.5rem 2rem",
+          padding: "2.5rem 1.6rem",
           maxWidth: "1100px",
           margin: "0 auto",
           display: "flex",

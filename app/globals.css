@@ -266,16 +266,7 @@ body .section-label div {
 }
 
 .hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 92px 1rem 1.5rem;
-  z-index: -1;
-  border-radius: 46px;
-  background:
-    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent) 26%, transparent), transparent 28%),
-    radial-gradient(circle at 86% 16%, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 25%),
-    linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 76%, transparent), color-mix(in srgb, var(--bg-2) 88%, transparent));
-  border: 1px solid var(--border);
+  content: none;
 }
 
 .hero-badge {
@@ -994,7 +985,7 @@ body .section-label div {
 
 @media (max-width: 760px) {
   .site-header {
-    padding: 0.75rem 1rem !important;
+    padding: 0.75rem 0.8rem !important;
   }
 
   .site-nav-links {
@@ -1013,7 +1004,7 @@ body .section-label div {
 
   .hero-section {
     min-height: auto !important;
-    padding: 7rem 1rem 4rem !important;
+    padding: 7rem 0.8rem 4rem !important;
   }
 
   .hero-badge {
@@ -1064,7 +1055,7 @@ body .section-label div {
   }
 
   .content-section {
-    padding: 4rem 1rem !important;
+    padding: 4rem 0.8rem !important;
   }
 
   .about-section {
@@ -1285,7 +1276,7 @@ body .section-label div {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.75rem !important;
-    padding: 2rem 1rem !important;
+    padding: 2rem 0.8rem !important;
   }
 
   .social-link {

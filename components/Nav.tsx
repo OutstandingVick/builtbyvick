@@ -112,7 +112,7 @@ export default function Nav() {
         backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
         transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
-        padding: mobileNav ? "0.75rem 1rem" : "1.2rem 2rem",
+        padding: mobileNav ? "0.75rem 0.8rem" : "1.2rem 1.6rem",
       }}
     >
       <nav

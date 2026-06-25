@@ -76,7 +76,7 @@ export default function Experience() {
       id="experience"
       className="content-section experience-section"
       style={{
-        padding: "8rem 2rem",
+        padding: "8rem 1.6rem",
         maxWidth: "1100px",
         margin: "0 auto",
       }}
