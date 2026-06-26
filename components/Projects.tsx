@@ -359,11 +359,11 @@ export default function Projects() {
       <div className="collaboration-section">
         <div className="collaboration-heading">
           <h3 className="font-display">
-            Collaborating <span>remotely</span> with teams across the globe
+            Testimonials from <span>remote</span> collaborators
           </h3>
           <p className="font-mono">
-            Remote-friendly frontend engineering for product teams that value clear communication,
-            reliable delivery, and thoughtful user experiences.
+            Recommendations from people I&apos;ve worked with across global teams,
+            product builds, and remote engineering collaborations.
           </p>
         </div>
 
@@ -387,17 +387,18 @@ export default function Projects() {
             <div className="collaboration-card-header">
               <div className="collaboration-avatar font-display">VO</div>
               <div>
-                <h4 className="font-display">What teams can expect</h4>
-                <p className="font-mono">Frontend Engineer · Remote</p>
+                <h4 className="font-display">Collaborator feedback</h4>
+                <p className="font-mono">Remote teams · Global projects</p>
               </div>
             </div>
             <p className="font-mono collaboration-copy">
-              I work well across time zones, translating product goals into clean, responsive
-              interfaces while keeping communication direct and implementation details visible.
+              This section is reserved for public recommendations from people
+              I&apos;ve worked with remotely across product, engineering, and Web3
+              projects.
             </p>
             <p className="font-mono collaboration-copy">
-              My process is research-aware, delivery-focused, and built around shipping stable
-              frontend experiences without losing the human context behind the product.
+              Once a collaborator shares a testimonial, their quote, role,
+              location, and project context can live here.
             </p>
           </div>
         </div>

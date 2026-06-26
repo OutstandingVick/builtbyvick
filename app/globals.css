@@ -15,6 +15,8 @@
   --text-3: #a4b59b;
   --accent: #43e660;
   --accent-2: #d2f34c;
+  --tertiary: #ff8a3d;
+  --tertiary-soft: rgba(255, 138, 61, 0.16);
   --accent-warm: #43e660;
   --nav-bg: rgba(16, 34, 23, 0.82);
   --nav-pill-bg: rgba(247, 255, 233, 0.1);
@@ -41,6 +43,8 @@ html[data-theme="light"] {
   --text-3: #6d826f;
   --accent: #43e660;
   --accent-2: #d2f34c;
+  --tertiary: #ff7a1a;
+  --tertiary-soft: rgba(255, 122, 26, 0.14);
   --accent-warm: #254f1a;
   --nav-bg: rgba(243, 241, 232, 0.82);
   --nav-pill-bg: rgba(255, 255, 255, 0.86);
@@ -288,6 +292,10 @@ body .section-label div {
 .more-project-description,
 .collaboration-copy {
   letter-spacing: -0.01em !important;
+}
+
+.hero-roles > span:nth-child(2) {
+  color: var(--tertiary) !important;
 }
 
 .hero-actions a,
@@ -826,7 +834,7 @@ body .section-label div {
   position: absolute;
   right: 1.7rem;
   top: 0.5rem;
-  color: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: color-mix(in srgb, var(--tertiary) 38%, transparent);
   font-family: 'Syne', sans-serif;
   font-size: 6rem;
   font-weight: 800;
@@ -936,7 +944,7 @@ body .section-label div {
 
 /* Selection */
 ::selection {
-  background: var(--accent);
+  background: var(--tertiary);
   color: var(--bg);
 }
 
