@@ -64,6 +64,30 @@ const more = [
   },
 ];
 
+const testimonials = [
+  {
+    initials: "01",
+    name: "Product collaborator",
+    meta: "Remote product build",
+    quote:
+      "Placeholder for a public recommendation from a product collaborator you worked with remotely.",
+  },
+  {
+    initials: "02",
+    name: "Engineering teammate",
+    meta: "Frontend / Web3 collaboration",
+    quote:
+      "Placeholder for feedback about communication, execution, and shipping frontend work across time zones.",
+  },
+  {
+    initials: "03",
+    name: "Global partner",
+    meta: "International remote project",
+    quote:
+      "Placeholder for a testimonial from someone outside your local market who can speak to your remote collaboration.",
+  },
+];
+
 export default function Projects() {
   return (
     <section
@@ -382,24 +406,20 @@ export default function Projects() {
             <span className="map-label map-label-right font-mono">Singapore</span>
           </div>
 
-          <div className="collaboration-card">
-            <div className="collaboration-quote-mark">”</div>
-            <div className="collaboration-card-header">
-              <div className="collaboration-avatar font-display">VO</div>
-              <div>
-                <h4 className="font-display">Collaborator feedback</h4>
-                <p className="font-mono">Remote teams · Global projects</p>
-              </div>
-            </div>
-            <p className="font-mono collaboration-copy">
-              This section is reserved for public recommendations from people
-              I&apos;ve worked with remotely across product, engineering, and Web3
-              projects.
-            </p>
-            <p className="font-mono collaboration-copy">
-              Once a collaborator shares a testimonial, their quote, role,
-              location, and project context can live here.
-            </p>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial) => (
+              <article className="collaboration-card testimonial-card" key={testimonial.name}>
+                <div className="collaboration-quote-mark">”</div>
+                <div className="collaboration-card-header">
+                  <div className="collaboration-avatar font-display">{testimonial.initials}</div>
+                  <div>
+                    <h4 className="font-display">{testimonial.name}</h4>
+                    <p className="font-mono">{testimonial.meta}</p>
+                  </div>
+                </div>
+                <p className="font-mono collaboration-copy">{testimonial.quote}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
