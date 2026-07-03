@@ -839,6 +839,10 @@ body .section-label div {
   padding: 1.5rem !important;
 }
 
+.testimonial-card .collaboration-card-header {
+  margin-bottom: 1.25rem;
+}
+
 .testimonial-card:nth-child(2) {
   animation-delay: 0.8s;
 }

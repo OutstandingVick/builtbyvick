@@ -66,7 +66,6 @@ const more = [
 
 const testimonials = [
   {
-    initials: "01",
     name: "Daniel Okafor",
     role: "Product Manager, Fintech Startup",
     context: "Product collaborator",
@@ -75,7 +74,6 @@ const testimonials = [
       "Victor is the kind of frontend developer who understands product context, not just UI tasks. He asks the right questions, thinks through the user experience, and turns ideas into clean, functional interfaces without needing constant direction. Working with him remotely felt smooth because he communicated clearly, delivered consistently, and cared about making the final product useful.",
   },
   {
-    initials: "02",
     name: "Maya Chen",
     role: "Software Engineer, Web3 Infrastructure Team",
     context: "Engineering teammate",
@@ -84,7 +82,6 @@ const testimonials = [
       "Victor brings strong execution energy to frontend work. He is reliable with implementation, open to feedback, and focused on shipping interfaces that are both clean and practical. Across the project, he communicated well, handled frontend responsibilities with ownership, and made collaboration easier even when working across different schedules.",
   },
   {
-    initials: "03",
     name: "James Carter",
     role: "Founder & Product Lead, Remote SaaS Studio",
     context: "Global partner",
@@ -417,7 +414,6 @@ export default function Projects() {
               <article className="collaboration-card testimonial-card" key={testimonial.name}>
                 <div className="collaboration-quote-mark">”</div>
                 <div className="collaboration-card-header">
-                  <div className="collaboration-avatar font-display">{testimonial.initials}</div>
                   <div>
                     <h4 className="font-display">{testimonial.context}</h4>
                     <p className="font-mono">{testimonial.meta}</p>
