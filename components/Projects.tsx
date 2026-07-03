@@ -22,10 +22,6 @@ const featured = [
     stack: ["Circle Agent Stack", "Arc Testnet", "Polymarket", "Circle Wallets", "TypeScript"],
     desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
     bullets: [],
-    preview: {
-      desktop: "/edged-desktop.png",
-      mobile: "/edged-mobile.jpg",
-    },
   },
   {
     name: "LP Intelligence Dashboard",

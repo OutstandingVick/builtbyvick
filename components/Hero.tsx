@@ -80,10 +80,10 @@ export default function Hero() {
           marginBottom: "1.5rem",
         }}
       >
-        <span style={{ whiteSpace: "nowrap" }}>
+        <span className="hero-name-line" style={{ whiteSpace: "nowrap" }}>
           VICTOR
           <span style={{ color: "var(--accent-warm)", WebkitTextStroke: "0px" }}>
-             POWEIDEI
+            POWEIDEI
           </span>
         </span>
         <br />

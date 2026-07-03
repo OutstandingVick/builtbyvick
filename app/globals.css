@@ -283,6 +283,12 @@ body .section-label div {
   letter-spacing: -0.06em !important;
 }
 
+.hero-name-line {
+  display: inline-flex;
+  align-items: baseline;
+  gap: clamp(0.16em, 1vw, 0.28em);
+}
+
 .hero-roles span,
 .hero-bio,
 .about-copy,
