@@ -253,13 +253,13 @@ body .section-label div {
 .section-label > span {
   display: inline-flex !important;
   align-items: center !important;
-  min-height: 36px !important;
-  padding: 0 1rem !important;
+  min-height: 64px !important;
+  padding: 0 1.7rem !important;
   border: 1px solid var(--border-2) !important;
   border-radius: 999px !important;
   background: color-mix(in srgb, var(--surface) 62%, transparent) !important;
   color: var(--text) !important;
-  font-size: 0.72rem !important;
+  font-size: 1.44rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
@@ -885,6 +885,29 @@ body .section-label div {
   width: 52px;
   height: 52px;
   font-size: 0.9rem;
+}
+
+.testimonial-author {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.testimonial-author strong {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.testimonial-author span {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .collaboration-card h4 {

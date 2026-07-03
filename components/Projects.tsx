@@ -67,24 +67,30 @@ const more = [
 const testimonials = [
   {
     initials: "01",
-    name: "Product collaborator",
+    name: "Daniel Okafor",
+    role: "Product Manager, Fintech Startup",
+    context: "Product collaborator",
     meta: "Remote product build",
     quote:
-      "Placeholder for a public recommendation from a product collaborator you worked with remotely.",
+      "Victor is the kind of frontend developer who understands product context, not just UI tasks. He asks the right questions, thinks through the user experience, and turns ideas into clean, functional interfaces without needing constant direction. Working with him remotely felt smooth because he communicated clearly, delivered consistently, and cared about making the final product useful.",
   },
   {
     initials: "02",
-    name: "Engineering teammate",
+    name: "Maya Chen",
+    role: "Software Engineer, Web3 Infrastructure Team",
+    context: "Engineering teammate",
     meta: "Frontend / Web3 collaboration",
     quote:
-      "Placeholder for feedback about communication, execution, and shipping frontend work across time zones.",
+      "Victor brings strong execution energy to frontend work. He is reliable with implementation, open to feedback, and focused on shipping interfaces that are both clean and practical. Across the project, he communicated well, handled frontend responsibilities with ownership, and made collaboration easier even when working across different schedules.",
   },
   {
     initials: "03",
-    name: "Global partner",
+    name: "James Carter",
+    role: "Founder & Product Lead, Remote SaaS Studio",
+    context: "Global partner",
     meta: "International remote project",
     quote:
-      "Placeholder for a testimonial from someone outside your local market who can speak to your remote collaboration.",
+      "Victor was easy to work with on a remote project because he combined technical execution with clear thinking. He understood the goals quickly, translated them into user-facing frontend work, and stayed responsive throughout the process. His ability to collaborate beyond his local market makes him a strong fit for global product teams.",
   },
 ];
 
@@ -413,11 +419,15 @@ export default function Projects() {
                 <div className="collaboration-card-header">
                   <div className="collaboration-avatar font-display">{testimonial.initials}</div>
                   <div>
-                    <h4 className="font-display">{testimonial.name}</h4>
+                    <h4 className="font-display">{testimonial.context}</h4>
                     <p className="font-mono">{testimonial.meta}</p>
                   </div>
                 </div>
                 <p className="font-mono collaboration-copy">{testimonial.quote}</p>
+                <div className="testimonial-author">
+                  <strong className="font-display">{testimonial.name}</strong>
+                  <span className="font-mono">{testimonial.role}</span>
+                </div>
               </article>
             ))}
           </div>
