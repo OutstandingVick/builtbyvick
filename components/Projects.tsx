@@ -117,7 +117,7 @@ export default function Projects() {
               padding: "3rem 0",
               borderBottom: "1px solid var(--border)",
               display: "grid",
-              gridTemplateColumns: "1fr 340px",
+              gridTemplateColumns: p.preview ? "1fr 340px" : "1fr",
               gap: "4rem",
               alignItems: "start",
             }}
@@ -230,17 +230,16 @@ export default function Projects() {
 
             </div>
 
-            {/* Right — stack / preview */}
-            <div
-              className={`project-stack-card${p.preview ? " project-shot-card" : ""}`}
-              style={{
-                backgroundColor: "var(--bg-3)",
-                border: "1px solid var(--border)",
-                borderRadius: "4px",
-                padding: "1.75rem",
-              }}
-            >
-              {p.preview ? (
+            {p.preview && (
+              <div
+                className="project-stack-card project-shot-card"
+                style={{
+                  backgroundColor: "var(--bg-3)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "4px",
+                  padding: "1.75rem",
+                }}
+              >
                 <div className="project-preview">
                   <div className="project-preview-corner project-preview-corner-tl" />
                   <div className="project-preview-corner project-preview-corner-tr" />
@@ -273,49 +272,8 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              ) : (
-                <>
-                  <div
-                    className="font-mono project-stack-label"
-                    style={{ fontSize: "0.6rem", letterSpacing: "0.18em", color: "var(--text-3)", textTransform: "uppercase", marginBottom: "1rem" }}
-                  >
-                    Stack
-                  </div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                    {p.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="font-mono project-stack-chip"
-                        style={{
-                          fontSize: "0.72rem",
-                          color: "var(--text-2)",
-                          backgroundColor: "var(--surface)",
-                          border: "1px solid var(--border-2)",
-                          padding: "4px 10px",
-                          borderRadius: "2px",
-                        }}
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                  {/* Number */}
-                  <div
-                    className="font-display project-number"
-                    style={{
-                      fontSize: "5rem",
-                      fontWeight: 800,
-                      color: "var(--border)",
-                      lineHeight: 1,
-                      marginTop: "2rem",
-                      letterSpacing: "-0.04em",
-                    }}
-                  >
-                    0{i + 1}
-                  </div>
-                </>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -399,8 +357,8 @@ export default function Projects() {
               <circle className="map-pin map-pin-delay" cx="788.4" cy="246.2" r="7" />
             </svg>
             <span className="map-label map-label-home font-mono">Lagos</span>
-            <span className="map-label map-label-left font-mono">Remote</span>
-            <span className="map-label map-label-right font-mono">Singapore</span>
+            <span className="map-label map-label-left font-mono">Texas</span>
+            <span className="map-label map-label-right font-mono">Malaysia</span>
           </div>
 
           <div className="testimonials-grid">

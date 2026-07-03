@@ -81,9 +81,9 @@ export default function Hero() {
         }}
       >
         <span style={{ whiteSpace: "nowrap" }}>
-          VICTOR{" "}
+          VICTOR
           <span style={{ color: "var(--accent-warm)", WebkitTextStroke: "0px" }}>
-            POWEIDEI
+             POWEIDEI
           </span>
         </span>
         <br />
