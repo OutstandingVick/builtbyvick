@@ -698,14 +698,14 @@ body .section-label div {
 
 .collaboration-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 0.8fr);
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 .collaboration-map {
   position: relative;
-  width: min(100%, 560px);
+  width: min(100%, 760px);
   aspect-ratio: 1.7;
   margin: 0 auto;
   overflow: hidden;
@@ -832,6 +832,7 @@ body .section-label div {
 
 .testimonials-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -1015,6 +1016,10 @@ body .section-label div {
 
   .collaboration-map {
     max-width: 560px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
