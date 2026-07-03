@@ -1290,6 +1290,10 @@ body .section-label div {
     text-align: center !important;
   }
 
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
   .project-preview {
     min-height: 360px;
     grid-template-columns: minmax(0, 1fr) minmax(92px, 27%);
