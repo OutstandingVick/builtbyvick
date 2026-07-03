@@ -415,15 +415,11 @@ export default function Projects() {
                 <div className="collaboration-quote-mark">”</div>
                 <div className="collaboration-card-header">
                   <div>
-                    <h4 className="font-display">{testimonial.context}</h4>
-                    <p className="font-mono">{testimonial.meta}</p>
+                    <h4 className="font-display">{testimonial.name}</h4>
+                    <p className="font-mono">{testimonial.role}</p>
                   </div>
                 </div>
                 <p className="font-mono collaboration-copy">{testimonial.quote}</p>
-                <div className="testimonial-author">
-                  <strong className="font-display">{testimonial.name}</strong>
-                  <span className="font-mono">{testimonial.role}</span>
-                </div>
               </article>
             ))}
           </div>
