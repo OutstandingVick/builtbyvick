@@ -891,29 +891,6 @@ body .section-label div {
   font-size: 0.9rem;
 }
 
-.testimonial-author {
-  position: relative;
-  z-index: 1;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.testimonial-author strong {
-  color: var(--text);
-  font-size: 1rem;
-  line-height: 1.25;
-}
-
-.testimonial-author span {
-  color: var(--text-3);
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
 .collaboration-card h4 {
   color: var(--text);
   font-size: 1.1rem;
