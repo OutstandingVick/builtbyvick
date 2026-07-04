@@ -102,42 +102,16 @@ export default function Nav() {
 
   return (
     <header
-      className="site-header"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
-        padding: mobileNav ? "0.75rem 0.8rem" : "1.2rem 1.6rem",
-      }}
+      className={`site-header fixed inset-x-0 top-0 z-[100] px-[1.6rem] py-[1.2rem] transition-[background-color,backdrop-filter] duration-300 max-[760px]:px-[0.8rem] max-[760px]:py-3 ${
+        scrolled ? "bg-[var(--nav-bg)] backdrop-blur-xl" : "bg-transparent backdrop-blur-0"
+      }`}
     >
-      <nav
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "1rem",
-        }}
-      >
+      <nav className="mx-auto flex max-w-[1100px] items-center justify-between gap-4">
         {/* Logo */}
         <a
           href="#home"
           aria-label="Victor Ogundimu home"
-          style={{
-            width: mobileNav ? "42px" : "48px",
-            height: mobileNav ? "42px" : "48px",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textDecoration: "none",
-            flexShrink: 0,
-          }}
+          className="inline-flex size-12 shrink-0 items-center justify-center no-underline max-[760px]:size-[42px]"
         >
           <Image
             src={theme === "dark" ? "/vick-dark-mode-indigo.png" : "/vick-light-mode-indigo.png"}
@@ -145,41 +119,12 @@ export default function Nav() {
             width={48}
             height={48}
             priority
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "block",
-              objectFit: "contain",
-            }}
+            className="block size-full object-contain"
           />
         </a>
 
-        <div
-          className="site-nav-pill"
-          style={{
-            minHeight: mobileNav ? "46px" : "52px",
-            display: "flex",
-            alignItems: "center",
-            gap: mobileNav ? "0.65rem" : "1.35rem",
-            padding: mobileNav ? "0 0.65rem" : "0 1rem",
-            backgroundColor: "var(--nav-pill-bg)",
-            border: "1px solid var(--nav-pill-border)",
-            borderRadius: "999px",
-            boxShadow: "0 10px 30px rgba(39, 24, 126, 0.18)",
-            overflowX: mobileNav ? "auto" : "visible",
-            scrollbarWidth: "none",
-          }}
-        >
-          <div
-            className="site-nav-links"
-            style={{
-              display: "flex",
-              alignItems: "stretch",
-              gap: mobileNav ? "0.25rem" : "1.15rem",
-              height: "100%",
-              flexShrink: 0,
-            }}
-          >
+        <div className="site-nav-pill flex min-h-[52px] items-center gap-[1.35rem] overflow-visible rounded-full border border-[var(--nav-pill-border)] bg-[var(--nav-pill-bg)] px-4 shadow-[0_10px_30px_rgba(39,24,126,0.18)] [scrollbar-width:none] max-[760px]:min-h-[46px] max-[760px]:gap-[0.65rem] max-[760px]:overflow-x-auto max-[760px]:px-[0.65rem] max-[520px]:min-h-[42px] max-[520px]:gap-2 max-[520px]:px-2">
+          <div className="site-nav-links flex h-full shrink-0 items-stretch gap-[1.15rem] max-[760px]:hidden">
             {links.map((l) => {
               const id = l.href.slice(1);
               const isActive = active === id;
@@ -188,51 +133,24 @@ export default function Nav() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="font-mono"
-                  style={{
-                    minHeight: mobileNav ? "46px" : "52px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.45rem",
-                    color: isActive ? "var(--nav-link-active)" : "var(--nav-link)",
-                    fontSize: mobileNav ? "0.66rem" : "0.72rem",
-                    fontWeight: 400,
-                    letterSpacing: "0.13em",
-                    lineHeight: 1,
-                    textDecoration: "none",
-                    whiteSpace: "nowrap",
-                    position: "relative",
-                    transition: "color 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "var(--nav-link-active)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = isActive
-                      ? "var(--nav-link-active)"
-                      : "var(--nav-link)";
-                  }}
+                  className={`font-mono relative inline-flex min-h-[52px] items-center gap-[0.45rem] whitespace-nowrap text-[0.72rem] font-normal leading-none tracking-[0.13em] no-underline transition-colors hover:text-[var(--nav-link-active)] ${
+                    isActive ? "text-[var(--nav-link-active)]" : "text-[var(--nav-link)]"
+                  }`}
                 >
                   {l.label}
                   {l.hasChevron && (
                     <ChevronsUpDown
                       size={14}
                       strokeWidth={1.8}
-                      style={{ color: "var(--nav-link-muted)", flexShrink: 0 }}
+                      className="shrink-0 text-[var(--nav-link-muted)]"
                     />
                   )}
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      style={{
-                        position: "absolute",
-                        left: 0,
-                        right: l.hasChevron ? "1.2rem" : 0,
-                        bottom: 0,
-                        height: "2px",
-                        backgroundColor: "var(--accent)",
-                        borderRadius: "0",
-                      }}
+                      className={`absolute bottom-0 left-0 h-0.5 rounded-none bg-[var(--accent)] ${
+                        l.hasChevron ? "right-[1.2rem]" : "right-0"
+                      }`}
                     />
                   )}
                 </a>
@@ -242,39 +160,17 @@ export default function Nav() {
 
           <div
             aria-hidden="true"
-            style={{
-              width: "1px",
-              height: mobileNav ? "28px" : "32px",
-              backgroundColor: "var(--nav-pill-border)",
-              flexShrink: 0,
-            }}
+            className="h-8 w-px shrink-0 bg-[var(--nav-pill-border)] max-[760px]:h-7"
           />
 
-          <div className="site-nav-actions" style={{ display: "flex", alignItems: "center", gap: mobileNav ? "0.35rem" : "0.55rem", flexShrink: 0 }}>
+          <div className="site-nav-actions flex shrink-0 items-center gap-[0.55rem] max-[760px]:gap-[0.35rem] max-[380px]:gap-2">
             <a
               href="https://github.com/outstandingvick"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
               title="GitHub"
-              style={{
-                width: mobileNav ? "30px" : "34px",
-                height: mobileNav ? "30px" : "34px",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--nav-icon)",
-                textDecoration: "none",
-                transition: "color 0.2s ease, transform 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--nav-link-active)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--nav-icon)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
+              className="inline-flex size-[34px] items-center justify-center text-[var(--nav-icon)] no-underline transition-[color,transform] hover:-translate-y-px hover:text-[var(--nav-link-active)] max-[760px]:size-[30px]"
             >
               <GitHubMark size={mobileNav ? 20 : 23} />
             </a>
@@ -283,58 +179,21 @@ export default function Nav() {
               href="mailto:victor@outstandingvick.xyz"
               aria-label="Email"
               title="Email"
-              style={{
-                width: mobileNav ? "30px" : "34px",
-                height: mobileNav ? "30px" : "34px",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--nav-icon)",
-                textDecoration: "none",
-                transition: "color 0.2s ease, transform 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--nav-link-active)";
-                e.currentTarget.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--nav-icon)";
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
+              className="inline-flex size-[34px] items-center justify-center text-[var(--nav-icon)] no-underline transition-[color,transform] hover:-translate-y-px hover:text-[var(--nav-link-active)] max-[760px]:size-[30px]"
             >
               <Mail size={mobileNav ? 19 : 22} strokeWidth={1.8} />
             </a>
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            aria-pressed={theme === "dark"}
-            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            style={{
-              width: "32px",
-              height: "32px",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--nav-icon)",
-              backgroundColor: "transparent",
-              border: "1px solid var(--nav-pill-border)",
-              borderRadius: "999px",
-              cursor: "pointer",
-              transition: "border-color 0.2s, color 0.2s, background-color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = "var(--nav-link-active)";
-              e.currentTarget.style.borderColor = "var(--nav-link-muted)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = "var(--nav-icon)";
-              e.currentTarget.style.borderColor = "var(--nav-pill-border)";
-            }}
-          >
-            {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
-          </button>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              aria-pressed={theme === "dark"}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              className="inline-flex size-8 cursor-pointer items-center justify-center rounded-full border border-[var(--nav-pill-border)] bg-transparent text-[var(--nav-icon)] transition-colors hover:border-[var(--nav-link-muted)] hover:text-[var(--nav-link-active)]"
+            >
+              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+            </button>
           </div>
         </div>
       </nav>

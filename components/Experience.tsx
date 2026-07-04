@@ -74,21 +74,12 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="content-section experience-section"
-      style={{
-        padding: "8rem 1.6rem",
-        maxWidth: "1100px",
-        margin: "0 auto",
-      }}
+      className="content-section experience-section mx-auto max-w-[1100px] px-[1.6rem] py-32 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16"
     >
-      <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
-        <span
-          className="font-mono"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
-        >
+      <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
+        <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
           02 / Work Experience
         </span>
-        <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
       </div>
 
       <div className="experience-carousel">

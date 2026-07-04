@@ -19,70 +19,22 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="hero-section"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "0 1.6rem",
-        paddingTop: "80px",
-        maxWidth: "1100px",
-        margin: "0 auto",
-        position: "relative",
-        textAlign: "center",
-      }}
+      className="hero-section relative mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-[1.6rem] pt-20 text-center max-[760px]:min-h-[auto] max-[760px]:px-[0.8rem] max-[760px]:pb-16 max-[760px]:pt-28"
     >
-      {/* Availability badge */}
-      <div
-        className="hero-badge"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "8px",
-          marginBottom: "3rem",
-          padding: "6px 14px",
-          border: "1px solid var(--border-2)",
-          borderRadius: "100px",
-          backgroundColor: "var(--bg-3)",
-        }}
-      >
-        <span
-          style={{
-            width: "7px",
-            height: "7px",
-            borderRadius: "50%",
-            backgroundColor: "var(--accent)",
-            display: "block",
-            boxShadow: "0 0 8px var(--accent)",
-            animation: "pulse 2s infinite",
-          }}
-        />
-        <span
-          className="font-mono"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.12em", color: "var(--text-2)" }}
-        >
+      <div className="hero-badge mb-12 inline-flex items-center gap-2 rounded-full border border-[var(--border-2)] bg-[var(--bg-3)] px-3.5 py-1.5 max-[760px]:mb-8">
+        <span className="block size-[7px] animate-[pulse_2s_infinite] rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
+        <span className="font-mono text-[0.65rem] tracking-[0.12em] text-[var(--text-2)]">
           AVAILABLE FOR ROLES
         </span>
       </div>
 
-      {/* Big name */}
       <h1
         ref={nameRef}
-        className="font-display hero-title"
-        style={{
-          fontSize: "clamp(2.8rem, 8vw, 7.4rem)",
-          fontWeight: 800,
-          lineHeight: 0.92,
-          letterSpacing: "-0.03em",
-          color: "var(--text)",
-          marginBottom: "1.5rem",
-        }}
+        className="font-display hero-title mb-6 text-[clamp(2.8rem,8vw,7.4rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-[var(--text)] max-[760px]:mb-5 max-[760px]:text-[2.35rem] max-[760px]:leading-none max-[520px]:text-[2rem] max-[380px]:text-[1.72rem]"
       >
-        <span className="hero-name-line" style={{ whiteSpace: "nowrap" }}>
+        <span className="hero-name-line inline-flex items-baseline gap-[0.35em] whitespace-nowrap">
           VICTOR
-          <span style={{ color: "var(--accent-warm)", WebkitTextStroke: "0px" }}>
+          <span className="text-[var(--accent-warm)] [-webkit-text-stroke:0px]">
             POWEIDEI
           </span>
         </span>
@@ -90,133 +42,43 @@ export default function Hero() {
         OGBONNA
       </h1>
 
-      {/* Role tag */}
-      <div
-        className="hero-roles"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "1rem",
-          marginBottom: "2rem",
-          flexWrap: "wrap",
-        }}
-      >
-        <span
-          className="font-serif"
-          style={{
-            fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)",
-            color: "var(--text-2)",
-            fontStyle: "italic",
-          }}
-        >
+      <div className="hero-roles mb-8 flex flex-wrap items-center justify-center gap-4 max-[760px]:mb-6 max-[760px]:gap-2">
+        <span className="font-serif text-[clamp(1.1rem,2.5vw,1.6rem)] italic text-[var(--text-2)]">
           Frontend Engineer
         </span>
-        <span style={{ color: "var(--border-2)" }}>—</span>
-        <span
-          className="font-serif"
-          style={{
-            fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)",
-            color: "var(--text-2)",
-            fontStyle: "italic",
-          }}
-        >
+        <span className="text-[var(--border-2)]">—</span>
+        <span className="font-serif text-[clamp(1.1rem,2.5vw,1.6rem)] italic text-[var(--text-2)]">
           Technical Writer & Researcher
         </span>
       </div>
 
-      {/* Bio */}
-      <p
-        className="font-mono hero-bio"
-        style={{
-          fontSize: "1.35rem",
-          color: "var(--text-2)",
-          maxWidth: "760px",
-          lineHeight: 1.75,
-          marginBottom: "3rem",
-        }}
-      >
+      <p className="font-mono hero-bio mb-12 max-w-[760px] text-[1.35rem] leading-[1.75] text-[var(--text-2)] max-[760px]:mb-8 max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
         I build responsive and user-focused web applications. My work centers
         on creating intuitive interfaces, seamless user experiences, and
         products that scale effectively.
       </p>
 
-      {/* CTA buttons */}
-      <div className="hero-actions" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center" }}>
+      <div className="hero-actions flex flex-wrap justify-center gap-4 max-[760px]:w-full max-[760px]:max-w-[360px]">
         <a
           href="#projects"
-          className="font-mono"
-          style={{
-            fontSize: "0.72rem",
-            letterSpacing: "0",
-            textTransform: "none",
-            textDecoration: "none",
-            color: "var(--bg)",
-            backgroundColor: "var(--accent)",
-            padding: "12px 24px",
-            borderRadius: "999px",
-            fontWeight: 800,
-            transition: "opacity 0.2s",
-          }}
-          onMouseEnter={(e) => ((e.target as HTMLElement).style.opacity = "0.82")}
-          onMouseLeave={(e) => ((e.target as HTMLElement).style.opacity = "1")}
+          className="font-mono inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-[0.72rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-[0.82] max-[760px]:w-full"
         >
           View my work
         </a>
         <a
           href="#contact"
-          className="font-mono"
-          style={{
-            fontSize: "0.72rem",
-            letterSpacing: "0",
-            textTransform: "none",
-            textDecoration: "none",
-            color: "var(--text)",
-            backgroundColor: "transparent",
-            padding: "12px 24px",
-            border: "1px solid var(--border-2)",
-            borderRadius: "999px",
-            transition: "border-color 0.2s, color 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.target as HTMLElement).style.borderColor = "var(--text-2)";
-          }}
-          onMouseLeave={(e) => {
-            (e.target as HTMLElement).style.borderColor = "var(--border-2)";
-          }}
+          className="font-mono inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--border-2)] bg-transparent px-6 py-3 text-[0.72rem] tracking-normal text-[var(--text)] no-underline transition-colors hover:border-[var(--text-2)] max-[760px]:w-full"
         >
           Get in touch
         </a>
       </div>
 
-      {/* Scroll hint */}
-      <div
-        className="hero-scroll"
-        style={{
-          position: "absolute",
-          bottom: "2.5rem",
-          right: "0",
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          opacity: 0.4,
-        }}
-      >
-        <span
-          className="font-mono"
-          style={{ fontSize: "0.6rem", letterSpacing: "0.15em", color: "var(--text-3)" }}
-        >
+      <div className="hero-scroll absolute bottom-10 right-0 flex items-center gap-2 opacity-40 max-[760px]:hidden">
+        <span className="font-mono text-[0.6rem] tracking-[0.15em] text-[var(--text-3)]">
           SCROLL
         </span>
-        <span style={{ color: "var(--text-3)", fontSize: "0.8rem" }}>↓</span>
+        <span className="text-[0.8rem] text-[var(--text-3)]">↓</span>
       </div>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
-        }
-      `}</style>
     </section>
   );
 }

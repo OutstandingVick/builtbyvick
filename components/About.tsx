@@ -4,92 +4,46 @@ import Image from "next/image";
 
 const skills = {
   "Languages & Technologies": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
-  "Tools": ["Git / GitHub", "Figma", "Vercel", "NotebookLM"],
+  Tools: ["Git / GitHub", "Figma", "Vercel", "NotebookLM"],
 };
 
 export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section"
-      style={{
-        padding: "4rem 1.6rem",
-        maxWidth: "1100px",
-        margin: "0 auto",
-      }}
+      className="content-section about-section mx-auto max-w-[1100px] px-[1.6rem] py-16 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16 max-[760px]:pt-12"
     >
-      {/* Section label */}
-      <div className="section-label" style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "4rem" }}>
-        <span
-          className="font-mono"
-          style={{ fontSize: "0.65rem", letterSpacing: "0.2em", color: "var(--accent)", textTransform: "uppercase" }}
-        >
+      <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
+        <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
           01 / About
         </span>
-        <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border)" }} />
       </div>
 
-      <div
-        className="about-grid"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "6rem",
-          alignItems: "start",
-        }}
-      >
-        {/* Left — portrait */}
-        <div className="portrait-column" style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              aspectRatio: "1 / 1",
-              overflow: "hidden",
-              border: "1px solid var(--border)",
-              borderRadius: "4px",
-              backgroundColor: "var(--surface)",
-            }}
-          >
+      <div className="about-grid grid grid-cols-2 items-start gap-24 max-[980px]:grid-cols-1 max-[980px]:gap-10">
+        <div className="portrait-column flex flex-col gap-8 max-[980px]:mx-auto max-[980px]:w-full max-[980px]:max-w-[560px] max-[760px]:max-w-[260px] max-[380px]:max-w-[240px]">
+          <div className="relative aspect-square w-full overflow-hidden rounded-[28px] bg-[var(--surface)] shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
             <Image
               src="/victor-portrait.jpg"
               alt="Portrait of Victor Ogundimu"
               fill
               sizes="(max-width: 900px) 100vw, 480px"
-              style={{
-                objectFit: "cover",
-                objectPosition: "50% 36%",
-              }}
+              className="object-cover object-[50%_36%]"
             />
           </div>
         </div>
 
-        {/* Right — text */}
         <div>
-          <h2
-            className="font-display section-heading"
-            style={{
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 700,
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-              marginBottom: "2rem",
-              color: "var(--text)",
-            }}
-          >
+          <h2 className="font-display section-heading mb-8 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--text)] max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
             Building at the
             <br />
-            <span className="font-serif" style={{ fontStyle: "italic", color: "var(--accent)" }}>
+            <span className="font-serif italic text-[var(--accent)]">
               intersection
             </span>{" "}
             of code,<br />
-             & research.
+            & research.
           </h2>
 
-          <div
-            className="font-mono about-copy"
-            style={{ fontSize: "1rem", color: "var(--text-2)", lineHeight: 1.7, display: "flex", flexDirection: "column", gap: "1rem" }}
-          >
+          <div className="font-mono about-copy flex flex-col gap-4 text-base leading-[1.7] text-[var(--text-2)] max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
             <p>
               I&apos;m Victor, a frontend engineer focused on creating responsive
               and scalable digital experiences. I blend research-driven thinking
@@ -102,44 +56,17 @@ export default function About() {
             </p>
           </div>
 
-          {/* Skills */}
-          <div
-            className="skills-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-              gap: "1.5rem",
-              marginTop: "2.75rem",
-            }}
-          >
+          <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] gap-6 max-[760px]:grid-cols-1 max-[760px]:gap-7 max-[380px]:gap-6">
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} className="skill-group">
-                <div
-                  className="font-mono"
-                  style={{
-                    fontSize: "0.6rem",
-                    letterSpacing: "0.18em",
-                    color: "var(--accent)",
-                    textTransform: "uppercase",
-                    marginBottom: "0.75rem",
-                  }}
-                >
+                <div className="font-mono mb-3 text-[0.6rem] uppercase tracking-[0.18em] text-[var(--accent)]">
                   {category}
                 </div>
-                <div className="skill-list" style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                <div className="skill-list flex flex-col gap-2 max-[760px]:gap-3">
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="font-mono skill-chip"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.65rem",
-                        fontSize: "0.95rem",
-                        color: "var(--text-2)",
-                        letterSpacing: "0",
-                        width: "fit-content",
-                      }}
+                      className="font-mono skill-chip inline-flex w-fit max-w-full items-center gap-[0.65rem] rounded-full border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3 py-1.5 text-[0.95rem] font-bold tracking-normal text-[var(--text)] [overflow-wrap:anywhere] max-[760px]:w-auto max-[760px]:text-[0.84rem] max-[760px]:leading-[1.35] max-[380px]:text-[0.78rem]"
                     >
                       {skill}
                     </span>
@@ -149,7 +76,6 @@ export default function About() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
