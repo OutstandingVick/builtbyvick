@@ -35,7 +35,7 @@ export default function Contact() {
 
         <div className="contact-grid grid grid-cols-2 gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
           <div>
-            <h2 className="font-display section-heading mb-6 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--text)] max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
+            <h2 className="font-display section-heading mb-6 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-(--text) max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
               Currently open
               <br />
               to new{" "}
@@ -52,7 +52,7 @@ export default function Contact() {
 
             <a
               href="mailto:victor.ogbonna@hotmail.com"
-              className="font-mono contact-email mb-8 block rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[var(--text)] no-underline transition-colors hover:border-[var(--accent)] max-[520px]:[overflow-wrap:anywhere] max-[760px]:text-[0.7rem]"
+              className="font-mono contact-email mb-8 block rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[v(--text)] no-underline transition-colors hover:border-(--accent) max-[520px]:wrap:anywhere max-[760px]:text-[0.7rem]"
             >
               victor.ogbonna@hotmail.com ↗
             </a>
@@ -64,12 +64,12 @@ export default function Contact() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link group mb-3 flex items-center justify-between gap-4 rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_60%,transparent)] px-4 py-4 no-underline transition-colors max-[520px]:flex-col max-[520px]:items-start max-[520px]:gap-1.5"
+                  className="social-link group mb-3 flex items-center justify-between gap-4 rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_60%,transparent)] px-4 py-4 no-underline transition-colors max-[520px]:flex-col max-[520px]:items-start max-[520px]:gap-1.5"
                 >
-                  <span className="social-label font-mono text-[0.75rem] text-[var(--text-2)] transition-colors group-hover:text-[var(--accent)] max-[760px]:text-[0.7rem]">
+                  <span className="social-label font-mono text-[0.75rem] text-(--text-2) transition-colors group-hover:text-(--accent) max-[760px]:text-[0.7rem]">
                     {s.label}
                   </span>
-                  <span className="font-mono social-handle text-[0.72rem] text-[var(--text-3)] max-[760px]:text-[0.7rem]">
+                  <span className="font-mono social-handle text-[0.72rem] text-(--text-3) max-[760px]:text-[0.7rem]">
                     {s.handle} ↗
                   </span>
                 </a>
@@ -79,12 +79,12 @@ export default function Contact() {
 
           <div>
             {sent ? (
-              <div className="rounded-[20px] border border-[var(--border)] bg-[var(--bg-3)] px-8 py-12 text-center">
+              <div className="rounded-[20px] border border-(--border) bg-(--bg-3) px-8 py-12 text-center">
                 <div className="mb-4 text-3xl">✦</div>
-                <h3 className="font-display mb-3 text-[1.2rem] font-bold text-[var(--text)]">
+                <h3 className="font-display mb-3 text-[1.2rem] font-bold text-(--text)">
                   Message sent!
                 </h3>
-                <p className="font-mono text-[0.92rem] leading-[1.7] text-[var(--text-2)]">
+                <p className="font-mono text-[0.92rem] leading-[1.7] text-(--text-2)">
                   I aim to respond within 24 hours. Talk soon.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function Contact() {
               <div className="flex flex-col gap-5">
                 {fields.map((field) => (
                   <div key={field.key}>
-                    <label className="font-mono mb-1.5 block text-[0.62rem] uppercase tracking-[0.15em] text-[var(--text-3)]">
+                    <label className="font-mono mb-1.5 block text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
                       {field.label}
                     </label>
                     <input
@@ -100,12 +100,12 @@ export default function Contact() {
                       placeholder={field.placeholder}
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      className="font-mono w-full rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
+                      className="font-mono w-full rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
                     />
                   </div>
                 ))}
                 <div>
-                  <label className="font-mono mb-1.5 block text-[0.62rem] uppercase tracking-[0.15em] text-[var(--text-3)]">
+                  <label className="font-mono mb-1.5 block text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
                     Message
                   </label>
                   <textarea
@@ -113,12 +113,12 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="font-mono w-full resize-y rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
+                    className="font-mono w-full resize-y rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
                   />
                 </div>
                 <button
                   onClick={handleSubmit}
-                  className="font-mono contact-submit inline-flex min-h-12 w-fit cursor-pointer items-center justify-center rounded-full border-0 bg-[var(--accent)] px-6 py-3.5 text-[0.72rem] font-extrabold tracking-normal text-[#102217] transition-opacity hover:opacity-[0.82] max-[760px]:text-[0.7rem]"
+                  className="font-mono contact-submit inline-flex min-h-12 w-fit cursor-pointer items-center justify-center rounded-full border-0 bg-(--accent) px-6 py-3.5 text-[0.72rem] font-extrabold tracking-normal text-[#102217] transition-opacity hover:opacity-[0.82] max-[760px]:text-[0.7rem]"
                 >
                   Send message →
                 </button>
@@ -128,11 +128,11 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="site-footer mx-auto flex w-full max-w-[1120px] items-center justify-between border-t border-[var(--border)] px-5 py-10 max-[980px]:max-w-[760px] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
-        <span className="font-mono text-[0.68rem] tracking-[0.08em] text-[var(--text-3)]">
+      <footer className="site-footer mx-auto flex w-full max-w-280 items-center justify-between border-t border-(--border) px-5 py-10 max-[980px]:max-w-190 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
+        <span className="font-mono text-[0.68rem] tracking-[0.08em] text-(--text-3)">
           © 2025 Victor Ogbonna
         </span>
-        <span className="font-mono text-[0.65rem] text-[var(--text-3)]">
+        <span className="font-mono text-[0.65rem] text-(--text-3)">
           Built with Next.js & Tailwind CSS
         </span>
       </footer>
