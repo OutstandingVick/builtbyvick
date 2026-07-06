@@ -43,12 +43,6 @@ export default function Hero() {
           href="#projects"
           className="font-mono inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-7 py-3 text-[0.76rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
         >
-          View my work
-        </a>
-        <a
-          href="#contact"
-          className="font-mono inline-flex min-h-12 items-center justify-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_58%,transparent)] px-7 py-3 text-[0.76rem] font-bold tracking-normal text-(--text) no-underline transition-[border-color,transform] hover:-translate-y-0.5 hover:border-(--text-2) max-[760px]:w-full"
-        >
           Get in touch
         </a>
       </div>

@@ -25,10 +25,10 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="content-section contact-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
+        className="content-section contact-section mx-auto w-full max-w-280 px-5 py-20 max-[980px]:max-w-760px max-[760px]:px-4 max-[760px]:py-14"
       >
         <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-          <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+          <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
             04 / Contact
           </span>
         </div>
@@ -39,12 +39,12 @@ export default function Contact() {
               Currently open
               <br />
               to new{" "}
-              <span className="font-serif italic text-[var(--accent)]">
+              <span className="font-serif italic text-(--accent)">
                 opportunities.
               </span>
             </h2>
 
-            <p className="font-mono contact-copy mb-12 text-[1.3rem] leading-[1.65] text-[var(--text-2)] max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
+            <p className="font-mono contact-copy mb-12 text-[1.3rem] leading-[1.65] text-(--text-2) max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
               Whether you&apos;re building a product, need technical writing, or want a
               researcher embedded in your Startup—I&apos;m interested in hearing
               about it. Drop me a message or reach out directly.
@@ -52,7 +52,7 @@ export default function Contact() {
 
             <a
               href="mailto:victor.ogbonna@hotmail.com"
-              className="font-mono contact-email mb-8 block rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[var(--text)] no-underline transition-colors hover:border-[var(--accent)] max-[520px]:[overflow-wrap:anywhere] max-[760px]:text-[0.7rem]"
+              className="font-mono contact-email mb-8 block rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[var(--text)] no-underline transition-colors hover:border-[var(--accent)] max-[520px]:[overflow-wrap:anywhere] max-[760px]:text-[0.7rem]"
             >
               victor.ogbonna@hotmail.com ↗
             </a>
