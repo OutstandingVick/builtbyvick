@@ -65,7 +65,9 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 32rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-2) 18%, var(--bg)), var(--bg) 28rem);
   color: var(--text);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -690,44 +692,6 @@ body::before {
 }
 
 @media (max-width: 760px) {
-  .site-header {
-    padding: 0.75rem 0.8rem !important;
-  }
-
-  .site-nav-links {
-    display: none !important;
-  }
-
-  .site-nav-pill {
-    min-height: 44px !important;
-    gap: 0.5rem !important;
-    padding: 0 0.55rem !important;
-  }
-
-  .site-nav-actions {
-    gap: 0.35rem !important;
-  }
-
-  .hero-section {
-    min-height: auto !important;
-    padding: 7rem 0.8rem 4rem !important;
-  }
-
-  .hero-badge {
-    margin-bottom: 2rem !important;
-  }
-
-  .hero-title {
-    font-size: 2.35rem !important;
-    line-height: 1 !important;
-    margin-bottom: 1.25rem !important;
-  }
-
-  .hero-roles {
-    gap: 0.55rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-
   .hero-bio,
   .about-copy,
   .contact-copy,
@@ -744,32 +708,6 @@ body::before {
 
   .more-project-description {
     font-size: 0.84rem !important;
-  }
-
-  .hero-actions {
-    width: 100% !important;
-    max-width: 360px !important;
-  }
-
-  .hero-actions a {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  .hero-scroll {
-    display: none !important;
-  }
-
-  .content-section {
-    padding: 4rem 0.8rem !important;
-  }
-
-  .about-section {
-    padding-top: 3rem !important;
-  }
-
-  .section-label {
-    margin-bottom: 2.25rem !important;
   }
 
   .section-heading {
@@ -921,10 +859,6 @@ body::before {
     margin-bottom: 1rem !important;
   }
 
-  .project-featured-item {
-    padding: 2rem 0 !important;
-  }
-
   .project-meta {
     flex-wrap: wrap !important;
     row-gap: 0.35rem !important;
@@ -932,13 +866,6 @@ body::before {
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-  }
-
-  .site-footer {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.75rem !important;
-    padding: 2rem 0.8rem !important;
   }
 
   .social-link {
@@ -983,20 +910,6 @@ body::before {
 }
 
 @media (max-width: 520px) {
-  .site-nav-pill {
-    min-height: 42px !important;
-    gap: 0.5rem !important;
-    padding: 0 0.5rem !important;
-  }
-
-  .hero-title {
-    font-size: 2rem !important;
-  }
-
-  .hero-bio {
-    margin-bottom: 2rem !important;
-  }
-
   .section-heading {
     font-size: 1.5rem !important;
   }
@@ -1014,14 +927,6 @@ body::before {
 }
 
 @media (max-width: 380px) {
-  .site-nav-actions {
-    gap: 0.5rem !important;
-  }
-
-  .hero-title {
-    font-size: 1.72rem !important;
-  }
-
   .skills-grid {
     gap: 1.5rem !important;
   }

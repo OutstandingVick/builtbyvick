@@ -102,16 +102,16 @@ export default function Nav() {
 
   return (
     <header
-      className={`site-header fixed inset-x-0 top-0 z-[100] px-[1.6rem] py-[1.2rem] transition-[background-color,backdrop-filter] duration-300 max-[760px]:px-[0.8rem] max-[760px]:py-3 ${
+      className={`site-header fixed inset-x-0 top-4 z-[100] px-5 transition-[background-color,backdrop-filter] duration-300 max-[760px]:top-3 max-[760px]:px-3 ${
         scrolled ? "bg-[var(--nav-bg)] backdrop-blur-xl" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="mx-auto flex max-w-[1100px] items-center justify-between gap-4">
+      <nav className="mx-auto flex min-h-[60px] w-full max-w-[1120px] items-center justify-between gap-4 rounded-full border border-[var(--nav-pill-border)] bg-[var(--nav-pill-bg)] px-4 shadow-[0_18px_55px_rgba(16,34,23,0.12)] backdrop-blur-xl max-[760px]:min-h-[54px] max-[760px]:px-3">
         {/* Logo */}
         <a
           href="#home"
           aria-label="Victor Ogundimu home"
-          className="inline-flex size-12 shrink-0 items-center justify-center no-underline max-[760px]:size-[42px]"
+          className="inline-flex size-10 shrink-0 items-center justify-center no-underline max-[760px]:size-9"
         >
           <Image
             src={theme === "dark" ? "/vick-dark-mode-indigo.png" : "/vick-light-mode-indigo.png"}
@@ -123,8 +123,8 @@ export default function Nav() {
           />
         </a>
 
-        <div className="site-nav-pill flex min-h-[52px] items-center gap-[1.35rem] overflow-visible rounded-full border border-[var(--nav-pill-border)] bg-[var(--nav-pill-bg)] px-4 shadow-[0_10px_30px_rgba(39,24,126,0.18)] [scrollbar-width:none] max-[760px]:min-h-[46px] max-[760px]:gap-[0.65rem] max-[760px]:overflow-x-auto max-[760px]:px-[0.65rem] max-[520px]:min-h-[42px] max-[520px]:gap-2 max-[520px]:px-2">
-          <div className="site-nav-links flex h-full shrink-0 items-stretch gap-[1.15rem] max-[760px]:hidden">
+        <div className="site-nav-pill flex min-h-[44px] min-w-0 items-center gap-5 overflow-visible [scrollbar-width:none] max-[760px]:gap-2 max-[760px]:overflow-x-auto">
+          <div className="site-nav-links flex h-full shrink-0 items-stretch gap-5 max-[760px]:hidden">
             {links.map((l) => {
               const id = l.href.slice(1);
               const isActive = active === id;
@@ -133,7 +133,7 @@ export default function Nav() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className={`font-mono relative inline-flex min-h-[52px] items-center gap-[0.45rem] whitespace-nowrap text-[0.72rem] font-normal leading-none tracking-[0.13em] no-underline transition-colors hover:text-[var(--nav-link-active)] ${
+                  className={`font-mono relative inline-flex min-h-[44px] items-center gap-[0.4rem] whitespace-nowrap text-[0.66rem] font-bold leading-none tracking-[0.14em] no-underline transition-colors hover:text-[var(--nav-link-active)] ${
                     isActive ? "text-[var(--nav-link-active)]" : "text-[var(--nav-link)]"
                   }`}
                 >
@@ -160,17 +160,17 @@ export default function Nav() {
 
           <div
             aria-hidden="true"
-            className="h-8 w-px shrink-0 bg-[var(--nav-pill-border)] max-[760px]:h-7"
+            className="h-7 w-px shrink-0 bg-[var(--nav-pill-border)] max-[760px]:h-6"
           />
 
-          <div className="site-nav-actions flex shrink-0 items-center gap-[0.55rem] max-[760px]:gap-[0.35rem] max-[380px]:gap-2">
+          <div className="site-nav-actions flex shrink-0 items-center gap-2 max-[760px]:gap-1.5">
             <a
               href="https://github.com/outstandingvick"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
               title="GitHub"
-              className="inline-flex size-[34px] items-center justify-center text-[var(--nav-icon)] no-underline transition-[color,transform] hover:-translate-y-px hover:text-[var(--nav-link-active)] max-[760px]:size-[30px]"
+              className="inline-flex size-9 items-center justify-center rounded-full text-[var(--nav-icon)] no-underline transition-[background-color,color,transform] hover:-translate-y-px hover:bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] hover:text-[var(--nav-link-active)] max-[760px]:size-8"
             >
               <GitHubMark size={mobileNav ? 20 : 23} />
             </a>
@@ -179,7 +179,7 @@ export default function Nav() {
               href="mailto:victor@outstandingvick.xyz"
               aria-label="Email"
               title="Email"
-              className="inline-flex size-[34px] items-center justify-center text-[var(--nav-icon)] no-underline transition-[color,transform] hover:-translate-y-px hover:text-[var(--nav-link-active)] max-[760px]:size-[30px]"
+              className="inline-flex size-9 items-center justify-center rounded-full text-[var(--nav-icon)] no-underline transition-[background-color,color,transform] hover:-translate-y-px hover:bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] hover:text-[var(--nav-link-active)] max-[760px]:size-8"
             >
               <Mail size={mobileNav ? 19 : 22} strokeWidth={1.8} />
             </a>
@@ -190,7 +190,7 @@ export default function Nav() {
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="inline-flex size-8 cursor-pointer items-center justify-center rounded-full border border-[var(--nav-pill-border)] bg-transparent text-[var(--nav-icon)] transition-colors hover:border-[var(--nav-link-muted)] hover:text-[var(--nav-link-active)]"
+              className="inline-flex size-9 cursor-pointer items-center justify-center rounded-full border border-[var(--nav-pill-border)] bg-[color-mix(in_srgb,var(--surface)_55%,transparent)] text-[var(--nav-icon)] transition-colors hover:border-[var(--nav-link-muted)] hover:text-[var(--nav-link-active)] max-[760px]:size-8"
             >
               {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
             </button>

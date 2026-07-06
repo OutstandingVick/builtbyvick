@@ -74,10 +74,10 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="content-section experience-section mx-auto max-w-[1100px] px-[1.6rem] py-32 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16"
+      className="content-section experience-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
           02 / Work Experience
         </span>
       </div>

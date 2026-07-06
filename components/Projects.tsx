@@ -71,10 +71,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="content-section projects-section mx-auto max-w-[1100px] px-[1.6rem] py-32 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16"
+      className="content-section projects-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
           03 / Projects
         </span>
       </div>
@@ -83,7 +83,7 @@ export default function Projects() {
         {featured.map((p) => (
           <article
             key={p.name}
-            className="project-featured-item mb-5 grid grid-cols-1 items-start gap-16 rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] p-8 max-[760px]:gap-10 max-[760px]:p-8"
+            className="project-featured-item mb-4 grid grid-cols-1 items-start gap-10 rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] p-7 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)] max-[760px]:gap-8 max-[760px]:p-6"
           >
             <div>
               <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
@@ -133,7 +133,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="mt-20">
+      <div className="mt-16">
         <h3 className="font-display mb-8 text-base font-semibold tracking-[0.02em] text-[var(--text-2)]">
           More Projects
         </h3>
@@ -141,7 +141,7 @@ export default function Projects() {
           {more.map((p) => (
             <article
               key={p.name}
-              className="rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-7 transition-colors hover:bg-[var(--bg-3)]"
+              className="rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)]"
             >
               <h4 className="font-display more-project-title mb-2 text-[0.92rem] font-semibold text-[var(--text)] max-[760px]:text-base max-[760px]:leading-[1.3]">
                 {p.name}
@@ -164,7 +164,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="collaboration-section mt-24 border-t-0 pb-4 pt-20 max-[760px]:mt-16 max-[760px]:pt-14">
+      <div className="collaboration-section mt-20 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
         <div className="collaboration-heading mx-auto mb-16 max-w-[760px] text-center max-[760px]:mb-10">
           <h3 className="font-display mb-5 text-[clamp(1.7rem,4vw,3rem)] font-extrabold leading-[1.05] tracking-[-0.05em] text-[var(--text)] max-[760px]:text-[1.65rem]">
             Testimonials from <span className="text-[var(--accent)]">remote</span> collaborators
@@ -193,7 +193,7 @@ export default function Projects() {
           <div className="testimonials-grid grid grid-cols-3 gap-4 max-[980px]:grid-cols-2 max-[760px]:grid-cols-1">
             {testimonials.map((testimonial) => (
               <article
-                className="collaboration-card testimonial-card relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6"
+                className="collaboration-card testimonial-card relative overflow-hidden rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6"
                 key={testimonial.name}
               >
                 <div className="collaboration-quote-mark">”</div>

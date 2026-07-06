@@ -25,15 +25,15 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="content-section contact-section mx-auto max-w-[1100px] px-[1.6rem] py-32 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16"
+        className="content-section contact-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
       >
         <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-          <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+          <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
             04 / Contact
           </span>
         </div>
 
-        <div className="contact-grid grid grid-cols-2 gap-24 max-[980px]:grid-cols-1 max-[980px]:gap-10">
+        <div className="contact-grid grid grid-cols-2 gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
           <div>
             <h2 className="font-display section-heading mb-6 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[var(--text)] max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
               Currently open
@@ -52,7 +52,7 @@ export default function Contact() {
 
             <a
               href="mailto:victor.ogbonna@hotmail.com"
-              className="font-mono contact-email mb-8 block rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[var(--text)] no-underline transition-colors hover:border-[var(--accent)] max-[520px]:[overflow-wrap:anywhere] max-[760px]:text-[0.7rem]"
+              className="font-mono contact-email mb-8 block rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[var(--text)] no-underline transition-colors hover:border-[var(--accent)] max-[520px]:[overflow-wrap:anywhere] max-[760px]:text-[0.7rem]"
             >
               victor.ogbonna@hotmail.com ↗
             </a>
@@ -79,7 +79,7 @@ export default function Contact() {
 
           <div>
             {sent ? (
-              <div className="rounded-[28px] border border-[var(--border)] bg-[var(--bg-3)] px-8 py-12 text-center">
+              <div className="rounded-[20px] border border-[var(--border)] bg-[var(--bg-3)] px-8 py-12 text-center">
                 <div className="mb-4 text-3xl">✦</div>
                 <h3 className="font-display mb-3 text-[1.2rem] font-bold text-[var(--text)]">
                   Message sent!
@@ -100,7 +100,7 @@ export default function Contact() {
                       placeholder={field.placeholder}
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      className="font-mono w-full rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
+                      className="font-mono w-full rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
                     />
                   </div>
                 ))}
@@ -113,7 +113,7 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="font-mono w-full resize-y rounded-[28px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
+                    className="font-mono w-full resize-y rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-[var(--text)] outline-none transition-colors placeholder:text-[var(--text-3)] focus:border-[var(--accent)]"
                   />
                 </div>
                 <button
@@ -128,7 +128,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="site-footer mx-auto flex max-w-[1100px] items-center justify-between border-t border-[var(--border)] px-[1.6rem] py-10 max-[980px]:max-w-[760px] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-[0.8rem] max-[760px]:py-8">
+      <footer className="site-footer mx-auto flex w-full max-w-[1120px] items-center justify-between border-t border-[var(--border)] px-5 py-10 max-[980px]:max-w-[760px] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
         <span className="font-mono text-[0.68rem] tracking-[0.08em] text-[var(--text-3)]">
           © 2025 Victor Ogbonna
         </span>

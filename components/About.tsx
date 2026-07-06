@@ -11,17 +11,17 @@ export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section mx-auto max-w-[1100px] px-[1.6rem] py-16 max-[980px]:max-w-[760px] max-[760px]:px-[0.8rem] max-[760px]:py-16 max-[760px]:pt-12"
+      className="content-section about-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-16 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_62%,transparent)] px-[1.7rem] text-[1.44rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
           01 / About
         </span>
       </div>
 
-      <div className="about-grid grid grid-cols-2 items-start gap-24 max-[980px]:grid-cols-1 max-[980px]:gap-10">
+      <div className="about-grid grid grid-cols-[0.9fr_1.1fr] items-start gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
         <div className="portrait-column flex flex-col gap-8 max-[980px]:mx-auto max-[980px]:w-full max-[980px]:max-w-[560px] max-[760px]:max-w-[260px] max-[380px]:max-w-[240px]">
-          <div className="relative aspect-square w-full overflow-hidden rounded-[28px] bg-[var(--surface)] shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
+          <div className="relative aspect-square w-full overflow-hidden rounded-[20px] bg-[var(--surface)] shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
             <Image
               src="/victor-portrait.jpg"
               alt="Portrait of Victor Ogundimu"
