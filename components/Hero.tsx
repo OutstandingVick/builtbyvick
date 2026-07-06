@@ -42,19 +42,12 @@ export default function Hero() {
       </div>
       <br />
       <div className="hero-actions flex flex-wrap justify-center gap-4">
-  <a
-    href="mailto:victor.ogbonna@hotmail.com"
-    className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
-  >
-    Get in touch
-  </a>
-</div>
-
-      <div className="hero-scroll absolute bottom-8 right-5 flex items-center gap-2 opacity-40 max-[760px]:hidden">
-        <span className="font-mono text-[0.6rem] tracking-[0.15em] text-(--text-3)">
-          SCROLL
-        </span>
-        <span className="text-[0.8rem] text-(--text-3)">↓</span>
+        <a
+          href="mailto:victor.ogbonna@hotmail.com"
+          className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
+         >
+          Get in touch
+        </a>
       </div>
     </section>
   );
