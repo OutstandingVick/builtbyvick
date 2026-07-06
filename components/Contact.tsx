@@ -115,7 +115,7 @@ export default function Contact() {
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="font-mono w-full resize-y rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
                   />
-                </div>
+                </div> 
                 <button
                   onClick={handleSubmit}
                   className="font-mono contact-submit inline-flex min-h-12 w-fit cursor-pointer items-center justify-center rounded-full border-0 bg-(--accent) px-6 py-3.5 text-[0.72rem] font-extrabold tracking-normal text-[#102217] transition-opacity hover:opacity-[0.82] max-[760px]:text-[0.7rem]"
