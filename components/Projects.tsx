@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const featured = [
   {
@@ -7,9 +8,8 @@ const featured = [
     period: "2025",
     desc: "A peer-to-peer football prediction market on Solana using a constant-product AMM. Users stake SOL on match outcomes; prices update automatically via the AMM formula.",
     bullets: [],
-    liveUrl: "https://your-tei-markets-link.vercel.app",
-    github: "https://github.com/outstandingvick",
-    tags: ["DeFi", "Prediction Market", "Solana"],
+    image: "/projects/tei-markets.png",
+    imageAlt: "Tei Markets website preview",
   },
   {
     name: "Edged",
@@ -17,9 +17,8 @@ const featured = [
     period: "2026",
     desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
     bullets: [],
-    liveUrl: "https://your-edged-link.vercel.app",
-    github: "https://github.com/outstandingvick",
-    tags: ["AI Agent", "Circle", "Prediction Markets"],
+    image: "/projects/edged.png",
+    imageAlt: "Edged website preview",
   },
   {
     name: "Immunis Protocol",
@@ -31,27 +30,8 @@ const featured = [
       "Mint a reusable Immunis access pass without revealing age, jurisdiction, or investor status",
       "Access a gated Stellar RWA vault while keeping sensitive identity facts private",
     ],
-    liveUrl: "https://your-immunis-link.vercel.app",
-    github: "https://github.com/outstandingvick",
-    tags: ["ZK", "RWA", "Compliance"],
-  },
-];
-
-const more = [
-  {
-    name: "SolScout",
-    stack: ["ElizaOS v2", "Nosana GPU", "TypeScript"],
-    desc: "DeFi intelligence agent deployed on Nosana GPUs. Surfaces protocol data from across the Solana ecosystem for the Nosana × ElizaOS Builders Challenge.",
-  },
-  {
-    name: "Xara Article — \"Money at the Speed of Conversation\"",
-    stack: ["Technical Writing", "Research"],
-    desc: "Long-form article on Xara (WhatsApp-native conversational banking on Solana). Scored 91/100 in SuperteamNG bounty competition.",
-  },
-  {
-    name: "CLOUD DAO Governance Proposal",
-    stack: ["Governance", "Writing", "Substack"],
-    desc: "Full DAO governance proposal for $CLOUD token, including Substack article and promotional flyer.",
+    image: "/projects/immunis.png",
+    imageAlt: "Immunis Protocol website preview",
   },
 ];
 
@@ -88,89 +68,90 @@ export default function Projects() {
         </span>
       </div>
 
-      <div className="flex flex-col">
+      <div className="featured-projects mx-auto flex w-full max-w-384 flex-col gap-6 px-8 max-[760px]:px-4">
         {featured.map((p) => (
           <article
-            key={p.name}
-            className="project-featured-item mb-4 grid grid-cols-1 items-start gap-10 rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] p-7 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)] max-[760px]:gap-8 max-[760px]:p-6"
+         key={p.name}
+        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_76%,transparent)] p-8 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_90%,transparent)] max-[980px]:grid-cols-1 max-[760px]:gap-8 max-[760px]:p-5"
+      >
+      <div>
+      <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
+      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
+        {p.category}
+      </span>
+      <span className="text-[0.6rem] text-(--border-2)">·</span>
+      <span className="font-mono text-[0.62rem] text-(--text-3)">
+        {p.period}
+      </span>
+    </div>
+
+    <h3 className="font-display project-title mb-4 text-[clamp(2rem,4vw,4rem)] font-black leading-[0.95] tracking-[-0.04em] text-(--text) wrap:anywhere max-[760px]:text-3xl">
+      {p.name}
+    </h3>
+
+    <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
+      {p.desc}
+    </p>
+
+    {p.bullets.length > 0 && (
+      <ul className="mb-8 flex flex-col gap-1.5">
+        {p.bullets.map((bullet) => (
+          <li
+            key={bullet}
+            className="font-mono project-bullet relative pl-4 text-[0.92rem] leading-[1.55] text-(--text-3) max-[760px]:text-[0.86rem]"
           >
-            <div>
-              <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
-                <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
-                  {p.category}
-                </span>
-                <span className="text-[0.6rem] text-(--border-2)">·</span>
-                <span className="font-mono text-[0.62rem] text-(--text-3)">
-                  {p.period}
-                </span>
-              </div>
+            <span className="absolute left-0 text-(--accent)">›</span>
+            {bullet}
+          </li>
+        ))}
+      </ul>
+    )}
 
-              <h3 className="font-display project-title mb-4 text-[clamp(1.4rem,3vw,2rem)] font-bold tracking-[-0.01em] text-(--text) wrap:anywhere max-[760px]:text-base max-[760px]:leading-[1.3]">
-                {p.name}
-              </h3>
+    <div className="project-links flex gap-4 max-[760px]:flex-col">
+      <a
+        href="https://github.com/outstandingvick"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-mono inline-flex min-h-12 w-fit items-center justify-center rounded-full bg-(--accent) px-5 py-2 text-[0.72rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-80 max-[760px]:w-full"
+      >
+        GitHub ↗
+      </a>
+    </div>
+  </div>
 
-              <p className="font-mono project-description mb-6 text-base leading-[1.6] text-(--text-2) max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
-                {p.desc}
-              </p>
+  <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(16,34,23,0.12)]">
+    <div className="flex h-10 items-center gap-2 border-b border-(--border) bg-[color-mix(in_srgb,var(--surface)_86%,white)] px-4">
+      <span className="size-2.5 rounded-full bg-red-400" />
+      <span className="size-2.5 rounded-full bg-yellow-400" />
+      <span className="size-2.5 rounded-full bg-green-400" />
+      <span className="font-mono ml-3 text-[0.62rem] text-(--text-3)">
+        project preview
+      </span>
+    </div>
 
-              {p.bullets.length > 0 && (
-                <ul className="mb-8 flex flex-col gap-1.5">
-                  {p.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="font-mono project-bullet relative pl-4 text-[0.92rem] leading-[1.55] text-(--text-3) max-[760px]:text-[0.86rem]"
-                    >
-                      <span className="absolute left-0 text-(--accent)">›</span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="project-links flex gap-4 max-[760px]:flex-col">
-                <a
-                  href="https://github.com/outstandingvick"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-4 py-2 text-[0.68rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-80 max-[760px]:w-full"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </div>
-          </article>
+    <div className="relative aspect-16/10 w-full overflow-hidden">
+      <Image
+        src={p.image}
+        alt={p.imageAlt}
+        fill
+        sizes="(max-width: 980px) 100vw, 720px"
+        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+      />
+       </div>
+      </div>
+      </article>
         ))}
       </div>
-
-      <div className="mt-16">
-        <h3 className="font-display mb-8 text-base font-semibold tracking-[0.02em] text-(--text-2)">
-          More Projects
-        </h3>
-        <div className="projects-more-grid grid grid-cols-3 gap-4 max-[980px]:grid-cols-1">
-          {more.map((p) => (
-            <article
-              key={p.name}
-              className="rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)]"
-            >
-              <h4 className="font-display more-project-title mb-2 text-[0.92rem] font-semibold text-(--text) max-[760px]:text-base max-[760px]:leading-[1.3]">
-                {p.name}
-              </h4>
-              <p className="font-mono more-project-description mb-4 text-[0.9rem] leading-[1.6] text-(--text-3) max-[760px]:text-[0.84rem]">
-                {p.desc}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {p.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="font-mono rounded-sm border border-(--border) px-2 py-0.5 text-[0.65rem] text-(--text-3)"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+      <br />
+      <br />
+      <div className="mx-auto mt-16 flex w-full max-w-280 justify-center p-32 max-[760px]:px-4">
+         <a href="https://github.com/outstandingvick"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono inline-flex min-h-14 items-center justify-center rounded-full border border-(--border-2) bg-(--accent) px-8 py-4 text-[0.85rem] font-extrabold uppercase tracking-[0.12em] text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-85 max-[760px]:w-full"
+          >
+             More on GitHub ↗
+             </a>
       </div>
 
       <div className="collaboration-section mt-20 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
