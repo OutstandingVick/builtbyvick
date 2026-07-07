@@ -71,10 +71,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="content-section projects-section mx-auto w-full max-w-[1120px] px-5 py-20 max-[980px]:max-w-[760px] max-[760px]:px-4 max-[760px]:py-14"
+      className="content-section projects-section mx-auto w-full max-w-280 px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-[var(--border-2)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-[var(--text)]">
+        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
           03 / Projects
         </span>
       </div>
@@ -83,24 +83,24 @@ export default function Projects() {
         {featured.map((p) => (
           <article
             key={p.name}
-            className="project-featured-item mb-4 grid grid-cols-1 items-start gap-10 rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] p-7 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)] max-[760px]:gap-8 max-[760px]:p-6"
+            className="project-featured-item mb-4 grid grid-cols-1 items-start gap-10 rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] p-7 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)] max-[760px]:gap-8 max-[760px]:p-6"
           >
             <div>
               <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
-                <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-[var(--text-3)]">
+                <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
                   {p.category}
                 </span>
-                <span className="text-[0.6rem] text-[var(--border-2)]">·</span>
-                <span className="font-mono text-[0.62rem] text-[var(--text-3)]">
+                <span className="text-[0.6rem] text-(--border-2)">·</span>
+                <span className="font-mono text-[0.62rem] text-(--text-3)">
                   {p.period}
                 </span>
               </div>
 
-              <h3 className="font-display project-title mb-4 text-[clamp(1.4rem,3vw,2rem)] font-bold tracking-[-0.01em] text-[var(--text)] [overflow-wrap:anywhere] max-[760px]:text-base max-[760px]:leading-[1.3]">
+              <h3 className="font-display project-title mb-4 text-[clamp(1.4rem,3vw,2rem)] font-bold tracking-[-0.01em] text-(--text) wrap:anywhere max-[760px]:text-base max-[760px]:leading-[1.3]">
                 {p.name}
               </h3>
 
-              <p className="font-mono project-description mb-6 text-base leading-[1.6] text-[var(--text-2)] max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
+              <p className="font-mono project-description mb-6 text-base leading-[1.6] text-(--text-2) max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
                 {p.desc}
               </p>
 
@@ -109,9 +109,9 @@ export default function Projects() {
                   {p.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="font-mono project-bullet relative pl-4 text-[0.92rem] leading-[1.55] text-[var(--text-3)] max-[760px]:text-[0.86rem]"
+                      className="font-mono project-bullet relative pl-4 text-[0.92rem] leading-[1.55] text-(--text-3) max-[760px]:text-[0.86rem]"
                     >
-                      <span className="absolute left-0 text-[var(--accent)]">›</span>
+                      <span className="absolute left-0 text-(--accent)">›</span>
                       {bullet}
                     </li>
                   ))}
@@ -123,7 +123,7 @@ export default function Projects() {
                   href="https://github.com/outstandingvick"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--accent)] px-4 py-2 text-[0.68rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-80 max-[760px]:w-full"
+                  className="font-mono inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-4 py-2 text-[0.68rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-80 max-[760px]:w-full"
                 >
                   GitHub ↗
                 </a>
@@ -134,26 +134,26 @@ export default function Projects() {
       </div>
 
       <div className="mt-16">
-        <h3 className="font-display mb-8 text-base font-semibold tracking-[0.02em] text-[var(--text-2)]">
+        <h3 className="font-display mb-8 text-base font-semibold tracking-[0.02em] text-(--text-2)">
           More Projects
         </h3>
         <div className="projects-more-grid grid grid-cols-3 gap-4 max-[980px]:grid-cols-1">
           {more.map((p) => (
             <article
               key={p.name}
-              className="rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)]"
+              className="rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_88%,transparent)]"
             >
-              <h4 className="font-display more-project-title mb-2 text-[0.92rem] font-semibold text-[var(--text)] max-[760px]:text-base max-[760px]:leading-[1.3]">
+              <h4 className="font-display more-project-title mb-2 text-[0.92rem] font-semibold text-(--text) max-[760px]:text-base max-[760px]:leading-[1.3]">
                 {p.name}
               </h4>
-              <p className="font-mono more-project-description mb-4 text-[0.9rem] leading-[1.6] text-[var(--text-3)] max-[760px]:text-[0.84rem]">
+              <p className="font-mono more-project-description mb-4 text-[0.9rem] leading-[1.6] text-(--text-3) max-[760px]:text-[0.84rem]">
                 {p.desc}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {p.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono rounded-sm border border-[var(--border)] px-2 py-0.5 text-[0.65rem] text-[var(--text-3)]"
+                    className="font-mono rounded-sm border border-(--border) px-2 py-0.5 text-[0.65rem] text-(--text-3)"
                   >
                     {tech}
                   </span>
@@ -165,11 +165,11 @@ export default function Projects() {
       </div>
 
       <div className="collaboration-section mt-20 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
-        <div className="collaboration-heading mx-auto mb-16 max-w-[760px] text-center max-[760px]:mb-10">
-          <h3 className="font-display mb-5 text-[clamp(1.7rem,4vw,3rem)] font-extrabold leading-[1.05] tracking-[-0.05em] text-[var(--text)] max-[760px]:text-[1.65rem]">
-            Testimonials from <span className="text-[var(--accent)]">remote</span> collaborators
+        <div className="collaboration-heading mx-auto mb-16 max-w-190 text-center max-[760px]:mb-10">
+          <h3 className="font-display mb-5 text-[clamp(1.7rem,4vw,3rem)] font-extrabold leading-[1.05] tracking-tighter text-(--text) max-[760px]:text-[1.65rem]">
+            Testimonials from <span className="text-(--accent)">remote</span> collaborators
           </h3>
-          <p className="font-mono text-[0.95rem] leading-[1.7] text-[var(--text-3)] max-[760px]:text-[0.86rem] max-[760px]:leading-[1.65]">
+          <p className="font-mono text-[0.95rem] leading-[1.7] text-(--text-3) max-[760px]:text-[0.86rem] max-[760px]:leading-[1.65]">
             Recommendations from people I&apos;ve worked with across global teams,
             product builds, and remote engineering collaborations.
           </p>
@@ -193,21 +193,21 @@ export default function Projects() {
           <div className="testimonials-grid grid grid-cols-3 gap-4 max-[980px]:grid-cols-2 max-[760px]:grid-cols-1">
             {testimonials.map((testimonial) => (
               <article
-                className="collaboration-card testimonial-card relative overflow-hidden rounded-[20px] border border-[var(--border)] bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6"
+                className="collaboration-card testimonial-card relative overflow-hidden rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] p-6"
                 key={testimonial.name}
               >
                 <div className="collaboration-quote-mark">”</div>
-                <div className="collaboration-card-header relative z-[1] mb-5 flex items-center gap-4">
+                <div className="collaboration-card-header relative z-1 mb-5 flex items-center gap-4">
                   <div>
-                    <h4 className="font-display mb-1 text-[1.1rem] font-bold leading-[1.2] text-[var(--text)]">
+                    <h4 className="font-display mb-1 text-[1.1rem] font-bold leading-[1.2] text-(--text)">
                       {testimonial.name}
                     </h4>
-                    <p className="font-mono text-[0.78rem] text-[var(--text-3)]">
+                    <p className="font-mono text-[0.78rem] text-(--text-3)">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
-                <p className="font-mono collaboration-copy relative z-[1] text-[0.95rem] leading-[1.75] text-[var(--text-2)] max-[760px]:text-[0.86rem] max-[760px]:leading-[1.65]">
+                <p className="font-mono collaboration-copy relative z-1 text-[0.95rem] leading-[1.75] text-(--text-2) max-[760px]:text-[0.86rem] max-[760px]:leading-[1.65]">
                   {testimonial.quote}
                 </p>
               </article>

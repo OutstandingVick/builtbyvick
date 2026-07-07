@@ -12,10 +12,8 @@ import {
   SiNodedotjs,
   SiTailwindcss,
   SiHtml5,
-  // SiCss3,
   SiFigma,
   SiVercel,
-  SiNotebooklm,
 } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { IconType } from "react-icons";
@@ -26,18 +24,40 @@ const skillIcons: Record<string, IconType> = {
   Rust: SiRust,
   React: SiReact,
   "Next.js": SiNextdotjs,
+  "Node.js": SiNodedotjs,
+  "Angular": SiAngular,
+  "Vue.js": SiVuedotjs,
+  "Svelte": SiSvelte,
+  "Django": SiDjango,
   "Tailwind CSS": SiTailwindcss,
-  "HTML/CSS": SiHtml5,
+  HTML: SiHtml5,
   "Git / GitHub": FaGithub,
   Figma: SiFigma,
   Vercel: SiVercel,
-  NotebookLM: SiNotebooklm,
+};
+
+const skillColors: Record<string, string> = {
+  JavaScript: "#F7DF1E",
+  TypeScript: "#3178C6",
+  Rust: "#000000",
+  React: "#61DAFB",
+  "Next.js": "#000000",
+  "Node.js": "#339933",
+  Angular: "#DD0031",
+  "Vue.js": "#4FC08D",
+  Svelte: "#FF3E00",
+  Django: "#092E20",
+  "Tailwind CSS": "#06B6D4",
+  HTML: "#E34F26",
+  "Git / GitHub": "#181717",
+  Figma: "#F24E1E",
+  Vercel: "#000000",
 };
 
 import Image from "next/image";
 
 const skills: Record<string, string[]> = {
-  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Tailwind CSS", "HTML/CSS", "Git / GitHub", "Figma", "Vercel"]
+  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Angular", "Vue.js", "Svelte", "Django", "Tailwind CSS", "HTML", "Git / GitHub", "Figma", "Vercel"]
   
 };
 
@@ -57,8 +77,8 @@ export default function About() {
         <div className="portrait-column flex flex-col gap-8 max-[980px]:mx-auto max-[980px]:w-full max-[980px]:max-w-140 max-[760px]:max-w-60 max-[380px]:max-w-60">
           <div className="relative aspect-square w-full overflow-hidden rounded-[20px] bg-(--surface) shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
             <Image
-              src="/victor-portrait.jpg"
-              alt="Portrait of Victor Ogundimu"
+              src="/vic-prof.jpg"
+              alt="Portrait of Victor Ogbonna"
               fill
               sizes="(max-width: 900px) 100vw, 480px"
               className="object-cover object-[50%_36%]"
@@ -95,13 +115,14 @@ export default function About() {
       <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-[760px]:grid-cols-2 max-[520px]:grid-cols-1">
   {Object.entries(skills).map(([category, items]) => (
     <div key={category} className="skill-group">
-      <div className="font-mono mb-4 font-bold text-3xl uppercase tracking-[0.18em] text-(--accent)">
+      <div className="font-mono mb-4 font-bold text-3xl italic uppercase tracking-[0.18em] text-(--accent-warm)">
         {category}
       </div>
       <br/>
-      <div className="skill-list grid grid-cols-3 gap-5 max-[760px]:grid-cols-1">
+      <div className="skill-list grid grid-cols-5 gap-5 max-[760px]:grid-cols-1">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
+          
 
           return (
             <div
@@ -109,7 +130,8 @@ export default function About() {
               className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl border border-(--border) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 py-7 text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)]"
             >
               {Icon ? (
-                <Icon className="text-[3.4rem] text-(--text)" />
+                <Icon className="text-[3.4rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}
+/>
               ) : (
                 <span className="font-mono text-[2.8rem] font-black text-(--text)">
                   {skill.slice(0, 1)}
