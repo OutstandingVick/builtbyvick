@@ -5,6 +5,11 @@ import {
   SiRust,
   SiReact,
   SiNextdotjs,
+  SiAngular,
+  SiVuedotjs,
+  SiSvelte,
+  SiDjango,
+  SiNodedotjs,
   SiTailwindcss,
   SiHtml5,
   // SiCss3,
@@ -32,8 +37,8 @@ const skillIcons: Record<string, IconType> = {
 import Image from "next/image";
 
 const skills: Record<string, string[]> = {
-  "Tech Stack": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Tailwind CSS", "HTML/CSS"],
-  Tools: ["Git / GitHub", "Figma", "Vercel", "NotebookLM"],
+  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Tailwind CSS", "HTML/CSS", "Git / GitHub", "Figma", "Vercel"]
+  
 };
 
 export default function About() {
@@ -86,14 +91,15 @@ export default function About() {
         </div>
       </div>
       <br />
+      <br />
       <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-[760px]:grid-cols-2 max-[520px]:grid-cols-1">
   {Object.entries(skills).map(([category, items]) => (
     <div key={category} className="skill-group">
       <div className="font-mono mb-4 font-bold text-3xl uppercase tracking-[0.18em] text-(--accent)">
         {category}
       </div>
-
-      <div className="skill-list grid grid-cols-2 gap-5 max-[760px]:grid-cols-1">
+      <br/>
+      <div className="skill-list grid grid-cols-3 gap-5 max-[760px]:grid-cols-1">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
 
@@ -119,6 +125,8 @@ export default function About() {
     </div>
   ))}
     </div>
+      <br />
+      <br />
       <br />
       <br />
     </section>
