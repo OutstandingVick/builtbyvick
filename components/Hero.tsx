@@ -4,9 +4,9 @@ export default function Hero() {
       id="home"
       className="hero-section relative mx-auto flex min-h-svh w-full max-w-280 flex-col items-center justify-center px-5 pb-16 text-center max-[760px]:min-h-100svh max-[760px]:px-4 max-[760px]:pb-12 max-[760px]:pt-28"
     >
-      <div className="hero-badge mb-9 inline-flex items-center gap-2 rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_78%,transparent)] px-3.5 py-1.5 shadow-[0_14px_40px_rgba(16,34,23,0.08)] max-[760px]:mb-8">
-        <span className="block size-1.75 animate-[pulse_2s_infinite] rounded-full bg-(--accent) shadow-[0_0_8px_var(--accent)]" />
-        <span className="font-mono text-[0.65rem] tracking-[0.12em] text-(--text-2)">
+      <div className="hero-badge mb-9 inline-flex items-center gap-2 px-3.5 py-1.5 max-[760px]:mb-8">
+        <span className="block size-1.75 animate-[pulse_2s_infinite]" />
+        <span className="transparent font-mono text-xl tracking-[0.12em] text-(--text-2)">
           AVAILABLE FOR ROLES
         </span>
       </div>

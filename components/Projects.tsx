@@ -7,6 +7,9 @@ const featured = [
     period: "2025",
     desc: "A peer-to-peer football prediction market on Solana using a constant-product AMM. Users stake SOL on match outcomes; prices update automatically via the AMM formula.",
     bullets: [],
+    liveUrl: "https://your-tei-markets-link.vercel.app",
+    github: "https://github.com/outstandingvick",
+    tags: ["DeFi", "Prediction Market", "Solana"],
   },
   {
     name: "Edged",
@@ -14,6 +17,9 @@ const featured = [
     period: "2026",
     desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
     bullets: [],
+    liveUrl: "https://your-edged-link.vercel.app",
+    github: "https://github.com/outstandingvick",
+    tags: ["AI Agent", "Circle", "Prediction Markets"],
   },
   {
     name: "Immunis Protocol",
@@ -25,6 +31,9 @@ const featured = [
       "Mint a reusable Immunis access pass without revealing age, jurisdiction, or investor status",
       "Access a gated Stellar RWA vault while keeping sensitive identity facts private",
     ],
+    liveUrl: "https://your-immunis-link.vercel.app",
+    github: "https://github.com/outstandingvick",
+    tags: ["ZK", "RWA", "Compliance"],
   },
 ];
 
@@ -70,9 +79,9 @@ const testimonials = [
 export default function Projects() {
   return (
     <section
-      id="projects"
-      className="content-section projects-section mx-auto w-full max-w-280 px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
-    >
+       id="projects"
+      className="content-section projects-section w-full max-w-none overflow-hidden py-20 max-[760px]:py-14"
+>
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
         <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
           03 / Projects
