@@ -282,6 +282,10 @@ body::before {
   padding-left: 0 !important;
 }
 
+.project-featured-item {
+  padding: 3rem !important;
+}
+
 .experience-controls {
   position: absolute;
   right: 0;
@@ -662,6 +666,10 @@ body::before {
     grid-template-columns: 1fr !important;
   }
 
+  .project-featured-item {
+    padding: 2rem !important;
+  }
+
   .portrait-column {
     max-width: 560px !important;
     width: 100% !important;
@@ -862,6 +870,10 @@ body::before {
   .project-meta {
     flex-wrap: wrap !important;
     row-gap: 0.35rem !important;
+  }
+
+  .project-featured-item {
+    padding: 1.5rem !important;
   }
 
   .testimonials-grid {

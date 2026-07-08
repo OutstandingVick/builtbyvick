@@ -59,22 +59,22 @@ const testimonials = [
 export default function Projects() {
   return (
     <section
-       id="projects"
-      className="content-section projects-section w-full max-w-none overflow-hidden py-20 max-[760px]:py-14"
->
+      id="projects"
+      className="content-section projects-section mx-auto w-full max-w-280 overflow-hidden px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
+    >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
         <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
           03 / Projects
         </span>
       </div>
 
-      <div className="featured-projects mx-auto flex w-full max-w-384 flex-col gap-6 px-8 max-[760px]:px-4">
+      <div className="featured-projects mx-auto flex w-full flex-col gap-6">
         {featured.map((p) => (
           <article
          key={p.name}
-        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_76%,transparent)] p-8 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_90%,transparent)] max-[980px]:grid-cols-1 max-[760px]:gap-8 max-[760px]:p-5"
+        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_76%,transparent)] p-12 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_90%,transparent)] max-[980px]:grid-cols-1 max-[980px]:p-8 max-[760px]:gap-8 max-[760px]:p-6"
       >
-      <div>
+      <div className="min-w-0 pl-2 max-[980px]:pl-0">
       <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
       <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
         {p.category}
