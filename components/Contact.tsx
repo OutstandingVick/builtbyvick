@@ -25,7 +25,7 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-5 pb-20 pt-28 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-14 max-[760px]:pt-20"
+        className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-5 pb-20 pt-60 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-14 max-[760px]:pt-20"
       >
         <div className="contact-wave" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-one" aria-hidden="true" />
@@ -39,7 +39,7 @@ export default function Contact() {
         <div className="contact-inner relative z-1 mx-auto w-full">
           <div className="mb-12 flex items-start justify-between gap-8 max-[760px]:mb-9 max-[760px]:flex-col max-[760px]:items-start">
             <div className="min-w-0 max-w-165">
-              <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] tracking-[-0.055em] text-[#071827]">
+              <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] text-[#63c978] tracking-[-0.055em]">
                 Let&apos;s build something{" "}
                 <span className="font-serif italic font-normal text-[#f05f9f]">
                   cool.
@@ -87,7 +87,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="contact-form-card rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] p-10 shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px] max-[760px]:p-5">
+            <div className="contact-form-card rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px]">
               {sent ? (
                 <div className="px-8 py-12 text-center">
                   <div className="mb-4 text-3xl">✦</div>
@@ -99,10 +99,10 @@ export default function Contact() {
                   </p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-5">
+                <div className="contact-form-body flex flex-col">
                   {fields.map((field) => (
-                    <div key={field.key}>
-                      <label className="font-mono mb-2 block text-[0.7rem] font-black uppercase tracking-[0.15em] text-[#315069]">
+                    <div key={field.key} className="contact-form-group">
+                      <label className="contact-label font-mono block text-[0.7rem] font-black uppercase tracking-[0.15em] text-[#315069]">
                         {field.label}
                       </label>
                       <input
@@ -114,8 +114,8 @@ export default function Contact() {
                       />
                     </div>
                   ))}
-                  <div>
-                    <label className="font-mono mb-2 block text-[0.7rem] font-black uppercase tracking-[0.15em] text-[#315069]">
+                  <div className="contact-form-group">
+                    <label className="contact-label font-mono block text-[0.7rem] font-black uppercase tracking-[0.15em] text-[#315069]">
                       Message
                     </label>
                     <textarea
@@ -138,11 +138,12 @@ export default function Contact() {
           </div>
         </div>
         <br />
+        <br />
         <footer className="site-footer mx-auto flex w-full max-w-280 items-center justify-between px-5 py-10 max-[980px]:max-w-190 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
-        <span className="font-mono text-[0.68rem] tracking-[0.08em] text-(--text-3)">
+        <span className="font-mono text-base tracking-[0.08em] text-(--text-4)">
           © 2025 Victor Ogbonna
         </span>
-        <span className="font-mono text-[0.65rem] text-(--text-3)">
+        <span className="font-mono text-base text-(--text-4)">
           Built with Next.js & Tailwind CSS
         </span>
       </footer>

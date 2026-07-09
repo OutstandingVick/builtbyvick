@@ -316,6 +316,31 @@ body::before {
   min-height: 10.25rem;
 }
 
+.contact-form-card {
+  overflow: visible;
+  padding: 2.5rem !important;
+}
+
+.contact-form-body {
+  gap: 1.55rem;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contact-label {
+  padding-left: 0.2rem;
+  line-height: 1;
+}
+
+.contact-submit {
+  margin-top: 0.25rem;
+  align-self: flex-start;
+}
+
 .contact-section {
   background-color: var(--tertiary);
   background:
@@ -323,8 +348,8 @@ body::before {
     radial-gradient(circle at 66% 62%, rgba(255, 255, 255, 0.22) 0 1rem, transparent 1.05rem),
     radial-gradient(circle at 84% 38%, rgba(255, 255, 255, 0.18) 0 0.65rem, transparent 0.7rem),
     var(--tertiary);
-  border-top: 2px solid #101820;
   color: #071827;
+  border-top: 0 !important;
   min-height: 720px;
 }
 

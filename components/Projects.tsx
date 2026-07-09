@@ -203,6 +203,8 @@ export default function Projects() {
       </div>
       <br />
       <br />
+      <br />
+      <br />
     </section>
   );
 }

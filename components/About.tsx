@@ -112,14 +112,15 @@ export default function About() {
       </div>
       <br />
       <br />
-      <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 max-[760px]:grid-cols-2 max-[520px]:grid-cols-1">
+      <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] 
+                      gap-6 max-[760px]:grid-cols-2 max-[520px]:grid-cols-1">
   {Object.entries(skills).map(([category, items]) => (
     <div key={category} className="skill-group">
       <div className="font-mono mb-4 font-bold text-3xl italic uppercase tracking-[0.18em] text-(--accent-warm)">
         {category}
       </div>
       <br/>
-      <div className="skill-list grid grid-cols-5 gap-5 max-[760px]:grid-cols-1">
+      <div className="skill-list grid grid-cols-3 md:grid-cols-5 gap-5">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
           
@@ -127,7 +128,10 @@ export default function About() {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl border border-(--border) bg-(--project-card-bg) px-5 py-7 text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)]"
+              className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl 
+                         border border-(--border) bg-(--project-card-bg) px-5 py-7 
+                         text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] 
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)] "
             >
               {Icon ? (
                 <Icon className="text-[3.4rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}
