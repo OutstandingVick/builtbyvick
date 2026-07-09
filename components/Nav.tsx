@@ -106,7 +106,9 @@ export default function Nav() {
         scrolled ? "bg-(--nav-bg) backdrop-blur-xl" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="mx-auto flex min-h-15 w-full max-w-280 items-center justify-between gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 shadow-[0_18px_55px_rgba(16,34,23,0.12)] backdrop-blur-xl max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3">
+      <nav className="mx-auto flex min-h-15 w-full max-w-280 items-center justify-between 
+                      gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 
+                       backdrop-blur-xl max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3">
         {/* Logo */}
         <a
           href="#home"

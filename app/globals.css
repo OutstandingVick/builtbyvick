@@ -884,6 +884,10 @@ html[data-theme="dark"] .contact-section {
     padding: 2rem !important;
   }
 
+  .contact-form-card {
+    padding: 2rem !important;
+  }
+
   .portrait-column {
     max-width: 560px !important;
     width: 100% !important;
@@ -1107,6 +1111,14 @@ html[data-theme="dark"] .contact-section {
 
   .contact-section {
     padding-top: 5.5rem;
+  }
+
+  .contact-form-card {
+    padding: 1.4rem !important;
+  }
+
+  .contact-form-body {
+    gap: 1.25rem;
   }
 
   .contact-wave {
