@@ -96,7 +96,7 @@ export default function Experience() {
           </div>
         </div>
 
-        <article className="experience-card">
+        <article className="experience-card rounded-xl">
           <div className="experience-card-header">
             <div className="experience-logo font-display">{item.initials}</div>
             <div>

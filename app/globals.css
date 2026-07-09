@@ -227,6 +227,7 @@ body::before {
 
 .experience-card {
   max-width: 760px;
+  background-color: var(--project-card-bg);
 }
 
 .experience-card-header {
