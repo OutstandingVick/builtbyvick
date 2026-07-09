@@ -127,7 +127,7 @@ export default function About() {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl border border-(--border) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 py-7 text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)]"
+              className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl border border-(--border) bg-(--project-card-bg) px-5 py-7 text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)]"
             >
               {Icon ? (
                 <Icon className="text-[3.4rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}

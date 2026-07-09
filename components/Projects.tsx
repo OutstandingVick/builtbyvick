@@ -7,8 +7,8 @@ const featured = [
     category: "DeFi / Prediction Market",
     period: "2025",
     desc: "A peer-to-peer football prediction market on Solana using a constant-product AMM. Users stake SOL on match outcomes; prices update automatically via the AMM formula.",
-    bullets: [],
-    image: "/projects/tei-markets.png",
+    site: "https://tei-markets.vercel.app/",
+    image: "/tei.png",
     imageAlt: "Tei Markets website preview",
   },
   {
@@ -16,8 +16,8 @@ const featured = [
     category: "Circle Agent Stack × Arc Testnet",
     period: "2026",
     desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
-    bullets: [],
-    image: "/projects/edged.png",
+    site: "https://edged.vercel.app/",
+    image: "/edged.png",
     imageAlt: "Edged website preview",
   },
   {
@@ -25,12 +25,8 @@ const featured = [
     category: "RWA Compliance / ZK",
     period: "2025",
     desc: "Privacy-preserving compliance infrastructure for tokenized real-world assets on Stellar. Immunis lets a wallet prove it satisfies a public access policy with zero-knowledge proofs, without exposing raw KYC data on-chain.",
-    bullets: [
-      "Generate a ZK eligibility proof against public RWA access policies",
-      "Mint a reusable Immunis access pass without revealing age, jurisdiction, or investor status",
-      "Access a gated Stellar RWA vault while keeping sensitive identity facts private",
-    ],
-    image: "/projects/immunis.png",
+    site: "https://immunis-protocol.vercel.app/",
+    image: "/immunis.png",
     imageAlt: "Immunis Protocol website preview",
   },
 ];
@@ -63,8 +59,8 @@ export default function Projects() {
       className="content-section projects-section mx-auto w-full max-w-280 overflow-hidden px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
-          03 / Projects
+        <span className="font-mono inline-flex min-h-11 items-center px-5 text-3xl font-extrabold tracking-[0.02em] text-(--text)">
+          Projects
         </span>
       </div>
 
@@ -72,51 +68,35 @@ export default function Projects() {
         {featured.map((p) => (
           <article
          key={p.name}
-        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_76%,transparent)] p-12 transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_90%,transparent)] max-[980px]:grid-cols-1 max-[980px]:p-8 max-[760px]:gap-8 max-[760px]:p-6"
-      >
+        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border 
+        border-(--border) p-12 transition-colors 
+        hover:bg-(--tertiary) hover:text-(bg)
+        max-[980px]:grid-cols-1 max-[980px]:p-8 max-[760px]:gap-8 max-[760px]:p-6 bg-(--project-card-bg)">
       <div className="min-w-0 pl-2 max-[980px]:pl-0">
       <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
-      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3)">
+      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3) font-bold">
         {p.category}
       </span>
+      <br />
       <span className="text-[0.6rem] text-(--border-2)">·</span>
-      <span className="font-mono text-[0.62rem] text-(--text-3)">
+      <br />
+      <span className="font-mono text-[0.62rem] text-(--text-3) font-bold">
         {p.period}
       </span>
+      <br />
     </div>
-
+    <br />
     <h3 className="font-display project-title mb-4 text-[clamp(2rem,4vw,4rem)] font-black leading-[0.95] tracking-[-0.04em] text-(--text) wrap:anywhere max-[760px]:text-3xl">
       {p.name}
     </h3>
-
+    <br />
     <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
       {p.desc}
     </p>
-
-    {p.bullets.length > 0 && (
-      <ul className="mb-8 flex flex-col gap-1.5">
-        {p.bullets.map((bullet) => (
-          <li
-            key={bullet}
-            className="font-mono project-bullet relative pl-4 text-[0.92rem] leading-[1.55] text-(--text-3) max-[760px]:text-[0.86rem]"
-          >
-            <span className="absolute left-0 text-(--accent)">›</span>
-            {bullet}
-          </li>
-        ))}
-      </ul>
-    )}
-
-    <div className="project-links flex gap-4 max-[760px]:flex-col">
-      <a
-        href="https://github.com/outstandingvick"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-mono inline-flex min-h-12 w-fit items-center justify-center rounded-full bg-(--accent) px-5 py-2 text-[0.72rem] font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_12px_30px_color-mix(in_srgb,var(--accent)_20%,transparent)] transition-opacity hover:opacity-80 max-[760px]:w-full"
-      >
-        GitHub ↗
-      </a>
-    </div>
+    <br/>
+    <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
+      {p.site}
+    </p>
   </div>
 
   <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(16,34,23,0.12)]">
@@ -130,13 +110,21 @@ export default function Projects() {
     </div>
 
     <div className="relative aspect-16/10 w-full overflow-hidden">
-      <Image
-        src={p.image}
-        alt={p.imageAlt}
-        fill
-        sizes="(max-width: 980px) 100vw, 720px"
-        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-      />
+      {p.image ? (
+        <Image
+          src={p.image}
+          alt={p.imageAlt}
+          fill
+          sizes="(max-width: 980px) 100vw, 720px"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-[color-mix(in_srgb,var(--surface)_78%,white)] px-8 text-center">
+          <span className="font-mono text-[0.78rem] uppercase tracking-[0.14em] text-(--text-3)">
+            Preview image coming soon
+          </span>
+        </div>
+      )}
        </div>
       </div>
       </article>
@@ -144,11 +132,11 @@ export default function Projects() {
       </div>
       <br />
       <br />
-      <div className="mx-auto mt-16 flex w-full max-w-280 justify-center p-32 max-[760px]:px-4">
+      <div className="mx-auto mt-16 flex w-full max-w-280 justify-center p-32 max-[760px]:px-4 hero-actions flex-wrap gap-4">
          <a href="https://github.com/outstandingvick"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono inline-flex min-h-14 items-center justify-center rounded-full border border-(--border-2) bg-(--accent) px-8 py-4 text-[0.85rem] font-extrabold uppercase tracking-[0.12em] text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-85 max-[760px]:w-full"
+            className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
           >
              More on GitHub ↗
              </a>

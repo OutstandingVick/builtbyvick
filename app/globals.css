@@ -16,6 +16,7 @@
   --accent: #43e660;
   --accent-2: #d2f34c;
   --tertiary: #ff8a3d;
+  --project-card-bg: #046241;
   --tertiary-soft: rgba(255, 138, 61, 0.16);
   --accent-warm: #43e660;
   --nav-bg: rgba(16, 34, 23, 0.82);
@@ -41,8 +42,9 @@ html[data-theme="light"] {
   --text-3: #6d826f;
   --accent: #43e660;
   --accent-2: #d2f34c;
-  --tertiary: #ff7a1a;
+  --tertiary: #ff8a3d;
   --tertiary-soft: rgba(255, 122, 26, 0.14);
+  --project-card-bg: #ffffff;
   --accent-warm: #254f1a;
   --nav-bg: rgba(243, 241, 232, 0.82);
   --nav-pill-bg: rgba(255, 255, 255, 0.86);
