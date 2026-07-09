@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
+import { FaGithub, FaLinkedinIn, FaRegFileAlt } from "react-icons/fa";
 
 const socials = [
-  { label: "GitHub", short: "GH", handle: "OutstandingvVick", url: "https://github.com/outstandingvick" },
-  { label: "LinkedIn", short: "IN", handle: "Victor Ogbonna", url: "https://www.linkedin.com/in/victorpogbonna/" },
-  { label: "Resume", short: "CV", handle: "Check out", url: "https://docs.google.com/document/d/1jHvJmdzc50TVhIdudjX_mA7PWtT6FKVpe-cUPNCTkQg/edit" },
+  { label: "GitHub", icon: FaGithub, handle: "OutstandingvVick", url: "https://github.com/outstandingvick" },
+  { label: "LinkedIn", icon: FaLinkedinIn, handle: "Victor Ogbonna", url: "https://www.linkedin.com/in/victorpogbonna/" },
+  { label: "Resume", icon: FaRegFileAlt, handle: "Check out", url: "https://docs.google.com/document/d/1jHvJmdzc50TVhIdudjX_mA7PWtT6FKVpe-cUPNCTkQg/edit" },
 ];
 
 export default function Contact() {
@@ -48,7 +49,9 @@ export default function Contact() {
             </div>
 
             <div className="contact-social-list flex shrink-0 items-center gap-4">
-              {socials.map((s) => (
+              {socials.map((s) => {
+                const Icon = s.icon;
+                return (
                 <a
                   key={s.label}
                   href={s.url}
@@ -56,14 +59,18 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   aria-label={s.label}
                   title={s.label}
-                  className="social-link grid size-17 place-items-center rounded-full border-2 border-[#101820] bg-[#fff7fb] font-mono text-[0.88rem] font-black text-[#15324a] no-underline shadow-[0_7px_0_#101820] transition-transform hover:-translate-y-1 max-[760px]:size-13.5 max-[760px]:text-[0.72rem]"
+                  className="social-link grid size-17 place-items-center rounded-full border-2 border-[#101820] bg-[#fff7fb] 
+                  font-mono text-[0.88rem] font-black text-[#15324a] 
+                  no-underline shadow-[0_7px_0_#101820] transition-transform 
+                  hover:-translate-y-1 max-[760px]:size-13.5 max-[760px]:text-[0.72rem]"
                 >
-                  {s.short}
+                  <Icon aria-hidden="true" className="size-7 max-[760px]:size-5" />
                 </a>
-              ))}
+                );
+              })}
             </div>
           </div>
-
+          <br/>
           <div className="contact-grid grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-14 max-[980px]:grid-cols-1 max-[980px]:gap-10">
             <div className="min-w-0">
               <p className="font-mono contact-copy mb-10 max-w-140 text-[1.15rem] font-semibold leading-[1.6] text-[#071827] max-[760px]:text-[1rem]">

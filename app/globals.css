@@ -65,6 +65,7 @@ html[data-theme="light"] {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 body {
@@ -119,6 +120,20 @@ body::before {
 .site-header nav {
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero-section,
+.content-section,
+.contact-section {
+  scroll-margin-top: 6.5rem;
+}
+
+#home,
+#about,
+#experience,
+#projects,
+#contact {
+  scroll-margin-top: 6.5rem !important;
 }
 
 .hero-section::before {

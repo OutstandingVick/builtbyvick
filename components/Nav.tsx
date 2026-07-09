@@ -102,13 +102,14 @@ export default function Nav() {
 
   return (
     <header
-      className={`site-header fixed inset-x-0 top-4 z-100 px-5 transition-[background-color,backdrop-filter] duration-300 max-[760px]:top-3 max-[760px]:px-3 ${
-        scrolled ? "bg-(--nav-bg) backdrop-blur-xl" : "bg-transparent backdrop-blur-0"
+      className={`site-header fixed inset-x-0 top-4 z-100 px-5 transition-[background-color,backdrop-filter] 
+                  duration-300 max-[760px]:top-3 max-[760px]:px-3 ${
+                  scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
       <nav className="mx-auto flex min-h-15 w-full max-w-280 items-center justify-between 
                       gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 
-                       backdrop-blur-xl max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3">
+                      shadow-[0_6px_18px_rgba(16,34,23,0.06)] backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3">
         {/* Logo */}
         <a
           href="#home"
@@ -192,7 +193,7 @@ export default function Nav() {
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="inline-flex size-9 shrink-0 cursor-pointer pl-20 items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_55%,transparent)] text-(--nav-icon) transition-colors hover:border-(--nav-link-muted) hover:text-(--nav-link-active) max-[760px]:size-8"
+              className="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_55%,transparent)] text-(--nav-icon) transition-colors hover:border-(--nav-link-muted) hover:text-(--nav-link-active) max-[760px]:size-8"
             >
               {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
             </button>

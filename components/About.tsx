@@ -10,8 +10,11 @@ import {
   SiSvelte,
   SiDjango,
   SiNodedotjs,
-  SiTailwindcss,
+  SiExpress,
+  SiBootstrap,
   SiHtml5,
+  SiTailwindcss,
+  SiCss,
   SiFigma,
   SiVercel,
 } from "react-icons/si";
@@ -25,12 +28,15 @@ const skillIcons: Record<string, IconType> = {
   React: SiReact,
   "Next.js": SiNextdotjs,
   "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
   "Angular": SiAngular,
   "Vue.js": SiVuedotjs,
   "Svelte": SiSvelte,
   "Django": SiDjango,
   "Tailwind CSS": SiTailwindcss,
   HTML: SiHtml5,
+  Bootstrap: SiBootstrap,
+  CSS: SiCss,
   "Git / GitHub": FaGithub,
   Figma: SiFigma,
   Vercel: SiVercel,
@@ -57,7 +63,7 @@ const skillColors: Record<string, string> = {
 import Image from "next/image";
 
 const skills: Record<string, string[]> = {
-  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Angular", "Vue.js", "Svelte", "Django", "Tailwind CSS", "HTML", "Git / GitHub", "Figma", "Vercel"]
+  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Expres.js", "Angular", "Vue.js", "Svelte", "Django", "Bootstrap", "Tailwind CSS", "CSS", "HTML", "Git / GitHub", "Figma", "Vercel"]
   
 };
 
