@@ -317,6 +317,7 @@ body::before {
 }
 
 .contact-section {
+  background-color: var(--tertiary);
   background:
     radial-gradient(circle at 24% 30%, rgba(255, 255, 255, 0.22) 0 0.75rem, transparent 0.8rem),
     radial-gradient(circle at 66% 62%, rgba(255, 255, 255, 0.22) 0 1rem, transparent 1.05rem),
@@ -334,6 +335,7 @@ body::before {
 }
 
 html[data-theme="dark"] .contact-section {
+  background-color: var(--tertiary);
   background:
     radial-gradient(circle at 24% 30%, rgba(255, 255, 255, 0.16) 0 0.75rem, transparent 0.8rem),
     radial-gradient(circle at 66% 62%, rgba(255, 255, 255, 0.14) 0 1rem, transparent 1.05rem),

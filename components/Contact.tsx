@@ -39,9 +39,6 @@ export default function Contact() {
         <div className="contact-inner relative z-1 mx-auto w-full">
           <div className="mb-12 flex items-start justify-between gap-8 max-[760px]:mb-9 max-[760px]:flex-col max-[760px]:items-start">
             <div className="min-w-0 max-w-165">
-              <p className="font-mono mb-4 text-[0.85rem] font-bold uppercase tracking-[0.18em] text-[#0d314d]">
-                Lagos · Remote
-              </p>
               <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] tracking-[-0.055em] text-[#071827]">
                 Let&apos;s build something{" "}
                 <span className="font-serif italic font-normal text-[#f05f9f]">
@@ -90,7 +87,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="contact-form-card rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] p-7 shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px] max-[760px]:p-5">
+            <div className="contact-form-card rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] p-10 shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px] max-[760px]:p-5">
               {sent ? (
                 <div className="px-8 py-12 text-center">
                   <div className="mb-4 text-3xl">✦</div>
@@ -141,7 +138,7 @@ export default function Contact() {
           </div>
         </div>
         <br />
-        <footer className="site-footer mx-auto flex w-full max-w-280 items-center justify-between border-t border-(--border) px-5 py-10 max-[980px]:max-w-190 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
+        <footer className="site-footer mx-auto flex w-full max-w-280 items-center justify-between px-5 py-10 max-[980px]:max-w-190 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
         <span className="font-mono text-[0.68rem] tracking-[0.08em] text-(--text-3)">
           © 2025 Victor Ogbonna
         </span>
