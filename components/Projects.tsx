@@ -70,17 +70,17 @@ export default function Projects() {
          key={p.name}
         className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border 
         border-(--border) p-12 transition-colors 
-        hover:bg-(--tertiary) hover:text-(bg)
+        hover:bg-(--tertiary)
         max-[980px]:grid-cols-1 max-[980px]:p-8 max-[760px]:gap-8 max-[760px]:p-6 bg-(--project-card-bg)">
       <div className="min-w-0 pl-2 max-[980px]:pl-0">
       <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
-      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-(--text-3) font-bold">
+      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] hover:text-(--text-4) text-(--text-3) font-bold">
         {p.category}
       </span>
       <br />
       <span className="text-[0.6rem] text-(--border-2)">·</span>
       <br />
-      <span className="font-mono text-[0.62rem] text-(--text-3) font-bold">
+      <span className="font-mono text-[0.62rem] hover:text-(--text-4) text-(--text-3) font-bold">
         {p.period}
       </span>
       <br />
@@ -94,9 +94,15 @@ export default function Projects() {
       {p.desc}
     </p>
     <br/>
-    <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
-      {p.site}
-    </p>
+    <div
+       className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
+            font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
+            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full">
+      <a href={p.site}
+      className="underline"
+      >
+        View Project</a>
+    </div>
   </div>
 
   <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(16,34,23,0.12)]">
@@ -104,7 +110,7 @@ export default function Projects() {
       <span className="size-2.5 rounded-full bg-red-400" />
       <span className="size-2.5 rounded-full bg-yellow-400" />
       <span className="size-2.5 rounded-full bg-green-400" />
-      <span className="font-mono ml-3 text-[0.62rem] text-(--text-3)">
+      <span className="font-mono ml-3 text-[0.62rem] hover:text-(--text-4)  text-(--text-3)">
         project preview
       </span>
     </div>
@@ -120,7 +126,7 @@ export default function Projects() {
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center bg-[color-mix(in_srgb,var(--surface)_78%,white)] px-8 text-center">
-          <span className="font-mono text-[0.78rem] uppercase tracking-[0.14em] text-(--text-3)">
+          <span className="font-mono text-[0.78rem] uppercase tracking-[0.14em] hover:text-(--text-4) text-(--text-3)">
             Preview image coming soon
           </span>
         </div>
@@ -136,7 +142,9 @@ export default function Projects() {
          <a href="https://github.com/outstandingvick"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
+            className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
+            font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
+            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
           >
              More on GitHub ↗
              </a>
