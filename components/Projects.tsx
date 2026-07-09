@@ -201,6 +201,8 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
     </section>
   );
 }

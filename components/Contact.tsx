@@ -28,11 +28,11 @@ export default function Contact() {
         className="content-section contact-section mx-auto w-full max-w-280 px-5 py-20 max-[980px]:max-w-760px max-[760px]:px-4 max-[760px]:py-14"
       >
         <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-          <span className="font-mono inline-flex min-h-11 items-center rounded-full border border-(--border-2) bg-[color-mix(in_srgb,var(--surface)_72%,transparent)] px-5 text-[0.95rem] font-extrabold tracking-[0.02em] text-(--text)">
-            04 / Contact
+          <span className="font-mono inline-flex min-h-11 items-center px-5 text-3xl font-extrabold tracking-[0.02em] text-(--text)">
+            Contact
           </span>
         </div>
-
+        <hr className="border-(--border) bg-(--border)" />
         <div className="contact-grid grid grid-cols-2 gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
           <div>
             <h2 className="font-display section-heading mb-6 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-(--text) max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
@@ -52,19 +52,19 @@ export default function Contact() {
 
             <a
               href="mailto:victor.ogbonna@hotmail.com"
-              className="font-mono contact-email mb-8 block rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-[v(--text)] no-underline transition-colors hover:border-(--accent) max-[520px]:wrap:anywhere max-[760px]:text-[0.7rem]"
+              className="font-mono contact-email mb-8 block rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-5 py-4 text-[0.75rem] tracking-[0.08em] text-(--text) no-underline transition-colors hover:border-(--accent) max-[520px]:wrap:anywhere max-[760px]:text-[0.7rem]"
             >
               victor.ogbonna@hotmail.com ↗
             </a>
 
-            <div className="flex flex-col">
+            <div className="contact-social-list flex flex-col gap-3">
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link group mb-3 flex items-center justify-between gap-4 rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_60%,transparent)] px-4 py-4 no-underline transition-colors max-[520px]:flex-col max-[520px]:items-start max-[520px]:gap-1.5"
+                  className="social-link group flex items-center justify-between gap-4 rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_60%,transparent)] px-4 py-4 no-underline transition-colors max-[520px]:flex-col max-[520px]:items-start max-[520px]:gap-1.5"
                 >
                   <span className="social-label font-mono text-[0.75rem] text-(--text-2) transition-colors group-hover:text-(--accent) max-[760px]:text-[0.7rem]">
                     {s.label}
@@ -100,7 +100,7 @@ export default function Contact() {
                       placeholder={field.placeholder}
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      className="font-mono w-full rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
+                      className="contact-field font-mono w-full rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
                     />
                   </div>
                 ))}
@@ -113,7 +113,7 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="font-mono w-full resize-y rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
+                    className="contact-field contact-message font-mono w-full resize-y rounded-[20px] border border-(--border) bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] px-3.5 py-3 text-[0.82rem] text-(--text) outline-none transition-colors placeholder:text-(--text-3) focus:border-(--accent)"
                   />
                 </div> 
                 <button

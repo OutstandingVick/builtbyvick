@@ -290,6 +290,32 @@ body::before {
   padding: 3rem !important;
 }
 
+.contact-email,
+.social-link,
+.contact-field {
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+.contact-email {
+  min-height: 3.25rem;
+  padding: 0.95rem 1.25rem !important;
+}
+
+.social-link {
+  min-height: 3.5rem;
+  padding: 0.95rem 1rem !important;
+}
+
+.contact-field {
+  min-height: 3.25rem;
+  padding: 0.9rem 1rem !important;
+}
+
+.contact-message {
+  min-height: 10.25rem;
+}
+
 .experience-controls {
   position: absolute;
   right: 0;
