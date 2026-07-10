@@ -28,6 +28,7 @@ export default function Contact() {
         id="contact"
         className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-5 pb-20 pt-60 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-14 max-[760px]:pt-20"
       >
+        <br />
         <div className="contact-wave" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-one" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-two" aria-hidden="true" />
@@ -81,7 +82,10 @@ export default function Contact() {
 
               <a
                 href="mailto:victor.ogbonna@hotmail.com"
-                className="contact-email font-mono inline-flex min-h-14 items-center justify-center rounded-full border-2 border-[#101820] bg-[#f6c84f] px-6 py-4 text-[0.82rem] font-black tracking-[0.02em] text-[#071827] no-underline shadow-[0_7px_0_#101820] transition-transform hover:-translate-y-1 max-[520px]:wrap:anywhere max-[760px]:w-full max-[760px]:text-[0.72rem]"
+                className="contact-email font-mono inline-flex min-h-14 items-center justify-center 
+                rounded-full border-2 border-[#101820] bg-[#63c978] px-6 py-4 text-[0.82rem] 
+                font-black tracking-[0.02em] text-[#071827] no-underline shadow-[0_7px_0_#101820] 
+                transition-transform hover:-translate-y-1 max-[520px]:wrap:anywhere max-[760px]:w-full max-[760px]:text-[0.72rem]"
               >
                 victor.ogbonna@hotmail.com ↗
               </a>
@@ -117,7 +121,8 @@ export default function Contact() {
                         placeholder={field.placeholder}
                         value={form[field.key as keyof typeof form]}
                         onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                        className="contact-field font-mono w-full rounded-full border-2 border-[#101820] bg-white px-5 py-4 text-[0.9rem] font-bold text-[#071827] outline-none transition-colors placeholder:text-[#718da3] focus:border-[#f05f9f]"
+                        className="contact-field font-mono w-full rounded-full border-2 border-[#101820] bg-white px-5 py-4 text-[0.9rem] 
+                        font-bold text-[#071827] outline-none transition-colors placeholder:text-[#718da3] focus:border-[#f05f9f]"
                       />
                     </div>
                   ))}
@@ -130,7 +135,8 @@ export default function Contact() {
                       rows={5}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="contact-field contact-message font-mono w-full resize-y rounded-3xl border-2 border-[#101820] bg-white px-5 py-4 text-[0.9rem] font-bold text-[#071827] outline-none transition-colors placeholder:text-[#718da3] focus:border-[#f05f9f]"
+                      className="contact-field contact-message font-mono w-full resize-y rounded-3xl border-2 border-[#101820]
+                       bg-white px-5 py-4 text-[0.9rem] font-bold text-[#071827] outline-none transition-colors placeholder:text-[#718da3] focus:border-[#f05f9f]"
                     />
                   </div>
                   <button
@@ -151,9 +157,11 @@ export default function Contact() {
           © 2025 Victor Ogbonna
         </span>
         <span className="font-mono text-base text-(--text-4)">
-          Built with Next.js & Tailwind CSS
+          Built with Typescript, Next.js & Tailwind CSS
         </span>
       </footer>
+      <br />
+      <br />
       </section>
     </>
   );

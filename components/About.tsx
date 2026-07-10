@@ -126,7 +126,7 @@ export default function About() {
         {category}
       </div>
       <br/>
-      <div className="skill-list grid grid-cols-3 md:grid-cols-5 gap-5">
+      <div className="skill-list grid grid-cols-3 md:grid-cols-6 gap-5">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
           
