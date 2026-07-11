@@ -193,7 +193,7 @@ export default function Nav() {
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="theme-toggle inline-flex size-[2.125rem] shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_32%,transparent)] text-(--nav-icon) transition-[background-color,border-color,color,transform] hover:-translate-y-px hover:border-(--nav-link-muted) hover:bg-[color-mix(in_srgb,var(--surface)_48%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-[1.875rem]"
+              className="theme-toggle inline-flex size-8.5 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_32%,transparent)] text-(--nav-icon) transition-[background-color,border-color,color,transform] hover:-translate-y-px hover:border-(--nav-link-muted) hover:bg-[color-mix(in_srgb,var(--surface)_48%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-7.5"
             >
               {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
