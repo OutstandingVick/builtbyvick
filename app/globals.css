@@ -122,6 +122,27 @@ body::before {
   margin-right: auto;
 }
 
+.site-nav-shell {
+  padding-right: 1.75rem !important;
+}
+
+.site-nav-actions {
+  gap: 0.75rem !important;
+  padding-right: 0.15rem;
+}
+
+.site-nav-divider {
+  height: 1.2rem !important;
+  opacity: 0.48 !important;
+}
+
+.theme-toggle {
+  width: 2rem !important;
+  height: 2rem !important;
+  background: color-mix(in srgb, var(--surface) 20%, transparent) !important;
+  box-shadow: none !important;
+}
+
 .hero-section,
 .content-section,
 .contact-section {
@@ -933,6 +954,20 @@ html[data-theme="light"] .contact-wave::before {
 }
 
 @media (max-width: 760px) {
+  .site-nav-shell {
+    padding-right: 1.1rem !important;
+  }
+
+  .site-nav-actions {
+    gap: 0.45rem !important;
+    padding-right: 0;
+  }
+
+  .theme-toggle {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+
   .content-section {
     width: min(calc(100% - 2rem), 100%) !important;
     padding-left: 0 !important;

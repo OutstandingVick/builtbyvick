@@ -107,9 +107,9 @@ export default function Nav() {
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="mx-auto flex min-h-15 w-full max-w-280 items-center justify-between 
-                      gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 
-                      shadow-[0_6px_18px_rgba(16,34,23,0.06)] backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3">
+      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-280 items-center justify-between 
+                      gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 
+                      shadow-[0_6px_18px_rgba(16,34,23,0.06)] backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-4">
         {/* Logo */}
         <a
           href="#home"
@@ -163,10 +163,10 @@ export default function Nav() {
 
           <div
             aria-hidden="true"
-            className="h-7 w-px shrink-0 bg-(--nav-pill-border) max-[760px]:h-6"
+            className="site-nav-divider h-5 w-px shrink-0 bg-(--nav-pill-border) opacity-70 max-[760px]:h-4"
           />
 
-          <div className="site-nav-actions flex shrink-0 items-center justify-end gap-2 max-[760px]:gap-1">
+          <div className="site-nav-actions flex shrink-0 items-center justify-end gap-2.5 max-[760px]:gap-1.5">
             <a
               href="https://github.com/outstandingvick"
               target="_blank"
@@ -193,9 +193,9 @@ export default function Nav() {
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}
               title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_55%,transparent)] text-(--nav-icon) transition-colors hover:border-(--nav-link-muted) hover:text-(--nav-link-active) max-[760px]:size-8"
+              className="theme-toggle inline-flex size-[2.125rem] shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_32%,transparent)] text-(--nav-icon) transition-[background-color,border-color,color,transform] hover:-translate-y-px hover:border-(--nav-link-muted) hover:bg-[color-mix(in_srgb,var(--surface)_48%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-[1.875rem]"
             >
-              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
             </button>
           </div>
         </div>
