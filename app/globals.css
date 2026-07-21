@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: dark;
-  --bg: #102217;
+  --bg: #0D2C54;
   --bg-2: #183623;
   --bg-3: #21462d;
   --surface: #f3f1e8;
@@ -20,7 +20,7 @@
   --project-card-bg: #046241;
   --tertiary-soft: rgba(255, 138, 61, 0.16);
   --accent-warm: #43e660;
-  --nav-bg: rgba(16, 34, 23, 0.82);
+  --nav-bg: rgba(13, 44, 84, 0.82);
   --nav-pill-bg: rgba(247, 255, 233, 0.1);
   --nav-pill-border: rgba(247, 255, 233, 0.18);
   --nav-link: var(--text-2);
@@ -159,6 +159,38 @@ body::before {
 
 .hero-section::before {
   content: none;
+}
+
+.portrait-stamp {
+  --stamp-notch: 9px;
+  position: relative;
+  padding: 18px;
+  background: #101820;
+  filter: drop-shadow(0 24px 34px rgba(16, 24, 32, 0.2));
+  transform: rotate(-1.25deg);
+  transform-origin: center;
+  transition: transform 220ms ease, filter 220ms ease;
+  -webkit-mask:
+    radial-gradient(circle var(--stamp-notch) at 50% 0, transparent 96%, #000 100%) 0 0 / calc(var(--stamp-notch) * 2.3) 100% repeat-x,
+    radial-gradient(circle var(--stamp-notch) at 50% 100%, transparent 96%, #000 100%) 0 0 / calc(var(--stamp-notch) * 2.3) 100% repeat-x,
+    radial-gradient(circle var(--stamp-notch) at 0 50%, transparent 96%, #000 100%) 0 0 / 100% calc(var(--stamp-notch) * 2.3) repeat-y,
+    radial-gradient(circle var(--stamp-notch) at 100% 50%, transparent 96%, #000 100%) 0 0 / 100% calc(var(--stamp-notch) * 2.3) repeat-y;
+  -webkit-mask-composite: source-in, source-in, source-in;
+  mask:
+    radial-gradient(circle var(--stamp-notch) at 50% 0, transparent 96%, #000 100%) 0 0 / calc(var(--stamp-notch) * 2.3) 100% repeat-x,
+    radial-gradient(circle var(--stamp-notch) at 50% 100%, transparent 96%, #000 100%) 0 0 / calc(var(--stamp-notch) * 2.3) 100% repeat-x,
+    radial-gradient(circle var(--stamp-notch) at 0 50%, transparent 96%, #000 100%) 0 0 / 100% calc(var(--stamp-notch) * 2.3) repeat-y,
+    radial-gradient(circle var(--stamp-notch) at 100% 50%, transparent 96%, #000 100%) 0 0 / 100% calc(var(--stamp-notch) * 2.3) repeat-y;
+  mask-composite: intersect;
+}
+
+.portrait-stamp:hover {
+  filter: drop-shadow(0 28px 42px rgba(16, 24, 32, 0.26));
+  transform: rotate(-0.35deg) translateY(-3px);
+}
+
+.portrait-stamp-inner {
+  border: 2px solid color-mix(in srgb, var(--surface) 84%, transparent);
 }
 
 .hero-roles span,
@@ -1018,6 +1050,16 @@ html[data-theme="light"] .contact-wave::before {
   .portrait-column {
     max-width: 260px !important;
     margin: 0 auto !important;
+  }
+
+  .portrait-stamp {
+    --stamp-notch: 6px;
+    padding: 12px;
+    transform: rotate(-0.75deg);
+  }
+
+  .portrait-stamp:hover {
+    transform: rotate(-0.25deg) translateY(-2px);
   }
 
   .skill-list {

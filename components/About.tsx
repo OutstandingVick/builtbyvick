@@ -81,14 +81,16 @@ export default function About() {
       <br />
       <div className="about-grid grid grid-cols-[0.9fr_1.1fr] items-start gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
         <div className="portrait-column flex flex-col gap-8 max-[980px]:mx-auto max-[980px]:w-full max-[980px]:max-w-140 max-[760px]:max-w-60 max-[380px]:max-w-60">
-          <div className="relative aspect-square w-full overflow-hidden rounded-[20px] bg-(--surface) shadow-[0_24px_70px_rgba(0,0,0,0.14)]">
-            <Image
-              src="/vic-prof.jpg"
-              alt="Portrait of Victor Ogbonna"
-              fill
-              sizes="(max-width: 900px) 100vw, 480px"
-              className="object-cover object-[50%_36%]"
-            />
+          <div className="portrait-stamp w-full">
+            <div className="portrait-stamp-inner relative aspect-square w-full overflow-hidden bg-(--surface)">
+              <Image
+                src="/vic-prof.jpg"
+                alt="Portrait of Victor Ogbonna"
+                fill
+                sizes="(max-width: 900px) 100vw, 480px"
+                className="object-cover object-[50%_36%]"
+              />
+            </div>
           </div>
         </div>
 
@@ -136,8 +138,8 @@ export default function About() {
               key={skill}
               className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl 
                          border border-(--border) bg-(--project-card-bg) px-5 py-7 
-                         text-center shadow-[0_20px_50px_rgba(16,34,23,0.06)] transition-[transform,box-shadow,border-color] 
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(16,34,23,0.11)] "
+                         text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color] 
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] "
             >
               {Icon ? (
                 <Icon className="text-[3.4rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}

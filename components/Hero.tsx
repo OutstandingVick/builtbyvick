@@ -44,7 +44,7 @@ export default function Hero() {
       <div className="hero-actions flex flex-wrap justify-center gap-4">
         <a
           href="mailto:victor.ogbonna@hotmail.com"
-          className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
+          className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
          >
           Get in touch
         </a>

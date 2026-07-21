@@ -96,7 +96,7 @@ export default function Projects() {
     <br/>
     <div
        className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
-            font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
+            font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
             transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full">
       <a href={p.site}
       className="underline"
@@ -105,7 +105,7 @@ export default function Projects() {
     </div>
   </div>
 
-  <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(16,34,23,0.12)]">
+  <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(13,44,84,0.12)]">
     <div className="flex h-10 items-center gap-2 border-b border-(--border) bg-[color-mix(in_srgb,var(--surface)_86%,white)] px-4">
       <span className="size-2.5 rounded-full bg-red-400" />
       <span className="size-2.5 rounded-full bg-yellow-400" />
@@ -143,7 +143,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
-            font-extrabold tracking-normal text-[#102217] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
+            font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
             transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
           >
              More on GitHub ↗
