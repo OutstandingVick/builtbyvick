@@ -122,7 +122,7 @@ export default function About() {
       <div className="font-mono mb-6 font-bold text-3xl italic uppercase tracking-[0.14em] text-(--accent-warm) max-[760px]:text-2xl max-[520px]:text-xl">
         {category}
       </div>
-      <div className="skill-list grid grid-cols-6 gap-5 max-[1100px]:grid-cols-4 max-[760px]:grid-cols-3 max-[520px]:grid-cols-2 max-[360px]:gap-3">
+      <div className="skill-list grid grid-cols-6 gap-5 max-[1100px]:grid-cols-4 max-[760px]:grid-cols-4 max-[360px]:gap-3">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
           

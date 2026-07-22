@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
 
 const featured = [
   {
@@ -130,15 +131,16 @@ export default function Projects() {
       </article>
         ))}
       </div>
-      <div className="hero-actions mx-auto flex w-full max-w-280 flex-wrap justify-center gap-4 py-16 max-[760px]:py-12">
+      <div className="projects-github-action mx-auto flex w-full justify-center pb-16 pt-12 max-[760px]:pb-12 max-[760px]:pt-8">
          <a href="https://github.com/outstandingvick"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
+            className="font-mono inline-flex min-h-14 w-full max-w-72 items-center justify-center gap-3 rounded-full bg-(--accent) px-8 py-4 text-base 
             font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
-            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[420px]:w-full"
+            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88]"
           >
-             More on GitHub ↗
+             <FaGithub aria-hidden="true" className="text-xl" />
+             <span>More on GitHub</span>
              </a>
       </div>
 

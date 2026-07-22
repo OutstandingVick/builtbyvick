@@ -104,7 +104,7 @@ export default function Nav() {
   return (
     <header
       className={`site-header fixed inset-x-0 top-4 z-100 px-5 transition-[background-color,backdrop-filter] 
-                  duration-300 max-[760px]:top-3 max-[760px]:px-3 ${
+                  duration-300 max-[760px]:top-3 max-[760px]:px-4 max-[380px]:px-3 ${
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >

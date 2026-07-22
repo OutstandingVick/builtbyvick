@@ -360,6 +360,11 @@ body::before {
   padding: 3rem !important;
 }
 
+.projects-github-action {
+  padding-top: 3rem !important;
+  padding-bottom: 4rem !important;
+}
+
 .contact-field {
   border-color: var(--border) !important;
 }
@@ -1002,6 +1007,23 @@ html[data-theme="light"] .contact-wave::before {
 }
 
 @media (max-width: 760px) {
+  .projects-github-action {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .site-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .site-nav-shell,
+  .mobile-nav-menu {
+    width: calc(100% - 2rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .site-nav-shell {
     padding-right: 1.1rem !important;
   }
@@ -1356,6 +1378,11 @@ html[data-theme="light"] .contact-wave::before {
 }
 
 @media (max-width: 380px) {
+  .site-nav-shell,
+  .mobile-nav-menu {
+    width: calc(100% - 1.5rem) !important;
+  }
+
   .skills-grid {
     gap: 1.5rem !important;
   }
