@@ -5,21 +5,21 @@
 :root {
   color-scheme: dark;
   --bg: #0D2C54;
-  --bg-2: #183623;
-  --bg-3: #21462d;
+  --bg-2: #0D2C54;
+  --bg-3: #0D2C54;
   --surface: #f3f1e8;
   --border: rgba(243, 241, 232, 0.16);
   --border-2: rgba(243, 241, 232, 0.28);
   --text: #f7ffe9;
   --text-2: #d9e8ce;
   --text-3: #a4b59b;
-  --text-4:  #183623;
-  --accent: #43e660;
+  --text-4: #0D2C54;
+  --accent: #0496FF;
   --accent-2: #d2f34c;
   --tertiary: #ff8a3d;
-  --project-card-bg: #046241;
+  --project-card-bg: #0D2C54;
   --tertiary-soft: rgba(255, 138, 61, 0.16);
-  --accent-warm: #43e660;
+  --accent-warm: #0496FF;
   --nav-bg: rgba(13, 44, 84, 0.82);
   --nav-pill-bg: rgba(247, 255, 233, 0.1);
   --nav-pill-border: rgba(247, 255, 233, 0.18);
@@ -36,20 +36,20 @@ html[data-theme="light"] {
   --bg-2: #e7f8d8;
   --bg-3: #ffffff;
   --surface: #ffffff;
-  --border: rgba(37, 79, 26, 0.14);
-  --border-2: rgba(37, 79, 26, 0.24);
-  --text: #1f3d24;
-  --text-2: #3f5e43;
-  --text-3: #6d826f;
-  --accent: #43e660;
+  --border: rgba(13, 44, 84, 0.14);
+  --border-2: rgba(13, 44, 84, 0.24);
+  --text: #0D2C54;
+  --text-2: #0D2C54;
+  --text-3: #0D2C54;
+  --accent: #0496FF;
   --accent-2: #d2f34c;
   --tertiary: #ff8a3d;
   --tertiary-soft: rgba(255, 122, 26, 0.14);
   --project-card-bg: #ffffff;
-  --accent-warm: #254f1a;
+  --accent-warm: #0D2C54;
   --nav-bg: rgba(243, 241, 232, 0.82);
   --nav-pill-bg: rgba(255, 255, 255, 0.86);
-  --nav-pill-border: rgba(37, 79, 26, 0.14);
+  --nav-pill-border: rgba(13, 44, 84, 0.14);
   --nav-link: var(--text-2);
   --nav-link-active: var(--text);
   --nav-link-muted: var(--text-3);
@@ -448,7 +448,7 @@ html[data-theme="dark"] .contact-section {
   position: absolute;
   inset: 0;
   background:
-    url("data:image/svg+xml,%3Csvg width='1440' height='122' viewBox='0 0 1440 122' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1440V60C1326 100 1222 96 1116 50C1025 10 918 8 820 56C716 107 594 108 488 58C388 11 287 11 190 61C121 96 57 87 0 52V0Z' fill='%23102217'/%3E%3Cpath d='M0 52C57 87 121 96 190 61C287 11 388 11 488 58C594 108 716 107 820 56C918 8 1025 10 1116 50C1222 96 1326 100 1440 60' fill='none' stroke='%23101820' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg width='1440' height='122' viewBox='0 0 1440 122' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1440V60C1326 100 1222 96 1116 50C1025 10 918 8 820 56C716 107 594 108 488 58C388 11 287 11 190 61C121 96 57 87 0 52V0Z' fill='%230D2C54'/%3E%3Cpath d='M0 52C57 87 121 96 190 61C287 11 388 11 488 58C594 108 716 107 820 56C918 8 1025 10 1116 50C1222 96 1326 100 1440 60' fill='none' stroke='%23101820' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")
     center top / 100% 100% no-repeat;
 }
 
@@ -507,7 +507,7 @@ html[data-theme="light"] .contact-wave::before {
   border: 4px solid #101820;
   border-bottom: 0;
   border-radius: 50% 50% 0 0;
-  background: #5fc678;
+  background: #0496FF;
   clip-path: polygon(0 100%, 18% 45%, 35% 80%, 48% 35%, 62% 82%, 82% 42%, 100% 100%);
 }
 
@@ -517,7 +517,7 @@ html[data-theme="light"] .contact-wave::before {
   width: 140px;
   height: 210px;
   border-radius: 80% 20% 0 0;
-  background: #235c39;
+  background: #0D2C54;
   transform: rotate(12deg);
   box-shadow: inset 18px 0 0 rgba(255, 255, 255, 0.12);
 }
@@ -553,7 +553,7 @@ html[data-theme="light"] .contact-wave::before {
   height: 3.2rem;
   border: 2px solid #101820;
   border-left: 0;
-  background: #63c978;
+  background: #0496FF;
   clip-path: polygon(0 50%, 100% 0, 78% 50%, 100% 100%);
   transform: translateY(-50%);
 }

@@ -41,7 +41,7 @@ export default function Contact() {
         <div className="contact-inner relative z-1 mx-auto w-full">
           <div className="mb-12 flex items-start justify-between gap-8 max-[760px]:mb-9 max-[760px]:flex-col max-[760px]:items-start">
             <div className="min-w-0 max-w-165">
-              <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] text-[#63c978] tracking-[-0.055em]">
+              <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] text-[#0496FF] tracking-[-0.055em]">
                 Let&apos;s build something{" "}
                 <span className="font-serif italic font-normal text-[#f05f9f]">
                   cool.
@@ -83,7 +83,7 @@ export default function Contact() {
               <a
                 href="mailto:victor.ogbonna@hotmail.com"
                 className="contact-email font-mono inline-flex min-h-14 items-center justify-center 
-                rounded-full border-2 border-[#101820] bg-[#63c978] px-6 py-4 text-[0.82rem] 
+                rounded-full border-2 border-[#101820] bg-[#0496FF] px-6 py-4 text-[0.82rem] 
                 font-black tracking-[0.02em] text-[#071827] no-underline shadow-[0_7px_0_#101820] 
                 transition-transform hover:-translate-y-1 max-[520px]:wrap:anywhere max-[760px]:w-full max-[760px]:text-[0.72rem]"
               >
@@ -92,7 +92,7 @@ export default function Contact() {
 
               <a
                 href="mailto:victor.ogbonna@hotmail.com"
-                className="contact-fish mt-16 inline-flex min-h-20 items-center justify-center rounded-[55%_45%_45%_55%/55%_50%_50%_45%] border-2 border-[#101820] bg-[#63c978] px-12 text-[1.2rem] font-black text-[#071827] no-underline shadow-[0_7px_0_#101820] max-[760px]:mt-8"
+                className="contact-fish mt-16 inline-flex min-h-20 items-center justify-center rounded-[55%_45%_45%_55%/55%_50%_50%_45%] border-2 border-[#101820] bg-[#0496FF] px-12 text-[1.2rem] font-black text-[#071827] no-underline shadow-[0_7px_0_#101820] max-[760px]:mt-8"
               >
                 Hire Me
               </a>
@@ -141,7 +141,7 @@ export default function Contact() {
                   </div>
                   <button
                     onClick={handleSubmit}
-                    className="contact-submit inline-flex min-h-14 w-fit cursor-pointer items-center justify-center rounded-full border-2 border-[#101820] bg-[#63c978] px-7 py-4 font-mono text-[0.82rem] font-black text-[#071827] shadow-[0_7px_0_#101820] transition-transform hover:-translate-y-1 max-[760px]:w-full"
+                    className="contact-submit inline-flex min-h-14 w-fit cursor-pointer items-center justify-center rounded-full border-2 border-[#101820] bg-[#0496FF] px-7 py-4 font-mono text-[0.82rem] font-black text-[#071827] shadow-[0_7px_0_#101820] transition-transform hover:-translate-y-1 max-[760px]:w-full"
                   >
                     Send message →
                   </button>
