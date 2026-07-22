@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { ChevronsUpDown, Mail, Moon, Sun } from "lucide-react";
+import { ChevronsUpDown, Mail, Menu, Moon, Sun, X } from "lucide-react";
 
 const links = [
   { label: "HOME", href: "#home" },
@@ -66,6 +66,7 @@ export default function Nav() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<Theme>("dark");
+  const [menuOpen, setMenuOpen] = useState(false);
   const mobileNav = useSyncExternalStore(subscribeToViewport, isMobileNav, () => false);
 
   useEffect(() => {
@@ -107,9 +108,10 @@ export default function Nav() {
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-280 items-center justify-between 
-                      gap-4 overflow-hidden rounded-full border border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 
-                      shadow-[0_6px_18px_rgba(13,44,84,0.06)] backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-4">
+      <div className="site-nav-frame relative mx-auto w-full max-w-280">
+      <nav className="site-nav-shell flex min-h-15 w-full items-center justify-between gap-4 overflow-hidden rounded-full border 
+                      border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
+                      backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-3">
         {/* Logo */}
         <a
           href="#home"
@@ -167,6 +169,16 @@ export default function Nav() {
           />
 
           <div className="site-nav-actions flex shrink-0 items-center justify-end gap-2.5 max-[760px]:gap-1.5">
+            <button
+              type="button"
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              className="hidden size-8 shrink-0 cursor-pointer items-center justify-center rounded-full text-(--nav-icon) transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] hover:text-(--nav-link-active) max-[760px]:inline-flex"
+            >
+              {menuOpen ? <X size={19} /> : <Menu size={19} />}
+            </button>
+
             <a
               href="https://github.com/outstandingvick"
               target="_blank"
@@ -200,6 +212,24 @@ export default function Nav() {
           </div>
         </div>
       </nav>
+      {menuOpen && (
+        <div className="mobile-nav-menu absolute inset-x-0 top-[calc(100%+0.55rem)] hidden flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={`font-mono flex min-h-11 items-center justify-between rounded-xl px-4 text-[0.75rem] font-bold tracking-[0.12em] no-underline transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_14%,transparent)] ${
+                active === link.href.slice(1) ? "text-(--nav-link-active)" : "text-(--nav-link)"
+              }`}
+            >
+              {link.label}
+              {link.hasChevron && <ChevronsUpDown size={14} className="text-(--nav-link-muted)" />}
+            </a>
+          ))}
+        </div>
+      )}
+      </div>
     </header>
   );
 }

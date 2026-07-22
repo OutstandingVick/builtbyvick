@@ -63,7 +63,7 @@ const skillColors: Record<string, string> = {
 import Image from "next/image";
 
 const skills: Record<string, string[]> = {
-  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Expres.js", "Angular", "Vue.js", "Svelte", "Django", "Bootstrap", "Tailwind CSS", "CSS", "HTML", "Git / GitHub", "Figma", "Vercel"]
+  "Tech Stack & Tools": ["JavaScript", "TypeScript", "Rust", "React", "Next.js", "Node.js", "Express.js", "Angular", "Vue.js", "Svelte", "Django", "Bootstrap", "Tailwind CSS", "CSS", "HTML", "Git / GitHub", "Figma", "Vercel"]
   
 };
 
@@ -71,16 +71,15 @@ export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section mx-auto w-full max-w-280 px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
+      className="content-section about-section mx-auto w-full max-w-280 px-6 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 px-5 text-3xl font-extrabold tracking-[0.02em] text-(--text)">
+        <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
           About Me
         </span>
       </div>
-      <br />
       <div className="about-grid grid grid-cols-[0.9fr_1.1fr] items-start gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
-        <div className="portrait-column flex flex-col gap-8 max-[980px]:mx-auto max-[980px]:w-full max-[980px]:max-w-140 max-[760px]:max-w-60 max-[380px]:max-w-60">
+        <div className="portrait-column flex w-full max-w-120 flex-col gap-8 max-[980px]:mx-auto max-[980px]:max-w-100 max-[760px]:max-w-70">
           <div className="portrait-stamp w-full">
             <div className="portrait-stamp-inner relative aspect-square w-full overflow-hidden bg-(--surface)">
               <Image
@@ -95,40 +94,33 @@ export default function About() {
         </div>
 
         <div>
-          <h2 className="font-display section-heading mb-8 text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-(--text) max-[760px]:text-[1.65rem] max-[760px]:leading-[1.15] max-[520px]:text-2xl">
+          <h2 className="font-display section-heading mb-7 text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-(--text) max-[1100px]:text-4xl max-[760px]:text-[1.75rem] max-[520px]:text-2xl">
             Building at the <span className="font-serif italic text-(--accent)">
               intersection
             </span>{" "}
             of code, & research.
           </h2>
-          <br />
-          <div className="font-mono about-copy flex flex-col gap-4 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem] max-[760px]:leading-[1.65]">
-            <p className="text-2xl">
+          <div className="font-mono about-copy flex flex-col gap-5 text-lg leading-[1.75] text-(--text-2) max-[760px]:text-base max-[520px]:text-[0.95rem]">
+            <p>
               I&apos;m Victor, a frontend engineer focused on creating responsive
               and scalable digital experiences. I blend research-driven thinking
               with hands-on development to build products that are both
               functional and impactful.
             </p>
-            <p className="text-2xl">
+            <p>
               I&apos;m currently strengthening my software engineering skills
               through continuous learning and hands-on project development.
             </p>
           </div>
-          <br />
-          <br />
         </div>
       </div>
-      <br />
-      <br />
-      <div className="skills-grid mt-11 grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] 
-                      gap-6 max-[760px]:grid-cols-2 max-[520px]:grid-cols-1">
+      <div className="skills-grid mt-16 grid gap-6 max-[760px]:mt-12">
   {Object.entries(skills).map(([category, items]) => (
     <div key={category} className="skill-group">
-      <div className="font-mono mb-4 font-bold text-3xl italic uppercase tracking-[0.18em] text-(--accent-warm)">
+      <div className="font-mono mb-6 font-bold text-3xl italic uppercase tracking-[0.14em] text-(--accent-warm) max-[760px]:text-2xl max-[520px]:text-xl">
         {category}
       </div>
-      <br/>
-      <div className="skill-list grid grid-cols-3 md:grid-cols-6 gap-5">
+      <div className="skill-list grid grid-cols-6 gap-5 max-[1100px]:grid-cols-4 max-[760px]:grid-cols-3 max-[520px]:grid-cols-2 max-[360px]:gap-3">
         {items.map((skill) => {
           const Icon = skillIcons[skill];
           
@@ -136,20 +128,20 @@ export default function About() {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-40 flex-col items-center justify-center gap-5 rounded-4xl 
-                         border border-(--border) bg-(--project-card-bg) px-5 py-7 
+              className="skill-card flex min-h-36 min-w-0 flex-col items-center justify-center gap-4 rounded-3xl 
+                         border border-(--border) bg-(--project-card-bg) px-3 py-5 
                          text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color] 
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] "
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:rounded-2xl"
             >
               {Icon ? (
-                <Icon className="text-[3.4rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}
+                <Icon className="text-[3rem] max-[520px]:text-[2.35rem]" style={{ color: skillColors[skill] ?? "var(--text)" }}
 />
               ) : (
                 <span className="font-mono text-[2.8rem] font-black text-(--text)">
                   {skill.slice(0, 1)}
                 </span>
               )}
-              <span className="font-mono text-[1rem] font-bold text-(--text)">
+              <span className="font-mono max-w-full text-[0.88rem] font-bold leading-tight text-(--text) max-[520px]:text-[0.78rem]">
                 {skill}
               </span>
             </div>
@@ -159,10 +151,6 @@ export default function About() {
     </div>
   ))}
     </div>
-      <br />
-      <br />
-      <br />
-      <br />
     </section>
   );
 }

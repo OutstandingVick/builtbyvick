@@ -26,9 +26,8 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-5 pb-20 pt-60 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-14 max-[760px]:pt-20"
+        className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-6 pb-12 pt-44 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-8 max-[760px]:pt-28"
       >
-        <br />
         <div className="contact-wave" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-one" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-two" aria-hidden="true" />
@@ -41,7 +40,7 @@ export default function Contact() {
         <div className="contact-inner relative z-1 mx-auto w-full">
           <div className="mb-12 flex items-start justify-between gap-8 max-[760px]:mb-9 max-[760px]:flex-col max-[760px]:items-start">
             <div className="min-w-0 max-w-165">
-              <h2 className="font-display max-w-full text-[clamp(2.35rem,5.2vw,4.65rem)] font-black leading-[0.92] text-[#0496FF] tracking-[-0.055em]">
+              <h2 className="font-display max-w-full text-7xl font-black leading-[0.92] text-[#0496FF] tracking-[-0.055em] max-[1100px]:text-6xl max-[760px]:text-5xl max-[520px]:text-[2.5rem]">
                 Let&apos;s build something{" "}
                 <span className="font-serif italic font-normal text-[#f05f9f]">
                   cool.
@@ -71,7 +70,6 @@ export default function Contact() {
               })}
             </div>
           </div>
-          <br/>
           <div className="contact-grid grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-14 max-[980px]:grid-cols-1 max-[980px]:gap-10">
             <div className="min-w-0">
               <p className="font-mono contact-copy mb-10 max-w-140 text-[1.15rem] font-semibold leading-[1.6] text-[#071827] max-[760px]:text-[1rem]">
@@ -85,7 +83,7 @@ export default function Contact() {
                 className="contact-email font-mono inline-flex min-h-14 items-center justify-center 
                 rounded-full border-2 border-[#101820] bg-[#0496FF] px-6 py-4 text-[0.82rem] 
                 font-black tracking-[0.02em] text-[#071827] no-underline shadow-[0_7px_0_#101820] 
-                transition-transform hover:-translate-y-1 max-[520px]:wrap:anywhere max-[760px]:w-full max-[760px]:text-[0.72rem]"
+                transition-transform hover:-translate-y-1 max-[520px]:[overflow-wrap:anywhere] max-[760px]:w-full max-[760px]:text-[0.72rem]"
               >
                 victor.ogbonna@hotmail.com ↗
               </a>
@@ -150,18 +148,14 @@ export default function Contact() {
               </div>
           </div>
         </div>
-        <br />
-        <br />
-        <footer className="site-footer mx-auto flex w-full max-w-280 items-center justify-between px-5 py-10 max-[980px]:max-w-190 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-4 max-[760px]:py-8">
-        <span className="font-mono text-base tracking-[0.08em] text-(--text-4)">
+        <footer className="site-footer mx-auto mt-16 flex w-full max-w-280 items-center justify-between gap-6 py-8 max-[980px]:max-w-190 max-[760px]:mt-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2">
+        <span className="font-mono text-sm tracking-[0.08em] text-(--text-4) max-[520px]:text-xs">
           © 2025 Victor Ogbonna
         </span>
-        <span className="font-mono text-base text-(--text-4)">
+        <span className="font-mono text-sm text-(--text-4) max-[520px]:text-xs">
           Built with Typescript, Next.js & Tailwind CSS
         </span>
       </footer>
-      <br />
-      <br />
       </section>
     </>
   );

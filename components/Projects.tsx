@@ -56,10 +56,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="content-section projects-section mx-auto w-full max-w-280 overflow-hidden px-5 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
+      className="content-section projects-section mx-auto w-full max-w-280 overflow-hidden px-6 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center px-5 text-3xl font-extrabold tracking-[0.02em] text-(--text)">
+        <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
           Projects
         </span>
       </div>
@@ -68,41 +68,35 @@ export default function Projects() {
         {featured.map((p) => (
           <article
          key={p.name}
-        className="project-featured-item group mb-6 grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border 
+        className="project-featured-item group grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border 
         border-(--border) p-12 transition-colors 
         hover:bg-(--tertiary)
-        max-[980px]:grid-cols-1 max-[980px]:p-8 max-[760px]:gap-8 max-[760px]:p-6 bg-(--project-card-bg)">
-      <div className="min-w-0 pl-2 max-[980px]:pl-0">
+        max-[980px]:grid-cols-1 max-[980px]:gap-8 max-[980px]:p-8 max-[760px]:p-5 bg-(--project-card-bg)">
+      <div className="min-w-0">
       <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
       <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] hover:text-(--text-4) text-(--text-3) font-bold">
         {p.category}
       </span>
-      <br />
       <span className="text-[0.6rem] text-(--border-2)">·</span>
-      <br />
       <span className="font-mono text-[0.62rem] hover:text-(--text-4) text-(--text-3) font-bold">
         {p.period}
       </span>
-      <br />
     </div>
-    <br />
-    <h3 className="font-display project-title mb-4 text-[clamp(2rem,4vw,4rem)] font-black leading-[0.95] tracking-[-0.04em] text-(--text) wrap:anywhere max-[760px]:text-3xl">
+    <h3 className="font-display project-title mb-4 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-(--text) [overflow-wrap:anywhere] max-[1100px]:text-4xl max-[760px]:text-3xl max-[380px]:text-2xl">
       {p.name}
     </h3>
-    <br />
     <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
       {p.desc}
     </p>
-    <br/>
-    <div
+    <a
+       href={p.site}
+       target="_blank"
+       rel="noopener noreferrer"
        className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
             font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
-            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full">
-      <a href={p.site}
-      className="underline"
-      >
-        View Project</a>
-    </div>
+            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[420px]:w-full">
+        View Project
+    </a>
   </div>
 
   <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(13,44,84,0.12)]">
@@ -136,15 +130,13 @@ export default function Projects() {
       </article>
         ))}
       </div>
-      <br />
-      <br />
-      <div className="mx-auto mt-16 flex w-full max-w-280 justify-center p-32 max-[760px]:px-4 hero-actions flex-wrap gap-4">
+      <div className="hero-actions mx-auto flex w-full max-w-280 flex-wrap justify-center gap-4 py-16 max-[760px]:py-12">
          <a href="https://github.com/outstandingvick"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
             font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
-            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[760px]:w-full"
+            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[420px]:w-full"
           >
              More on GitHub ↗
              </a>
@@ -201,10 +193,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
     </section>
   );
 }
