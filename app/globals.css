@@ -76,7 +76,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 1.55;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -224,7 +224,7 @@ body::before {
 }
 
 .experience-carousel {
-  min-height: 620px;
+  min-height: 590px;
   position: relative;
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr);
@@ -294,6 +294,8 @@ body::before {
 }
 
 .experience-card {
+  width: 100%;
+  min-width: 0;
   max-width: 760px;
   background-color: var(--project-card-bg);
 }
@@ -662,6 +664,20 @@ html[data-theme="light"] .contact-wave::before {
     linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 74%, transparent), var(--bg));
 }
 
+.skill-card,
+.project-featured-item,
+.collaboration-card,
+.contact-form-card {
+  min-width: 0;
+}
+
+.skill-card span,
+.experience-card-header > div,
+.collaboration-card-header > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .collaboration-map::before {
   content: "";
   position: absolute;
@@ -957,7 +973,7 @@ html[data-theme="light"] .contact-wave::before {
   }
 
   .portrait-column {
-    max-width: 560px !important;
+    max-width: 400px !important;
     width: 100% !important;
     margin: 0 auto !important;
   }
@@ -1006,6 +1022,10 @@ html[data-theme="light"] .contact-wave::before {
     padding-right: 0 !important;
   }
 
+  .section-label {
+    margin-bottom: 2rem !important;
+  }
+
   .contact-section {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -1048,7 +1068,7 @@ html[data-theme="light"] .contact-wave::before {
   }
 
   .portrait-column {
-    max-width: 260px !important;
+    max-width: 280px !important;
     margin: 0 auto !important;
   }
 
@@ -1060,25 +1080,6 @@ html[data-theme="light"] .contact-wave::before {
 
   .portrait-stamp:hover {
     transform: rotate(-0.25deg) translateY(-2px);
-  }
-
-  .skill-list {
-    flex-direction: column !important;
-    gap: 0.7rem !important;
-  }
-
-  .skill-list > span {
-    font-size: 0.84rem !important;
-    line-height: 1.35 !important;
-    width: auto !important;
-    max-width: 100% !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  .skill-chip::before {
-    width: 0.55rem;
-    height: 0.55rem;
-    border-width: 1.5px;
   }
 
   .experience-role,
@@ -1099,6 +1100,10 @@ html[data-theme="light"] .contact-wave::before {
     grid-template-columns: 1fr;
     gap: 1.75rem;
     padding-bottom: 4.5rem;
+  }
+
+  .experience-card {
+    padding: 1.35rem;
   }
 
   .experience-rail {
@@ -1205,6 +1210,11 @@ html[data-theme="light"] .contact-wave::before {
     padding: 1.5rem !important;
   }
 
+  .project-featured-preview,
+  .project-featured-item > div {
+    min-width: 0;
+  }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
@@ -1281,6 +1291,26 @@ html[data-theme="light"] .contact-wave::before {
     padding: 1.4rem;
   }
 
+  .collaboration-map {
+    aspect-ratio: 1.35;
+  }
+
+  .collaboration-map::before {
+    inset: 0.6rem;
+  }
+
+  .map-label {
+    min-height: 24px;
+    padding-inline: 0.45rem;
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+  }
+
+  .collaboration-quote-mark {
+    right: 1rem;
+    font-size: 4.5rem;
+  }
+
   .collaboration-avatar {
     width: 52px;
     height: 52px;
@@ -1298,9 +1328,29 @@ html[data-theme="light"] .contact-wave::before {
   }
 
   .social-link {
-    align-items: flex-start !important;
-    flex-direction: column !important;
-    gap: 0.35rem !important;
+    flex-direction: row !important;
+  }
+
+  .contact-social-list {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.75rem !important;
+  }
+
+  .contact-fish {
+    margin-left: 0.35rem;
+  }
+
+  .collaboration-map {
+    aspect-ratio: 1.2;
+  }
+
+  .map-label-left {
+    left: 18%;
+  }
+
+  .map-label-right {
+    right: 8%;
   }
 
 }
@@ -1310,11 +1360,14 @@ html[data-theme="light"] .contact-wave::before {
     gap: 1.5rem !important;
   }
 
-  .skill-list > span {
-    font-size: 0.78rem !important;
-  }
-
   .portrait-column {
     max-width: 240px !important;
+  }
+
+  .contact-bubble-two,
+  .contact-bubble-three,
+  .contact-coral-left,
+  .contact-coral-right {
+    display: none;
   }
 }
