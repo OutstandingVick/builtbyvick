@@ -360,6 +360,18 @@ body::before {
   padding: 3rem !important;
 }
 
+.project-featured-item .project-meta {
+  margin-bottom: 0.9rem !important;
+}
+
+.project-featured-item .project-title {
+  margin-bottom: 1rem !important;
+}
+
+.project-featured-item .project-description {
+  margin-bottom: 1.75rem !important;
+}
+
 .projects-github-action {
   padding-top: 3rem !important;
   padding-bottom: 4rem !important;
@@ -1007,6 +1019,18 @@ html[data-theme="light"] .contact-wave::before {
 }
 
 @media (max-width: 760px) {
+  .project-featured-item .project-meta {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .project-featured-item .project-title {
+    margin-bottom: 0.85rem !important;
+  }
+
+  .project-featured-item .project-description {
+    margin-bottom: 1.5rem !important;
+  }
+
   .projects-github-action {
     padding-top: 2rem !important;
     padding-bottom: 3rem !important;
