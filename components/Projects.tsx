@@ -82,7 +82,7 @@ export default function Projects() {
         {p.period}
       </span>
     </div>
-    <h3 className="font-display project-title mb-4 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-(--text) [overflow-wrap:anywhere] max-[1100px]:text-4xl max-[760px]:text-3xl max-[380px]:text-2xl">
+    <h3 className="font-display project-title mb-4 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-(--text) wrap-anywhere max-[1100px]:text-4xl max-[760px]:text-3xl max-[380px]:text-2xl">
       {p.name}
     </h3>
     <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
@@ -193,6 +193,8 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
     </section>
   );
 }

@@ -114,6 +114,8 @@ export default function About() {
           </div>
         </div>
       </div>
+      <br />
+    <br />
       <div className="skills-grid mt-16 grid gap-6 max-[760px]:mt-12">
   {Object.entries(skills).map(([category, items]) => (
     <div key={category} className="skill-group">
@@ -151,6 +153,9 @@ export default function About() {
     </div>
   ))}
     </div>
+    <br />
+    <br />
+    <br />
     </section>
   );
 }

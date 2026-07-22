@@ -40,6 +40,7 @@ export default function Hero() {
           Get in touch
         </a>
       </div>
+      <br />
     </section>
   );
 }
