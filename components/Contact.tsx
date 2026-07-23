@@ -148,11 +148,11 @@ export default function Contact() {
               </div>
           </div>
         </div>
-        <footer className="site-footer mx-auto mt-16 flex w-full max-w-280 items-center justify-between gap-6 py-8 max-[980px]:max-w-190 max-[760px]:mt-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2">
-        <span className="font-mono text-sm tracking-[0.08em] text-(--text-4) max-[520px]:text-xs">
+        <footer className="site-footer relative z-2 mx-auto mt-16 flex w-full max-w-280 items-center justify-between gap-6 py-8 max-[980px]:max-w-190 max-[760px]:mt-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2">
+        <span className="font-mono text-sm font-semibold tracking-[0.08em] text-[#071827] max-[520px]:text-xs">
           © 2025 Victor Ogbonna
         </span>
-        <span className="font-mono text-sm text-(--text-4) max-[520px]:text-xs">
+        <span className="font-mono text-sm font-semibold text-[#071827] max-[520px]:text-xs">
           Built with Typescript, Next.js & Tailwind CSS
         </span>
       </footer>
