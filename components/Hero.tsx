@@ -28,6 +28,8 @@ export default function Hero() {
         SCROLL ↓
       </a>
       <br/>
+      <br/>
+      <br/>
     </section>
   );
 }
