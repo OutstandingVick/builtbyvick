@@ -88,13 +88,13 @@ function SkillCarousel({ items }: { items: string[] }) {
         type="button"
         onClick={() => scrollByCard(-1)}
         aria-label="Scroll skills left"
-        className="skill-carousel-arrow absolute top-1/2 left-1 z-2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent) max-[760px]:size-9"
+        className="skill-carousel-arrow absolute top-1/2 left-0 z-2 flex size-11 -translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
       >
         <ChevronLeft size={20} />
       </button>
       <div
         ref={scrollerRef}
-        className="skill-list flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-12 pb-2 max-[760px]:gap-3 max-[760px]:px-11"
+        className="skill-list flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-1 pb-2 max-[360px]:gap-3"
       >
         {items.map((skill) => {
           const Icon = skillIcons[skill];
@@ -102,10 +102,10 @@ function SkillCarousel({ items }: { items: string[] }) {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-36 w-[min(10.75rem,72vw)] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
+              className="skill-card flex min-h-36 w-43 shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
                          border border-(--border) bg-(--project-card-bg) px-3 py-5
                          text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color]
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:rounded-2xl"
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:w-35 max-[520px]:rounded-2xl"
             >
               {Icon ? (
                 <Icon className="text-[3rem] max-[520px]:text-[2.35rem]" style={{ color: skillColors[skill] ?? "var(--text)" }} />
@@ -125,7 +125,7 @@ function SkillCarousel({ items }: { items: string[] }) {
         type="button"
         onClick={() => scrollByCard(1)}
         aria-label="Scroll skills right"
-        className="skill-carousel-arrow absolute top-1/2 right-1 z-2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent) max-[760px]:size-9"
+        className="skill-carousel-arrow absolute top-1/2 right-0 z-2 flex size-11 translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
       >
         <ChevronRight size={20} />
       </button>
@@ -137,10 +137,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section mx-auto w-full pb-20 pt-10"
+      className="content-section about-section mx-auto w-full max-w-400 px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-[clamp(1.7rem,4vw,3rem)] font-extrabold tracking-[0.02em] text-(--text)">
+        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
           About Me
         </span>
       </div>
@@ -170,14 +170,16 @@ export default function About() {
           <br />
           <div className="font-mono about-copy flex flex-col gap-5 text-lg leading-[1.75] text-(--text-2) max-[760px]:text-base max-[520px]:text-[0.95rem]">
             <p>
-              I&apos;m Victor, a frontend engineer focused on creating responsive
-              and scalable digital experiences. I blend research-driven thinking
-              with hands-on development to build products that are both
-              functional and impactful.
+              I’m a frontend engineer and product builder focused on creating responsive web products, developer-facing tools, and digital experiences that combine strong engineering with clear product thinking.
             </p>
             <p>
-              I&apos;m currently strengthening my software engineering skills
-              through continuous learning and hands-on project development.
+              Recently, I’ve worked across Web3, fintech, AI agents, payments, prediction markets, and blockchain infrastructure, building projects such as Tutela, Phylax, Setula, Edged, Immunis Protocol, Tei Markets, Klazz, and Rappen. Much of this work has involved taking early-stage ideas from research and technical validation through product design, frontend development, and working prototypes.
+            </p>
+            <p>
+              Alongside engineering, I work as a technical researcher and writer, exploring areas such as DeFi, stablecoins, payments, Solana infrastructure, and emerging crypto products. That research shapes how I build—helping me understand users, validate assumptions, and turn complex systems into simpler experiences.
+            </p>
+            <p>
+              Outside of software, I’m deeply involved in developer and Web3 communities through Superteam Nigeria, where I’ve worked across community building, technical education, events, content, and ecosystem initiatives. It’s given me a broader understanding of how products are built, communicated, distributed, and ultimately adopted.
             </p>
           </div>
         </div>

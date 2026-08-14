@@ -68,19 +68,19 @@ function ProjectRow({
       target="_blank"
       rel="noopener noreferrer"
       onMouseMove={onMove}
-      className="project-row group relative flex items-center justify-between gap-x-6 gap-y-3 overflow-visible border-b border-(--border) px-2 no-underline transition-colors duration-200 first:border-t hover:bg-(--project-row-hover-bg) hover:text-(--project-row-hover-fg) max-[1100px]:flex-wrap max-[1100px]:items-center"
+      className="project-row group relative flex items-center justify-between gap-6 overflow-visible border-b border-(--border) px-2 no-underline transition-colors duration-200 first:border-t hover:bg-(--project-row-hover-bg) hover:text-(--project-row-hover-fg) max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3"
     >
-      <div className="flex min-w-0 items-baseline gap-4 max-[760px]:gap-3">
+      <div className="flex min-w-0 items-baseline gap-5 max-[760px]:gap-3">
         <span className="font-mono shrink-0 text-[0.72rem] font-bold tracking-[0.16em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
           {String(index).padStart(2, "0")}
         </span>
-        <h3 className="font-display m-0 text-[clamp(1.35rem,3.4vw,3.4rem)] font-extrabold leading-[1.1] tracking-[-0.04em] text-(--text) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
+        <h3 className="font-display m-0 text-[clamp(1.7rem,3.4vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-(--text) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
           {project.name}
         </h3>
       </div>
 
-      <div className="ml-auto flex min-w-0 max-w-full items-center gap-4 max-[1100px]:basis-full max-[1100px]:pl-11 max-[760px]:pl-9">
-        <span className="font-mono min-w-0 wrap-anywhere text-[0.68rem] font-bold uppercase tracking-[0.12em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg) max-[760px]:text-[0.58rem] max-[760px]:tracking-[0.08em]">
+      <div className="flex min-w-0 shrink-0 items-center gap-5 max-[760px]:w-full max-[760px]:justify-between max-[760px]:pl-9">
+        <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.14em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg) max-[760px]:text-[0.58rem]">
           {project.period} — {project.stack.join(" — ")}
         </span>
         <ArrowUpRight
@@ -131,10 +131,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="content-section projects-section mx-auto w-full overflow-visible py-20"
+      className="content-section projects-section mx-auto w-full max-w-400 overflow-visible px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-[clamp(1.7rem,4vw,3rem)] font-extrabold tracking-[0.02em] text-(--text)">
+        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
           My Latest Works
         </span>
       </div>
