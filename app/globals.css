@@ -716,6 +716,15 @@ html[data-theme="light"] .contact-wave::before {
 
 .project-row {
   isolation: isolate;
+  padding-top: 5.25rem;
+  padding-bottom: 5.25rem;
+}
+
+@media (max-width: 760px) {
+  .project-row {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
 }
 
 .project-row-preview {

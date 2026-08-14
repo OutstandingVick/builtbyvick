@@ -108,7 +108,7 @@ export default function Nav() {
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-[100rem] items-center justify-between gap-4 overflow-hidden rounded-full border 
+      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-400 items-center justify-between gap-4 overflow-hidden rounded-full border 
                       border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
                       backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-3">
         {/* Logo */}
@@ -212,7 +212,7 @@ export default function Nav() {
         </div>
       </nav>
       {menuOpen && (
-        <div className="mobile-nav-menu mx-auto mt-2 hidden w-full max-w-[100rem] flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
+        <div className="mobile-nav-menu mx-auto mt-2 hidden w-full max-w-400 flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
           {links.map((link) => (
             <a
               key={link.href}

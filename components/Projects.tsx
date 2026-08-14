@@ -68,7 +68,7 @@ function ProjectRow({
       target="_blank"
       rel="noopener noreferrer"
       onMouseMove={onMove}
-      className="project-row group relative flex items-center justify-between gap-6 overflow-visible border-b border-(--border) px-2 py-8 no-underline transition-colors duration-200 first:border-t hover:bg-(--project-row-hover-bg) hover:text-(--project-row-hover-fg) max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:py-6"
+      className="project-row group relative flex items-center justify-between gap-6 overflow-visible border-b border-(--border) px-2 no-underline transition-colors duration-200 first:border-t hover:bg-(--project-row-hover-bg) hover:text-(--project-row-hover-fg) max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3"
     >
       <div className="flex min-w-0 items-baseline gap-5 max-[760px]:gap-3">
         <span className="font-mono shrink-0 text-[0.72rem] font-bold tracking-[0.16em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
@@ -134,11 +134,12 @@ export default function Projects() {
       className="content-section projects-section mx-auto w-full max-w-400 overflow-visible px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
-          Projects
+        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+          My Latest Works
         </span>
       </div>
-
+      <br />
+      <br />
       <div className="featured-projects mx-auto flex w-full flex-col">
         {featured.map((project, index) => (
           <ProjectRow key={project.name} project={project} index={index + 1} />
@@ -208,6 +209,8 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
       <br />
       <br />
     </section>
