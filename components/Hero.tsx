@@ -9,10 +9,10 @@ export default function Hero() {
           VICTOR POWEIDEI OGBONNA
         </p>
         <br/>
-        <h1 className="font-display text-[clamp(1.96rem,6.38vw,6.31rem)] font-bold leading-[1.08] tracking-[-0.04em] text-(--text)">
-          <span className="block whitespace-nowrap max-[760px]:whitespace-normal">I build intuitive interfaces,</span>
-          <span className="block whitespace-nowrap max-[760px]:whitespace-normal">seamless user experiences,</span>
-          <span className="block whitespace-nowrap max-[760px]:whitespace-normal">
+        <h1 className="font-display text-[clamp(1.96rem,6.38vw,6.31rem)] font-bold leading-[1.08] tracking-[-0.04em] text-(--text) max-[760px]:text-[clamp(1.45rem,6.4vw,2.75rem)]">
+          <span className="block whitespace-nowrap">I build intuitive interfaces,</span>
+          <span className="block whitespace-nowrap">seamless user experiences,</span>
+          <span className="block whitespace-nowrap">
             & products that <span className="text-(--accent)">scale</span>.
           </span>
         </h1>
