@@ -28,6 +28,7 @@
   --nav-link-muted: var(--text-3);
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
+  --hero-muted: color-mix(in srgb, var(--text) 48%, transparent);
 }
 
 html[data-theme="light"] {
@@ -55,6 +56,7 @@ html[data-theme="light"] {
   --nav-link-muted: var(--text-3);
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
+  --hero-muted: color-mix(in srgb, var(--text) 42%, transparent);
 }
 
 * {
