@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 const featured = [
@@ -11,6 +13,7 @@ const featured = [
     site: "https://tei-markets.vercel.app/",
     image: "/tei.png",
     imageAlt: "Tei Markets website preview",
+    stack: ["Next.js", "TypeScript", "Solana", "Tailwind"],
   },
   {
     name: "Edged",
@@ -20,6 +23,7 @@ const featured = [
     site: "https://edged.vercel.app/",
     image: "/edged.png",
     imageAlt: "Edged website preview",
+    stack: ["Next.js", "TypeScript", "Circle", "Polymarket"],
   },
   {
     name: "Immunis Protocol",
@@ -29,8 +33,78 @@ const featured = [
     site: "https://immunis-protocol.vercel.app/",
     image: "/immunis.png",
     imageAlt: "Immunis Protocol website preview",
+    stack: ["Next.js", "TypeScript", "Stellar", "ZK"],
   },
 ];
+
+type FeaturedProject = (typeof featured)[number];
+
+function ProjectRow({
+  project,
+  index,
+}: {
+  project: FeaturedProject;
+  index: number;
+}) {
+  const rowRef = useRef<HTMLAnchorElement>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+
+  const onMove = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const row = rowRef.current;
+    const preview = previewRef.current;
+    if (!row || !preview) return;
+
+    const rect = row.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    preview.style.left = `${x}px`;
+    preview.style.top = `${y}px`;
+  };
+
+  return (
+    <a
+      ref={rowRef}
+      href={project.site}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseMove={onMove}
+      className="project-row group relative flex items-center justify-between gap-6 overflow-visible border-b border-(--border) px-2 py-8 no-underline transition-colors duration-200 first:border-t hover:bg-(--project-row-hover-bg) hover:text-(--project-row-hover-fg) max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:py-6"
+    >
+      <div className="flex min-w-0 items-baseline gap-5 max-[760px]:gap-3">
+        <span className="font-mono shrink-0 text-[0.72rem] font-bold tracking-[0.16em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
+          {String(index).padStart(2, "0")}
+        </span>
+        <h3 className="font-display m-0 text-[clamp(1.7rem,3.4vw,3.4rem)] font-extrabold leading-[1.05] tracking-[-0.04em] text-(--text) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)">
+          {project.name}
+        </h3>
+      </div>
+
+      <div className="flex min-w-0 shrink-0 items-center gap-5 max-[760px]:w-full max-[760px]:justify-between max-[760px]:pl-9">
+        <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.14em] text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg) max-[760px]:text-[0.58rem]">
+          {project.period} — {project.stack.join(" — ")}
+        </span>
+        <ArrowUpRight
+          size={22}
+          strokeWidth={1.8}
+          className="shrink-0 text-(--text-3) transition-colors duration-200 group-hover:text-(--project-row-hover-fg)"
+        />
+      </div>
+
+      <div
+        ref={previewRef}
+        className="project-row-preview pointer-events-none absolute top-1/2 left-1/2 z-20 hidden overflow-hidden rounded-md shadow-[0_24px_60px_rgba(7,24,39,0.28)] max-[760px]:hidden min-[761px]:block"
+      >
+        <Image
+          src={project.image}
+          alt={project.imageAlt}
+          fill
+          sizes="352px"
+          className="object-cover object-top"
+        />
+      </div>
+    </a>
+  );
+}
 
 const testimonials = [
   {
@@ -57,7 +131,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="content-section projects-section mx-auto w-full max-w-[100rem] overflow-hidden px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
+      className="content-section projects-section mx-auto w-full max-w-[100rem] overflow-visible px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
         <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
@@ -65,70 +139,9 @@ export default function Projects() {
         </span>
       </div>
 
-      <div className="featured-projects mx-auto flex w-full flex-col gap-6">
-        {featured.map((p) => (
-          <article
-         key={p.name}
-        className="project-featured-item group grid grid-cols-[0.85fr_1.15fr] items-center gap-12 rounded-[28px] border 
-        border-(--border) p-12 transition-colors 
-        hover:bg-(--tertiary)
-        max-[980px]:grid-cols-1 max-[980px]:gap-8 max-[980px]:p-8 max-[760px]:p-5 bg-(--project-card-bg)">
-      <div className="min-w-0">
-      <div className="project-meta mb-4 flex items-center gap-3 max-[760px]:flex-wrap max-[760px]:gap-y-1.5">
-      <span className="font-mono text-[0.62rem] uppercase tracking-[0.15em] hover:text-(--text-4) text-(--text-3) font-bold">
-        {p.category}
-      </span>
-      <span className="text-[0.6rem] text-(--border-2)">·</span>
-      <span className="font-mono text-[0.62rem] hover:text-(--text-4) text-(--text-3) font-bold">
-        {p.period}
-      </span>
-    </div>
-    <h3 className="font-display project-title mb-4 text-5xl font-black leading-[0.95] tracking-[-0.04em] text-(--text) wrap-anywhere max-[1100px]:text-4xl max-[760px]:text-3xl max-[380px]:text-2xl">
-      {p.name}
-    </h3>
-    <p className="font-mono project-description mb-6 max-w-160 text-base leading-[1.7] text-(--text-2) max-[760px]:text-[0.95rem]">
-      {p.desc}
-    </p>
-    <a
-       href={p.site}
-       target="_blank"
-       rel="noopener noreferrer"
-       className="font-mono inline-flex min-h-14 min-w-44 items-center justify-center rounded-full bg-(--accent) px-10 py-4 text-base 
-            font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
-            transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88] max-[420px]:w-full">
-        View Project
-    </a>
-  </div>
-
-  <div className="relative overflow-hidden rounded-3xl border border-(--border) bg-white shadow-[0_30px_80px_rgba(13,44,84,0.12)]">
-    <div className="flex h-10 items-center gap-2 border-b border-(--border) bg-[color-mix(in_srgb,var(--surface)_86%,white)] px-4">
-      <span className="size-2.5 rounded-full bg-red-400" />
-      <span className="size-2.5 rounded-full bg-yellow-400" />
-      <span className="size-2.5 rounded-full bg-green-400" />
-      <span className="font-mono ml-3 text-[0.62rem] hover:text-(--text-4)  text-(--text-3)">
-        project preview
-      </span>
-    </div>
-
-    <div className="relative aspect-16/10 w-full overflow-hidden">
-      {p.image ? (
-        <Image
-          src={p.image}
-          alt={p.imageAlt}
-          fill
-          sizes="(max-width: 980px) 100vw, 720px"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-      ) : (
-        <div className="flex h-full w-full items-center justify-center bg-[color-mix(in_srgb,var(--surface)_78%,white)] px-8 text-center">
-          <span className="font-mono text-[0.78rem] uppercase tracking-[0.14em] hover:text-(--text-4) text-(--text-3)">
-            Preview image coming soon
-          </span>
-        </div>
-      )}
-       </div>
-      </div>
-      </article>
+      <div className="featured-projects mx-auto flex w-full flex-col">
+        {featured.map((project, index) => (
+          <ProjectRow key={project.name} project={project} index={index + 1} />
         ))}
       </div>
       <div className="projects-github-action mx-auto flex w-full justify-center pb-16 pt-12 max-[760px]:pb-12 max-[760px]:pt-8">

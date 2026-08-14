@@ -29,6 +29,8 @@
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
   --hero-muted: color-mix(in srgb, var(--text) 48%, transparent);
+  --project-row-hover-bg: #f3f1e8;
+  --project-row-hover-fg: #0D2C54;
 }
 
 html[data-theme="light"] {
@@ -57,6 +59,8 @@ html[data-theme="light"] {
   --nav-icon: var(--text-2);
   --nav-active-underline: var(--accent);
   --hero-muted: color-mix(in srgb, var(--text) 42%, transparent);
+  --project-row-hover-bg: #0D2C54;
+  --project-row-hover-fg: #f3f1e8;
 }
 
 * {
@@ -708,6 +712,30 @@ html[data-theme="light"] .contact-wave::before {
 
 .skill-carousel-arrow {
   background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+
+.project-row {
+  isolation: isolate;
+}
+
+.project-row-preview {
+  width: min(22rem, 46vw);
+  aspect-ratio: 16 / 10;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.92);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project-row:hover .project-row-preview,
+.project-row:focus-visible .project-row-preview {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .project-row-preview {
+    display: none;
+  }
 }
 
 .project-featured-item,
