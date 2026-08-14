@@ -102,10 +102,10 @@ function SkillCarousel({ items }: { items: string[] }) {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-36 w-[10.75rem] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
+              className="skill-card flex min-h-36 w-43 shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
                          border border-(--border) bg-(--project-card-bg) px-3 py-5
                          text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color]
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:w-[8.75rem] max-[520px]:rounded-2xl"
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:w-35 max-[520px]:rounded-2xl"
             >
               {Icon ? (
                 <Icon className="text-[3rem] max-[520px]:text-[2.35rem]" style={{ color: skillColors[skill] ?? "var(--text)" }} />
