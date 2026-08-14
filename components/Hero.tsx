@@ -8,14 +8,16 @@ export default function Hero() {
         <p className="hero-meta mb-5 font-mono text-[1rem] font-medium tracking-[0.18em] text-(--hero-muted) max-[760px]:mb-4 max-[760px]:text-[0.6rem]">
           VICTOR POWEIDEI OGBONNA
         </p>
-
+        <br />
+        <br />
         <h1 className="font-display text-[clamp(1.96rem,6.38vw,6.31rem)] font-bold leading-[1.08] tracking-[-0.04em] text-(--text)">
-          <span className="block whitespace-nowrap">I build intuitive interfaces</span>
+          <span className="block whitespace-nowrap">I build intuitive interfaces,</span>
           <span className="block whitespace-nowrap">seamless user experiences,</span>
           <span className="block whitespace-nowrap">
             & products that <span className="text-(--accent)">scale</span>.
           </span>
         </h1>
+        <br />
         <br />
         <p className="hero-bio mt-10 max-w-xl text-[1.5rem] font-medium leading-[1.55] text-(--hero-muted) max-[760px]:mt-6 max-[760px]:max-w-sm max-[760px]:text-[0.95rem]">
           Frontend & Product Engineer, that also builds his own products end to

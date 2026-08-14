@@ -71,14 +71,15 @@ export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section mx-auto w-full max-w-[100rem] px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
+      className="content-section about-section mx-auto w-full max-w-400 px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
           About Me
         </span>
       </div>
-      <div className="about-grid grid grid-cols-[0.9fr_1.1fr] items-start gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-10">
+      <br />
+      <div className="about-grid grid grid-cols-[minmax(0,38rem)_minmax(0,1fr)] items-start gap-[2.4rem] max-[980px]:grid-cols-1 max-[980px]:gap-10">
         <div className="portrait-column flex w-full max-w-120 flex-col gap-8 max-[980px]:mx-auto max-[980px]:max-w-100 max-[760px]:max-w-70">
           <div className="portrait-stamp w-full">
             <div className="portrait-stamp-inner relative aspect-square w-full overflow-hidden bg-(--surface)">
@@ -100,6 +101,7 @@ export default function About() {
             </span>{" "}
             of code, & research.
           </h2>
+          <br />
           <div className="font-mono about-copy flex flex-col gap-5 text-lg leading-[1.75] text-(--text-2) max-[760px]:text-base max-[520px]:text-[0.95rem]">
             <p>
               I&apos;m Victor, a frontend engineer focused on creating responsive
