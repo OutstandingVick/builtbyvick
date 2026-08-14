@@ -88,13 +88,13 @@ function SkillCarousel({ items }: { items: string[] }) {
         type="button"
         onClick={() => scrollByCard(-1)}
         aria-label="Scroll skills left"
-        className="skill-carousel-arrow absolute top-1/2 left-0 z-2 flex size-11 -translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
+        className="skill-carousel-arrow absolute top-1/2 left-1 z-2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent) max-[760px]:size-9"
       >
         <ChevronLeft size={20} />
       </button>
       <div
         ref={scrollerRef}
-        className="skill-list flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-1 pb-2 max-[360px]:gap-3"
+        className="skill-list flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-12 pb-2 max-[760px]:gap-3 max-[760px]:px-11"
       >
         {items.map((skill) => {
           const Icon = skillIcons[skill];
@@ -102,10 +102,10 @@ function SkillCarousel({ items }: { items: string[] }) {
           return (
             <div
               key={skill}
-              className="skill-card flex min-h-36 w-43 shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
+              className="skill-card flex min-h-36 w-[min(10.75rem,72vw)] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
                          border border-(--border) bg-(--project-card-bg) px-3 py-5
                          text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color]
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:w-35 max-[520px]:rounded-2xl"
+                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:rounded-2xl"
             >
               {Icon ? (
                 <Icon className="text-[3rem] max-[520px]:text-[2.35rem]" style={{ color: skillColors[skill] ?? "var(--text)" }} />
@@ -125,7 +125,7 @@ function SkillCarousel({ items }: { items: string[] }) {
         type="button"
         onClick={() => scrollByCard(1)}
         aria-label="Scroll skills right"
-        className="skill-carousel-arrow absolute top-1/2 right-0 z-2 flex size-11 translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
+        className="skill-carousel-arrow absolute top-1/2 right-1 z-2 flex size-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent) max-[760px]:size-9"
       >
         <ChevronRight size={20} />
       </button>
@@ -137,10 +137,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="content-section about-section mx-auto w-full max-w-400 px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
+      className="content-section about-section mx-auto w-full pb-20 pt-10"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+        <span className="font-mono inline-flex min-h-11 items-center text-[clamp(1.7rem,4vw,3rem)] font-extrabold tracking-[0.02em] text-(--text)">
           About Me
         </span>
       </div>

@@ -103,14 +103,14 @@ export default function Nav() {
 
   return (
     <header
-      className={`site-header fixed inset-x-0 top-4 z-100 px-4 transition-[background-color,backdrop-filter] 
-                  duration-300 max-[760px]:top-3 max-[760px]:px-3 max-[380px]:px-3 ${
+      className={`site-header fixed top-4 left-3 right-3 z-100 transition-[background-color,backdrop-filter] 
+                  duration-300 max-[760px]:top-3 max-[760px]:left-2.5 max-[760px]:right-2.5 ${
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-400 items-center justify-between gap-4 overflow-hidden rounded-full border 
-                      border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
-                      backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-3">
+      <nav className="site-nav-shell mx-auto flex min-h-15 w-full min-w-0 max-w-full items-center justify-between gap-3 overflow-hidden rounded-full border 
+                      border-(--nav-pill-border) bg-(--nav-pill-bg) px-3 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
+                      backdrop-blur-md max-[760px]:min-h-13 max-[760px]:gap-2 max-[760px]:px-2.5">
         {/* Logo */}
         <a
           href="#home"
@@ -212,7 +212,7 @@ export default function Nav() {
         </div>
       </nav>
       {menuOpen && (
-        <div className="mobile-nav-menu mx-auto mt-2 hidden w-full max-w-400 flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
+        <div className="mobile-nav-menu mx-auto mt-2 hidden w-full min-w-0 max-w-full flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
           {links.map((link) => (
             <a
               key={link.href}

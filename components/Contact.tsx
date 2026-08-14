@@ -26,7 +26,7 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="contact-section relative mx-auto mt-20 w-full overflow-hidden px-6 pb-12 pt-44 max-[760px]:mt-12 max-[760px]:px-4 max-[760px]:pb-8 max-[760px]:pt-28"
+        className="contact-section relative mx-auto mt-20 w-full overflow-hidden pb-12 pt-44 max-[760px]:mt-12 max-[760px]:pb-8 max-[760px]:pt-28"
       >
         <div className="contact-wave" aria-hidden="true" />
         <div className="contact-bubble contact-bubble-one" aria-hidden="true" />
@@ -48,7 +48,7 @@ export default function Contact() {
               </h2>
             </div>
 
-            <div className="contact-social-list flex shrink-0 items-center gap-4">
+            <div className="contact-social-list flex min-w-0 flex-wrap items-center gap-4">
               {socials.map((s) => {
                 const Icon = s.icon;
                 return (
@@ -96,7 +96,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="contact-form-card rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px]">
+            <div className="contact-form-card min-w-0 rounded-[34px] border-2 border-[#101820] bg-[#fff7fb] shadow-[0_10px_0_#101820] max-[760px]:rounded-[26px]">
               {sent ? (
                 <div className="px-8 py-12 text-center">
                   <div className="mb-4 text-3xl">✦</div>
@@ -148,7 +148,7 @@ export default function Contact() {
               </div>
           </div>
         </div>
-        <footer className="site-footer relative z-2 mx-auto mt-16 flex w-full max-w-[100rem] items-center justify-between gap-6 py-8 max-[760px]:mt-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2">
+        <footer className="site-footer relative z-2 mx-auto mt-16 flex w-full max-w-full items-center justify-between gap-6 max-[760px]:mt-12 max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-2">
         <span className="font-mono text-sm font-semibold tracking-[0.08em] text-[#071827] max-[520px]:text-xs">
           © 2025 Victor Ogbonna
         </span>
