@@ -455,7 +455,7 @@ body::before {
 }
 
 .contact-inner {
-  width: min(100% - 2.5rem, 1120px);
+  width: min(100% - 2rem, 100rem);
   margin-left: auto;
   margin-right: auto;
 }
@@ -983,7 +983,7 @@ html[data-theme="light"] .contact-wave::before {
   .hero-section,
   .content-section,
   .site-footer {
-    max-width: 760px !important;
+    max-width: 100% !important;
   }
 
   .about-grid,
@@ -1065,7 +1065,7 @@ html[data-theme="light"] .contact-wave::before {
 
   .site-nav-shell,
   .mobile-nav-menu {
-    width: calc(100% - 2rem) !important;
+    width: calc(100% - 1.5rem) !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -1085,9 +1085,10 @@ html[data-theme="light"] .contact-wave::before {
   }
 
   .content-section {
-    width: min(calc(100% - 2rem), 100%) !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 
   .section-label {
@@ -1101,7 +1102,7 @@ html[data-theme="light"] .contact-wave::before {
 
   .contact-inner,
   .contact-section > .site-footer {
-    width: calc(100% - 2rem) !important;
+    width: calc(100% - 1.5rem) !important;
     max-width: none !important;
     margin-left: auto !important;
     margin-right: auto !important;

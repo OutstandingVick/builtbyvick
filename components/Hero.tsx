@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="hero-section relative mx-auto flex min-h-svh w-full max-w-280 flex-col justify-center px-8 pb-24 pt-28 max-[760px]:w-[calc(100%-2rem)] max-[760px]:px-4 max-[760px]:pb-20 max-[760px]:pt-24 max-[380px]:w-[calc(100%-1.5rem)] max-[380px]:px-3"
+      className="hero-section relative mx-auto flex min-h-svh w-full max-w-[100rem] flex-col justify-center px-6 pb-24 pt-28 max-[760px]:px-5 max-[760px]:pb-20 max-[760px]:pt-24 max-[380px]:px-4"
     >
       <div className="hero-copy max-w-4xl">
         <p className="hero-meta mb-5 font-mono text-[0.68rem] font-medium tracking-[0.18em] text-(--hero-muted) max-[760px]:mb-4 max-[760px]:text-[0.6rem]">
@@ -23,7 +23,7 @@ export default function Hero() {
 
       <a
         href="#about"
-        className="hero-scroll absolute bottom-8 right-8 font-mono text-[0.62rem] font-medium tracking-[0.22em] text-(--hero-muted) no-underline transition-colors hover:text-(--text) max-[760px]:bottom-6 max-[760px]:right-4"
+        className="hero-scroll absolute bottom-8 right-6 font-mono text-[0.62rem] font-medium tracking-[0.22em] text-(--hero-muted) no-underline transition-colors hover:text-(--text) max-[760px]:bottom-6 max-[760px]:right-5"
       >
         SCROLL ↓
       </a>

@@ -74,7 +74,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="content-section experience-section mx-auto w-full max-w-280 px-6 py-20 max-[980px]:max-w-190 max-[760px]:px-4 max-[760px]:py-14"
+      className="content-section experience-section mx-auto w-full max-w-[100rem] px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
         <span className="font-mono inline-flex min-h-11 items-center text-3xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
