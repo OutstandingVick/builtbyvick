@@ -6,13 +6,13 @@ import { FaGithub } from "react-icons/fa";
 
 const featured = [
   {
-    name: "Tei Markets",
+    name: "Tutela Markets",
     category: "DeFi / Prediction Market",
-    period: "2025",
+    period: "2026",
     desc: "A peer-to-peer football prediction market on Solana using a constant-product AMM. Users stake SOL on match outcomes; prices update automatically via the AMM formula.",
-    site: "https://tei-markets.vercel.app/",
-    image: "/tei.png",
-    imageAlt: "Tei Markets website preview",
+    site: "https://tutelamarkets.vercel.app/app",
+    image: "/tutela.png",
+    imageAlt: "Tutela Markets website preview",
     stack: ["Next.js", "TypeScript", "Solana", "Tailwind"],
   },
   {
