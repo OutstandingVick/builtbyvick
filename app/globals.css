@@ -697,7 +697,19 @@ html[data-theme="light"] .contact-wave::before {
     linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 74%, transparent), var(--bg));
 }
 
-.skill-card,
+.skill-list {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.skill-list::-webkit-scrollbar {
+  display: none;
+}
+
+.skill-carousel-arrow {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+
 .project-featured-item,
 .collaboration-card,
 .contact-form-card {
