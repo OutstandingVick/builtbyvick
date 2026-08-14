@@ -6,7 +6,7 @@ export default function Hero() {
     >
       <div className="hero-copy max-w-4xl">
         <p className="hero-meta mb-5 font-mono text-[0.68rem] font-medium tracking-[0.18em] text-(--hero-muted) max-[760px]:mb-4 max-[760px]:text-[0.6rem]">
-          FRONTEND ENGINEER · NG · OPEN TO WORK
+          FULL-STACK ENGINEER · LAGOS, NG · OPEN TO WORK
         </p>
 
         <h1 className="font-display text-[clamp(2.6rem,7.2vw,5.75rem)] font-bold leading-[1.02] tracking-[-0.04em] text-(--text)">
@@ -16,8 +16,8 @@ export default function Hero() {
         </h1>
 
         <p className="hero-bio mt-7 max-w-xl text-[1.05rem] font-medium leading-[1.55] text-(--hero-muted) max-[760px]:mt-6 max-[760px]:max-w-sm max-[760px]:text-[0.95rem]">
-          Frontend engineer, technical writer & researcher. I build products
-          end to end.
+          Frontend engineer at Gen Financial, and I build my own products end to
+          end.
         </p>
       </div>
 
