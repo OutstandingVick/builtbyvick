@@ -6,6 +6,16 @@ import { FaGithub } from "react-icons/fa";
 
 const featured = [
   {
+    name: "Trackam",
+    category: "DeFi / Prediction Market",
+    period: "2026",
+    desc: "Open-source coding analytics platform that tracks developer activity, streaks, goals, leaderboards, and proof of work.",
+    site: "https://trackam.click/",
+    image: "/trackam.png",
+    imageAlt: "Trackam website preview",
+    stack: ["TypeScript", "PostgreSQL", "Railway", "and More"],
+  },
+  {
     name: "Tutela Markets",
     category: "DeFi / Prediction Market",
     period: "2026",
