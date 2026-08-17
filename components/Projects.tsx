@@ -149,7 +149,7 @@ export default function Projects() {
         </span>
       </div>
       <br />
-      <br />
+      <br className="hidden md:block"/>
       <div className="featured-projects mx-auto flex w-full flex-col">
         {featured.map((project, index) => (
           <ProjectRow key={project.name} project={project} index={index + 1} />
@@ -168,7 +168,7 @@ export default function Projects() {
              </a>
       </div>
 
-      <div className="collaboration-section mt-20 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
+      <div className="collaboration-section mt-15 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
         <div className="collaboration-heading mx-auto mb-16 max-w-190 text-center max-[760px]:mb-10">
           <h3 className="font-display mb-5 text-[clamp(1.7rem,4vw,3rem)] font-extrabold leading-[1.05] tracking-tighter text-(--text) max-[760px]:text-[1.65rem]">
             Testimonials from <span className="text-(--accent)">remote</span> collaborators

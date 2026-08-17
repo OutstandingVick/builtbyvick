@@ -70,6 +70,7 @@ export default function Contact() {
               })}
             </div>
           </div>
+          <br className="block md:hidden" />
           <div className="contact-grid grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-14 max-[980px]:grid-cols-1 max-[980px]:gap-10">
             <div className="min-w-0">
               <p className="font-mono contact-copy mb-10 max-w-140 text-[1.15rem] font-semibold leading-[1.6] text-[#071827] max-[760px]:text-[1rem]">
@@ -77,17 +78,18 @@ export default function Contact() {
                 just want to talk through a build, reach out and I&apos;ll get back
                 to you.
               </p>
-
+              <br className="block md:hidden" />
               <a
                 href="mailto:victor.ogbonna@hotmail.com"
                 className="contact-email font-mono inline-flex min-h-14 items-center justify-center 
                 rounded-full border-2 border-[#101820] bg-[#0496FF] px-6 py-4 text-[0.82rem] 
                 font-black tracking-[0.02em] text-[#071827] no-underline shadow-[0_7px_0_#101820] 
-                transition-transform hover:-translate-y-1 max-[520px]:[overflow-wrap:anywhere] max-[760px]:w-full max-[760px]:text-[0.72rem]"
+                transition-transform hover:-translate-y-1 max-[520px]:wrap-anywhere] max-[760px]:w-full max-[760px]:text-[0.72rem]"
               >
                 victor.ogbonna@hotmail.com ↗
               </a>
-
+              <br className="block md:hidden" />
+              <br className="block md:hidden" />
               <a
                 href="mailto:victor.ogbonna@hotmail.com"
                 className="contact-fish mt-16 inline-flex min-h-20 items-center justify-center rounded-[55%_45%_45%_55%/55%_50%_50%_45%] border-2 border-[#101820] bg-[#0496FF] px-12 text-[1.2rem] font-black text-[#071827] no-underline shadow-[0_7px_0_#101820] max-[760px]:mt-8"
@@ -156,6 +158,7 @@ export default function Contact() {
           Built with Typescript, Next.js & Tailwind CSS
         </span>
       </footer>
+      <br />
       </section>
     </>
   );
