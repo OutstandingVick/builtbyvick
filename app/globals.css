@@ -1324,23 +1324,31 @@ html[data-theme="light"] .contact-wave::before {
   }
 
   .experience-month {
-    top: 22px;
+    top: 0;
     bottom: auto;
     left: auto;
-    gap: 0.55rem;
+    display: block;
+    width: max-content;
+    padding: 0;
+    text-align: center;
     font-size: 0.78rem;
   }
 
   .experience-month-start {
-    left: 0;
+    left: 12px;
+    transform: translateX(-50%);
   }
 
   .experience-month-end {
-    right: 0;
+    right: 12px;
+    transform: translateX(50%);
   }
 
   .experience-node {
-    position: static;
+    position: absolute;
+    top: 25.5px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 13px;
     height: 13px;
     box-shadow: 0 0 0 4px var(--bg);
