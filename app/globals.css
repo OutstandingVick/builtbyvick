@@ -1189,6 +1189,11 @@ html[data-theme="light"] .contact-wave::before {
     padding-right: 1.1rem !important;
   }
 
+  .mobile-nav-menu > a {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
   .site-nav-actions {
     gap: 0.45rem !important;
     padding-right: 0;

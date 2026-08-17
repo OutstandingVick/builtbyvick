@@ -223,7 +223,6 @@ export default function Nav() {
               }`}
             >
               {link.label}
-              {link.hasChevron && <ChevronsUpDown size={14} className="text-(--nav-link-muted)" />}
             </a>
           ))}
         </div>
