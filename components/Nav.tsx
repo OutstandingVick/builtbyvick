@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { ChevronsUpDown, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { Mail, Menu, Moon, Sun, X } from "lucide-react";
 
 const links = [
   { label: "HOME", href: "#home" },
@@ -137,18 +137,11 @@ export default function Nav() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className={`font-mono relative inline-flex min-h-11 items-center gap-[0.4rem] whitespace-nowrap text-[0.66rem] font-bold leading-none tracking-[0.14em] no-underline transition-colors hover:text-(--nav-link-active) ${
+                  className={`font-mono relative inline-flex min-h-11 items-center gap-[0.4rem] whitespace-nowrap text-[0.72rem] font-medium leading-none tracking-[0.08em] no-underline transition-colors hover:text-(--nav-link-active) ${
                     isActive ? "text-(--nav-link-active)" : "text-(--nav-link)"
                   }`}
                 >
                   {l.label}
-                  {l.hasChevron && (
-                    <ChevronsUpDown
-                      size={14}
-                      strokeWidth={1.8}
-                      className="shrink-0 text-(--nav-link-muted)"
-                    />
-                  )}
                   {isActive && (
                     <span
                       aria-hidden="true"
