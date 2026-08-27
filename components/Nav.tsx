@@ -203,13 +203,13 @@ export default function Nav() {
         </div>
       </nav>
       {menuOpen && (
-        <div className="mobile-nav-menu mx-auto mt-2 hidden w-full max-w-400 flex-col overflow-hidden rounded-2xl border border-(--nav-pill-border) bg-(--nav-bg) p-2 shadow-[0_18px_48px_rgba(13,44,84,0.18)] backdrop-blur-xl max-[760px]:flex">
+        <div className="mobile-nav-menu mx-auto hidden w-full max-w-400 flex-col overflow-hidden border-b border-(--nav-pill-border) bg-(--nav-bg) px-0 py-3 shadow-none backdrop-blur-xl max-[760px]:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`font-mono flex min-h-11 items-center justify-between rounded-xl px-4 text-[0.75rem] font-bold tracking-[0.12em] no-underline transition-colors hover:bg-[color-mix(in_srgb,var(--surface)_14%,transparent)] ${
+              className={`font-mono flex min-h-11 items-center justify-between border-t border-(--nav-pill-border) px-0 text-[0.75rem] font-medium tracking-[0.08em] no-underline transition-colors hover:text-(--nav-link-active) ${
                 active === link.href.slice(1) ? "text-(--nav-link-active)" : "text-(--nav-link)"
               }`}
             >
