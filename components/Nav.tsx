@@ -145,9 +145,7 @@ export default function Nav() {
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      className={`absolute bottom-0 left-0 h-0.5 rounded-none bg-(--accent) ${
-                        l.hasChevron ? "right-[1.2rem]" : "right-0"
-                      }`}
+                      className="absolute bottom-0 left-0 right-0 h-px bg-(--nav-link-active)"
                     />
                   )}
                 </a>
