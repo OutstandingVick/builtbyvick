@@ -1593,3 +1593,27 @@ html[data-theme="light"] .contact-wave::before {
     display: none;
   }
 }
+
+@media (max-width: 760px) {
+  .hero-section {
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.25rem 4rem !important;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 34rem;
+  }
+
+  .hero-bio {
+    max-width: 29rem !important;
+    margin-top: 2rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .site-nav-shell,
+  .mobile-nav-menu {
+    width: 100% !important;
+  }
+}
