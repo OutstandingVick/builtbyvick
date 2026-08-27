@@ -8,7 +8,7 @@ export default function Hero() {
         <p className="hero-kicker font-mono mb-7 text-[0.72rem] font-medium tracking-[0.14em] text-(--hero-muted) md:text-[0.82rem]">
           VICTOR POWEIDEI OGBONNA
         </p>
-        <h1 className="font-display text-[clamp(1.96rem,6.38vw,6.31rem)] font-bold leading-[1.08] tracking-[-0.04em] text-(--text) max-[760px]:text-[clamp(1.45rem,6.4vw,2.75rem)]">
+        <h1 className="hero-heading font-serif text-[clamp(3rem,5.7vw,5.8rem)] font-normal leading-[0.98] tracking-normal text-(--text) max-[760px]:text-[clamp(2.55rem,11vw,4.35rem)]">
           <span className="block whitespace-nowrap">I build intuitive interfaces,</span>
           <span className="block whitespace-nowrap">seamless user experiences,</span>
           <span className="block whitespace-nowrap">
