@@ -127,8 +127,8 @@ export default function Nav() {
           />
         </a>
 
-        <div className="site-nav-pill flex min-h-11 min-w-0 shrink items-center justify-end gap-5 overflow-hidden scrollbar-none max-[760px]:gap-2">
-          <div className="site-nav-links flex h-full shrink-0 items-stretch gap-5 max-[760px]:hidden">
+        <div className="site-nav-pill flex min-h-11 min-w-0 shrink items-center justify-end gap-7 overflow-hidden scrollbar-none max-[760px]:gap-2">
+          <div className="site-nav-links flex h-full shrink-0 items-stretch gap-7 max-[760px]:hidden">
             {links.map((l) => {
               const id = l.href.slice(1);
               const isActive = active === id;
