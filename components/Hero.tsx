@@ -5,10 +5,9 @@ export default function Hero() {
       className="hero-section relative mx-auto flex min-h-svh w-full max-w-400 flex-col items-center justify-center px-6 pb-16 pt-28 text-center max-[760px]:px-5 max-[760px]:pb-10 max-[760px]:pt-24 max-[380px]:px-4"
     >
       <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center">
-        <p className="hfont-mono text-[0.6rem] md:text-[1rem] font-medium tracking-[0.18em] text-(--hero-muted)">
+        <p className="hero-kicker font-mono mb-7 text-[0.72rem] font-medium tracking-[0.14em] text-(--hero-muted) md:text-[0.82rem]">
           VICTOR POWEIDEI OGBONNA
         </p>
-        <br/>
         <h1 className="font-display text-[clamp(1.96rem,6.38vw,6.31rem)] font-bold leading-[1.08] tracking-[-0.04em] text-(--text) max-[760px]:text-[clamp(1.45rem,6.4vw,2.75rem)]">
           <span className="block whitespace-nowrap">I build intuitive interfaces,</span>
           <span className="block whitespace-nowrap">seamless user experiences,</span>
