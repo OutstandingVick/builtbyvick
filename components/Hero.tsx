@@ -12,7 +12,7 @@ export default function Hero() {
           <span className="block">I build intuitive interfaces,</span>
           <span className="block">seamless user experiences,</span>
           <span className="block">
-            & products that <span className="text-(--accent)">scale</span>.
+            &amp; products that <span className="hero-accent italic text-(--accent)">scale</span>.
           </span>
         </h1>
         <p className="hero-bio max-w-xl text-[1.5rem] font-medium leading-[1.55] text-(--hero-muted)">
