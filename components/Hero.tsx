@@ -22,13 +22,10 @@ export default function Hero() {
       </div>
       <a
         href="#about"
-        className="absolute bottom-8 right-6 font-mono text-[0.62rem] font-medium tracking-[0.22em] text-(--hero-muted) no-underline transition-colors hover:text-(--text) max-[760px]:bottom-6 max-[760px]:right-5"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[0.62rem] font-medium tracking-[0.18em] text-(--hero-muted) no-underline transition-colors hover:text-(--text) max-[760px]:bottom-6"
       >
         SCROLL ↓
       </a>
-      <br/>
-      <br/>
-      <br/>
     </section>
   );
 }
