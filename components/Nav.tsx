@@ -115,7 +115,7 @@ export default function Nav() {
         <a
           href="#home"
           aria-label="Victor Ogundimu home"
-          className="inline-flex size-10 shrink-0 items-center justify-center no-underline max-[760px]:size-9"
+          className="inline-flex size-11 shrink-0 items-center justify-start no-underline max-[760px]:size-9"
         >
           <Image
             src={theme === "dark" ? "/vick-dark-mode-indigo.png" : "/vick-light-mode-indigo.png"}
@@ -123,7 +123,7 @@ export default function Nav() {
             width={48}
             height={48}
             priority
-            className="block size-full object-contain"
+            className="block size-9 object-contain max-[760px]:size-8"
           />
         </a>
 
