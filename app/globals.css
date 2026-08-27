@@ -187,6 +187,20 @@ body::before {
   content: none;
 }
 
+.hero-content::after {
+  content: "";
+  width: min(18rem, 56vw);
+  margin-top: 2.5rem;
+  border-top: 1px dashed color-mix(in srgb, var(--text) 26%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header *,
+  .hero-section * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
 .portrait-stamp {
   --stamp-notch: 9px;
   position: relative;
@@ -1604,6 +1618,7 @@ html[data-theme="light"] .contact-wave::before {
 
   .hero-content {
     max-width: 34rem;
+    transform: translateY(-2.5rem);
   }
 
   .hero-bio {
