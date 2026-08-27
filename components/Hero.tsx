@@ -15,7 +15,7 @@ export default function Hero() {
             &amp; products that <span className="hero-accent italic text-(--accent)">scale</span>.
           </span>
         </h1>
-        <p className="hero-bio max-w-xl text-[1.5rem] font-medium leading-[1.55] text-(--hero-muted)">
+        <p className="hero-bio max-w-2xl text-[1rem] font-medium leading-[1.7] text-(--hero-muted) md:text-[1.08rem]">
           Frontend & Product Engineer, that also builds his own products end to
           end.
         </p>
