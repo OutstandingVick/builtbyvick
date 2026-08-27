@@ -158,7 +158,7 @@ export default function Nav() {
             className="site-nav-divider h-4 w-px shrink-0 bg-(--nav-pill-border) opacity-60 max-[760px]:h-4"
           />
 
-          <div className="site-nav-actions flex shrink-0 items-center justify-end gap-2.5 max-[760px]:gap-1.5">
+          <div className="site-nav-actions flex shrink-0 items-center justify-end gap-1 max-[760px]:gap-0.5">
             <button
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
@@ -175,7 +175,7 @@ export default function Nav() {
               rel="noreferrer"
               aria-label="GitHub"
               title="GitHub"
-              className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-(--nav-icon) no-underline transition-[background-color,color,transform] hover:-translate-y-px hover:bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-8"
+              className="inline-flex size-9 shrink-0 items-center justify-center text-(--nav-icon) no-underline transition-[color,transform] hover:-translate-y-px hover:text-(--nav-link-active) max-[760px]:size-8"
             >
               <GitHubMark size={mobileNav ? 20 : 23} />
             </a>
@@ -184,7 +184,7 @@ export default function Nav() {
               href="mailto:victor@outstandingvick.xyz"
               aria-label="Email"
               title="Email"
-              className="inline-flex size-9 shrink-0 items-center justify-center rounded-full text-(--nav-icon) no-underline transition-[background-color,color,transform] hover:-translate-y-px hover:bg-[color-mix(in_srgb,var(--surface)_70%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-8"
+              className="inline-flex size-9 shrink-0 items-center justify-center text-(--nav-icon) no-underline transition-[color,transform] hover:-translate-y-px hover:text-(--nav-link-active) max-[760px]:size-8"
             >
               <Mail size={mobileNav ? 19 : 22} strokeWidth={1.8} />
             </a>
