@@ -155,7 +155,7 @@ export default function Nav() {
 
           <div
             aria-hidden="true"
-            className="site-nav-divider h-5 w-px shrink-0 bg-(--nav-pill-border) opacity-70 max-[760px]:h-4"
+            className="site-nav-divider h-4 w-px shrink-0 bg-(--nav-pill-border) opacity-60 max-[760px]:h-4"
           />
 
           <div className="site-nav-actions flex shrink-0 items-center justify-end gap-2.5 max-[760px]:gap-1.5">
