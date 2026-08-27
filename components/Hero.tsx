@@ -2,9 +2,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="hero-section relative mx-auto flex min-h-svh w-full max-w-400 flex-col justify-end px-6 pb-8 pt-28 max-[760px]:px-5 max-[760px]:pb-6 max-[760px]:pt-24 max-[380px]:px-4"
+      className="hero-section relative mx-auto flex min-h-svh w-full max-w-400 flex-col items-center justify-center px-6 pb-16 pt-28 text-center max-[760px]:px-5 max-[760px]:pb-10 max-[760px]:pt-24 max-[380px]:px-4"
     >
-      <div>
+      <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center">
         <p className="hfont-mono text-[0.6rem] md:text-[1rem] font-medium tracking-[0.18em] text-(--hero-muted)">
           VICTOR POWEIDEI OGBONNA
         </p>
