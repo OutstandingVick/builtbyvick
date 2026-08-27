@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect, useSyncExternalStore } from "react";
-import { Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Mail, Menu, X } from "lucide-react";
 
 const links = [
   { label: "HOME", href: "#home" },
@@ -9,43 +9,6 @@ const links = [
   { label: "PROJECTS", href: "#projects", hasChevron: true },
   { label: "CONTACT ME", href: "#contact" },
 ];
-
-type Theme = "light" | "dark";
-
-function getPreferredTheme(): Theme {
-  if (typeof window === "undefined") {
-    return "dark";
-  }
-
-  try {
-    const savedTheme = window.localStorage.getItem("theme");
-    if (savedTheme === "light" || savedTheme === "dark") {
-      return savedTheme;
-    }
-  } catch {
-    // Use the system preference when storage is unavailable.
-  }
-
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-}
-
-function applyTheme(theme: Theme) {
-  document.documentElement.dataset.theme = theme;
-  try {
-    window.localStorage.setItem("theme", theme);
-  } catch {
-    // The visual theme can still change when storage is unavailable.
-  }
-}
-
-function isMobileNav() {
-  return typeof window !== "undefined" && window.innerWidth <= 760;
-}
-
-function subscribeToViewport(onStoreChange: () => void) {
-  window.addEventListener("resize", onStoreChange);
-  return () => window.removeEventListener("resize", onStoreChange);
-}
 
 function GitHubMark({ size }: { size: number }) {
   return (
@@ -65,9 +28,7 @@ function GitHubMark({ size }: { size: number }) {
 export default function Nav() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState<Theme>("dark");
   const [menuOpen, setMenuOpen] = useState(false);
-  const mobileNav = useSyncExternalStore(subscribeToViewport, isMobileNav, () => false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -84,22 +45,6 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
-      const preferredTheme = getPreferredTheme();
-      setTheme(preferredTheme);
-      document.documentElement.dataset.theme = preferredTheme;
-    });
-
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    applyTheme(nextTheme);
-  };
 
   return (
     <header
@@ -118,7 +63,7 @@ export default function Nav() {
           className="inline-flex size-11 shrink-0 items-center justify-start no-underline max-[760px]:size-9"
         >
           <Image
-            src={theme === "dark" ? "/vick-dark-mode-indigo.png" : "/vick-light-mode-indigo.png"}
+            src="/vick-light-mode-indigo.png"
             alt="Victor Ogundimu logo"
             width={48}
             height={48}
@@ -177,7 +122,7 @@ export default function Nav() {
               title="GitHub"
               className="inline-flex size-9 shrink-0 items-center justify-center text-(--nav-icon) no-underline transition-[color,transform] hover:-translate-y-px hover:text-(--nav-link-active) max-[760px]:size-8"
             >
-              <GitHubMark size={mobileNav ? 20 : 23} />
+              <GitHubMark size={22} />
             </a>
 
             <a
@@ -186,19 +131,8 @@ export default function Nav() {
               title="Email"
               className="inline-flex size-9 shrink-0 items-center justify-center text-(--nav-icon) no-underline transition-[color,transform] hover:-translate-y-px hover:text-(--nav-link-active) max-[760px]:size-8"
             >
-              <Mail size={mobileNav ? 19 : 22} strokeWidth={1.8} />
+              <Mail size={21} strokeWidth={1.8} />
             </a>
-
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              aria-pressed={theme === "dark"}
-              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="theme-toggle inline-flex size-8.5 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--nav-pill-border) bg-[color-mix(in_srgb,var(--surface)_32%,transparent)] text-(--nav-icon) transition-[background-color,border-color,color,transform] hover:-translate-y-px hover:border-(--nav-link-muted) hover:bg-[color-mix(in_srgb,var(--surface)_48%,transparent)] hover:text-(--nav-link-active) max-[760px]:size-7.5"
-            >
-              {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
-            </button>
           </div>
         </div>
       </nav>

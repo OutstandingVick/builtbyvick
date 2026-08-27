@@ -160,7 +160,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono inline-flex min-h-14 w-full max-w-72 items-center justify-center gap-3 rounded-full bg-(--accent) px-8 py-4 text-base 
-            font-extrabold tracking-normal text-[#0D2C54] no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)] 
+            font-extrabold tracking-normal text-(--text) no-underline shadow-[0_18px_38px_color-mix(in_srgb,var(--accent)_24%,transparent)]
             transition-[opacity,transform] hover:-translate-y-0.5 hover:opacity-[0.88]"
           >
              <FaGithub aria-hidden="true" className="text-xl" />
