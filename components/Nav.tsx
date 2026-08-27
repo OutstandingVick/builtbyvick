@@ -103,12 +103,12 @@ export default function Nav() {
 
   return (
     <header
-      className={`site-header fixed inset-x-0 top-4 z-100 px-4 transition-[background-color,backdrop-filter] 
-                  duration-300 max-[760px]:top-3 max-[760px]:px-3 max-[380px]:px-3 ${
+      className={`site-header fixed inset-x-0 top-0 z-100 px-6 transition-[background-color,backdrop-filter] 
+                  duration-300 max-[760px]:px-5 max-[380px]:px-4 ${
                   scrolled ? "bg-transparent backdrop-blur-0" : "bg-transparent backdrop-blur-0"
       }`}
     >
-      <nav className="site-nav-shell mx-auto flex min-h-15 w-full max-w-400 items-center justify-between gap-4 overflow-hidden rounded-full border 
+      <nav className="site-nav-shell mx-auto flex min-h-18 w-full max-w-400 items-center justify-between gap-4 overflow-hidden border-b 
                       border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
                       backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-3">
         {/* Logo */}
