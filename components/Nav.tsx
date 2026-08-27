@@ -109,8 +109,8 @@ export default function Nav() {
       }`}
     >
       <nav className="site-nav-shell mx-auto flex min-h-18 w-full max-w-400 items-center justify-between gap-4 overflow-hidden border-b 
-                      border-(--nav-pill-border) bg-(--nav-pill-bg) px-4 pr-5 shadow-[0_6px_18px_rgba(13,44,84,0.06)] 
-                      backdrop-blur-md max-[760px]:min-h-13.5 max-[760px]:gap-2 max-[760px]:px-3 max-[760px]:pr-3">
+                      border-(--nav-pill-border) bg-transparent px-0 shadow-none 
+                      backdrop-blur-none max-[760px]:min-h-15 max-[760px]:gap-2">
         {/* Logo */}
         <a
           href="#home"
