@@ -118,6 +118,10 @@ body::before {
 
 .hero-section {
   isolation: isolate;
+  max-width: none !important;
+  background:
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--surface) 14%, transparent), transparent 22rem),
+    color-mix(in srgb, var(--accent) 24%, var(--bg));
 }
 
 .hero-meta {
