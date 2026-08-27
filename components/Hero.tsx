@@ -49,13 +49,13 @@ export default function Hero() {
         </div>
 
         <p className="hero-kicker font-mono text-[0.78rem] font-semibold tracking-[0.03em] text-(--hero-muted) md:text-[0.86rem]">
-          Hi, I&apos;m Victor
+          Hi, I&apos;m Victor Poweidei Ogbonna
         </p>
 
-        <h1 className="hero-heading font-serif text-[clamp(3.2rem,5.3vw,5.5rem)] font-normal leading-[0.94] tracking-[-0.025em] text-(--text) max-[760px]:text-[clamp(2.65rem,11.5vw,4rem)]">
+        <h1 className="hero-heading font-serif text-[clamp(3.2rem,5.05vw,5.25rem)] font-normal italic leading-[0.94] tracking-[-0.025em] text-(--text) max-[760px]:text-[clamp(2.65rem,11.5vw,4rem)]">
           I build intuitive interfaces,
           <br className="hero-heading-break" /> seamless experiences &amp; products that{" "}
-          <span className="hero-accent italic text-(--accent)">scale.</span>
+          <span className="hero-accent text-(--accent)">scale.</span>
         </h1>
 
         <p className="hero-bio max-w-2xl text-[1rem] font-medium leading-[1.7] text-(--hero-muted) md:text-[1.08rem]">

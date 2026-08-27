@@ -156,6 +156,19 @@ body::before {
   content: none;
 }
 
+.hero-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.4px);
+  background-size: 7px 7px;
+  opacity: 0.62;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 16%, transparent 84%, #000 100%);
+  mask-image: linear-gradient(90deg, #000 0%, transparent 16%, transparent 84%, #000 100%);
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -164,9 +177,9 @@ body::before {
 
 .hero-portrait-card {
   position: relative;
-  width: clamp(10.5rem, 14vw, 12rem);
-  aspect-ratio: 1.45 / 1;
-  margin-bottom: 2rem;
+  width: clamp(12.25rem, 15vw, 14rem);
+  aspect-ratio: 1 / 1.03;
+  margin-bottom: 2.2rem;
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.88);
   border-radius: 1.3rem;
@@ -213,6 +226,7 @@ body::before {
 .hero-kicker {
   margin-bottom: 1.25rem;
   color: rgba(31, 61, 84, 0.74) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
 }
 
 .hero-divider {
@@ -232,7 +246,7 @@ body::before {
   border-radius: 999px;
   background: #142b3e;
   color: #f4f9fc;
-  font-family: 'Inter', sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -254,13 +268,13 @@ body::before {
 }
 
 .hero-doodle-left {
-  left: clamp(1.25rem, 6vw, 7rem);
-  top: 27%;
+  left: clamp(1.25rem, 5vw, 6rem);
+  top: 24%;
   transform: rotate(-9deg);
 }
 
 .hero-window {
-  width: clamp(7.2rem, 11vw, 10rem);
+  width: clamp(9rem, 13vw, 12.5rem);
   overflow: hidden;
   border: 3px solid #173247;
   border-radius: 0.9rem;
@@ -289,7 +303,7 @@ body::before {
 
 .hero-window-face {
   position: relative;
-  height: clamp(5rem, 7vw, 6.5rem);
+  height: clamp(6.2rem, 8.5vw, 8rem);
 }
 
 .hero-window-face i {
@@ -328,14 +342,14 @@ body::before {
 }
 
 .hero-doodle-right {
-  right: clamp(1rem, 5vw, 6rem);
-  bottom: 19%;
+  right: clamp(1rem, 4vw, 5rem);
+  bottom: 12%;
   transform: rotate(8deg);
 }
 
 .hero-code-card {
   display: flex;
-  width: clamp(7.5rem, 11vw, 10.5rem);
+  width: clamp(9rem, 13vw, 12.5rem);
   flex-direction: column;
   gap: 0.55rem;
   padding: 1.1rem;
@@ -374,13 +388,14 @@ body::before {
 .hero-spark-two { left: -1.7rem; bottom: -1.4rem; }
 
 .hero-heading {
-  max-width: 66rem;
+  max-width: 76rem;
   text-wrap: balance;
 }
 
 .hero-bio {
   color: rgba(31, 61, 84, 0.68) !important;
-  font-family: 'Inter', sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.94rem !important;
   text-wrap: balance;
 }
 
@@ -1847,5 +1862,70 @@ body::before {
   .site-nav-shell,
   .mobile-nav-menu {
     width: 100% !important;
+  }
+
+  .hero-section {
+    justify-content: center;
+    padding: 5.75rem 1.25rem 4.25rem !important;
+  }
+
+  .hero-content {
+    max-width: 34rem;
+    padding-bottom: 0;
+    transform: none;
+  }
+
+  .hero-portrait-card {
+    width: 9.75rem;
+    margin-bottom: 1.35rem;
+    border-width: 4px;
+    border-radius: 1.1rem;
+  }
+
+  .hero-doodle {
+    display: none;
+  }
+
+  .hero-kicker {
+    margin-bottom: 0.9rem;
+    font-size: 0.72rem !important;
+  }
+
+  .hero-heading {
+    max-width: 24rem;
+    font-size: clamp(2.55rem, 11vw, 3.4rem) !important;
+    line-height: 0.96;
+  }
+
+  .hero-bio {
+    max-width: 22rem !important;
+    margin-top: 1.25rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-divider {
+    width: min(13rem, 62vw);
+    margin-top: 1.2rem;
+  }
+
+  .hero-cta {
+    min-height: 2.8rem;
+    margin-top: 1rem;
+    padding-inline: 1.15rem;
+    font-size: 0.64rem;
+  }
+
+  .hero-scroll {
+    right: auto !important;
+    bottom: 1rem;
+    left: 50% !important;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.55rem;
+  }
+
+  .hero-section::after {
+    opacity: 0.4;
   }
 }
