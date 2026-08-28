@@ -69,6 +69,52 @@ const skills: Record<string, string[]> = {
   
 };
 
+const aboutPhotos = {
+  first: [
+    { src: "/about-story-02.jpg", alt: "Victor speaking during a Superteam Nigeria gathering" },
+    { src: "/about-story-01.jpg", alt: "Victor collaborating with builders at a Superteam Nigeria event" },
+    { src: "/about-story-03.jpg", alt: "Victor sharing an idea with the Superteam Nigeria community" },
+  ],
+  second: [
+    { src: "/about-story-04.jpg", alt: "Victor presenting a workshop brief" },
+    { src: "/about-story-05.jpg", alt: "Victor facilitating a community workshop" },
+    { src: "/about-story-06.jpg", alt: "Victor speaking and smiling during a workshop" },
+  ],
+};
+
+function StoryCollage({
+  photos,
+  variant,
+}: {
+  photos: { src: string; alt: string }[];
+  variant: "first" | "second";
+}) {
+  return (
+    <div className={`about-collage about-collage-${variant}`}>
+      <span className="about-collage-grid" aria-hidden="true" />
+      <svg className="about-collage-route" viewBox="0 0 240 155" aria-hidden="true">
+        <path d="M18 20 C52 2 83 16 77 43 C70 73 117 69 144 44 C174 18 212 31 221 61" />
+        <path d="M214 54 L222 62 L214 68" />
+        <rect x="12" y="16" width="8" height="8" rx="1" />
+        <rect x="217" y="57" width="8" height="8" rx="1" />
+      </svg>
+      <div className="about-photo-stack">
+        {photos.map((photo, index) => (
+          <figure key={photo.src} className={`about-photo about-photo-${index + 1}`}>
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 760px) 48vw, 260px"
+              className="object-cover"
+            />
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SkillCarousel({ items }: { items: string[] }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
 
@@ -144,49 +190,35 @@ export default function About() {
           About Me
         </span>
       </div>
-      <br />
-      <div className="about-grid grid grid-cols-[minmax(0,38rem)_minmax(0,1fr)] items-start gap-[2.4rem] max-[980px]:grid-cols-1 max-[980px]:gap-10">
-        <div className="portrait-column flex w-full max-w-120 flex-col gap-8 max-[980px]:mx-auto max-[980px]:max-w-100 max-[760px]:max-w-70">
-          <div className="portrait-stamp w-full">
-            <div className="portrait-stamp-inner relative aspect-square w-full overflow-hidden bg-(--surface)">
-              <Image
-                src="/vic-prof.jpg"
-                alt="Portrait of Victor Ogbonna"
-                fill
-                sizes="(max-width: 900px) 100vw, 480px"
-                className="object-cover object-[50%_36%]"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h2 className="font-display section-heading mb-7 text-5xl font-bold leading-[1.1] tracking-[-0.02em] text-(--text) max-[1100px]:text-4xl max-[760px]:text-[1.75rem] max-[520px]:text-2xl">
-            Building at the <span className="font-serif italic text-(--accent)">
-              intersection
-            </span>{" "}
-            of code, & research.
-          </h2>
-          <br />
-          <div className="font-mono about-copy flex flex-col gap-5 text-lg leading-[1.75] text-(--text-2) max-[760px]:text-base max-[520px]:text-[0.95rem]">
+      <div className="about-story">
+        <div className="about-story-row">
+          <StoryCollage photos={aboutPhotos.first} variant="first" />
+          <div className="about-story-copy font-mono">
             <p>
               I’m a frontend engineer and product builder focused on creating responsive web products, developer-facing tools, and digital experiences that combine strong engineering with clear product thinking.
             </p>
             <p>
-              Recently, I’ve worked across Web3, fintech, AI agents, payments, prediction markets, and blockchain infrastructure, building projects such as Tutela, Phylax, Setula, Edged, Immunis Protocol, Tei Markets, Klazz, and Rappen. Much of this work has involved taking early-stage ideas from research and technical validation through product design, frontend development, and working prototypes.
-            </p>
-            <p>
-              Alongside engineering, I work as a technical researcher and writer, exploring areas such as DeFi, stablecoins, payments, Solana infrastructure, and emerging crypto products. That research shapes how I build—helping me understand users, validate assumptions, and turn complex systems into simpler experiences.
-            </p>
-            <p>
-              Outside of software, I’m deeply involved in developer and Web3 communities through Superteam Nigeria, where I’ve worked across community building, technical education, events, content, and ecosystem initiatives. It’s given me a broader understanding of how products are built, communicated, distributed, and ultimately adopted.
+              Recently, I’ve worked across Web3, fintech, AI agents, payments, prediction markets, and blockchain infrastructure, taking early-stage ideas from research and technical validation through product design, frontend development, and working prototypes.
             </p>
           </div>
         </div>
+
+        <div className="about-story-divider" aria-hidden="true" />
+
+        <div className="about-story-row about-story-row-reverse">
+          <div className="about-story-copy font-mono">
+            <p>
+              Alongside engineering, I work as a technical researcher and writer, exploring DeFi, stablecoins, payments, Solana infrastructure, and emerging crypto products. That research shapes how I build—helping me understand users, validate assumptions, and turn complex systems into simpler experiences.
+            </p>
+            <p>
+              Outside of software, I’m deeply involved in developer and Web3 communities through Superteam Nigeria. Working across community building, technical education, events, content, and ecosystem initiatives has shown me how products are built, communicated, distributed, and ultimately adopted.
+            </p>
+          </div>
+          <StoryCollage photos={aboutPhotos.second} variant="second" />
+        </div>
       </div>
-      <br />
-    <br />
-      <div className="skills-grid mt-16 max-[760px]:mt-12">
+
+      <div className="skills-grid mt-24 max-[760px]:mt-16">
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="skill-group">
             <div className="font-mono mb-6 font-bold text-3xl italic uppercase tracking-[0.14em] text-(--accent-warm) max-[760px]:text-2xl max-[520px]:text-xl">
@@ -197,9 +229,6 @@ export default function About() {
           </div>
         ))}
       </div>
-    <br />
-    <br />
-    <br />
     </section>
   );
 }

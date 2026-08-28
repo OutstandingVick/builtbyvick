@@ -456,6 +456,225 @@ body::before {
   border: 2px solid color-mix(in srgb, var(--surface) 84%, transparent);
 }
 
+/* Editorial two-row image story inspired by the supplied reference layout. */
+.about-story {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.about-story-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 8rem);
+  min-height: 31rem;
+}
+
+.about-story-row-reverse {
+  grid-template-columns: minmax(20rem, 0.92fr) minmax(0, 1.08fr);
+}
+
+.about-story-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  color: var(--text-2);
+  font-size: clamp(1rem, 1.3vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.62;
+  letter-spacing: -0.025em;
+}
+
+.about-story-divider {
+  width: calc(100% - 8rem);
+  margin: 0 auto;
+  border-top: 1px dashed color-mix(in srgb, white 48%, transparent);
+}
+
+.about-collage {
+  position: relative;
+  min-width: 0;
+  height: clamp(24rem, 34vw, 31rem);
+  isolation: isolate;
+}
+
+.about-collage::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: 16rem;
+  height: 23rem;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.62) 0 1px, transparent 1.4px);
+  background-size: 7px 7px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.about-collage-first::before {
+  top: -2rem;
+  left: -3rem;
+}
+
+.about-collage-second::before {
+  right: -3rem;
+  bottom: -2rem;
+}
+
+.about-collage-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 12% 2% 9%;
+  border: 2px solid color-mix(in srgb, white 42%, transparent);
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, white 28%, transparent) 1px, transparent 1px) 0 0 / 12.5% 100%,
+    linear-gradient(0deg, color-mix(in srgb, white 28%, transparent) 1px, transparent 1px) 0 0 / 100% 25%;
+}
+
+.about-collage-route {
+  position: absolute;
+  z-index: 5;
+  top: -0.6rem;
+  left: 45%;
+  width: 42%;
+  height: auto;
+  overflow: visible;
+  color: color-mix(in srgb, var(--secondary) 76%, black);
+  transform: rotate(8deg);
+}
+
+.about-collage-second .about-collage-route {
+  top: auto;
+  right: auto;
+  bottom: -0.2rem;
+  left: 8%;
+  transform: rotate(186deg);
+}
+
+.about-collage-route path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 8 8;
+}
+
+.about-collage-route rect:first-of-type {
+  fill: #f29cb2;
+}
+
+.about-collage-route rect:last-of-type {
+  fill: #fff2a8;
+}
+
+.about-photo-stack {
+  position: absolute;
+  inset: 0;
+}
+
+.about-photo {
+  position: absolute;
+  overflow: hidden;
+  border: 0.48rem solid rgba(255, 255, 255, 0.95);
+  border-radius: 1.65rem;
+  background: var(--surface);
+  box-shadow: 0 1.35rem 2.2rem rgba(10, 35, 58, 0.2);
+  transform-origin: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-photo:hover {
+  z-index: 7;
+  box-shadow: 0 1.7rem 2.8rem rgba(10, 35, 58, 0.26);
+}
+
+.about-collage-first .about-photo-1 {
+  z-index: 3;
+  top: 25%;
+  left: 5%;
+  width: 32%;
+  height: 62%;
+  transform: rotate(-5deg);
+}
+
+.about-collage-first .about-photo-1 img {
+  object-position: 54% 42%;
+}
+
+.about-collage-first .about-photo-2 {
+  z-index: 2;
+  top: 5%;
+  left: 34%;
+  width: 34%;
+  height: 60%;
+  transform: rotate(-7deg);
+}
+
+.about-collage-first .about-photo-2 img {
+  object-position: 58% 44%;
+}
+
+.about-collage-first .about-photo-3 {
+  z-index: 4;
+  top: 29%;
+  right: 4%;
+  width: 32%;
+  height: 60%;
+  transform: rotate(7deg);
+}
+
+.about-collage-first .about-photo-3 img {
+  object-position: 54% 45%;
+}
+
+.about-collage-second .about-photo-1 {
+  z-index: 2;
+  top: 24%;
+  left: 5%;
+  width: 31%;
+  height: 67%;
+  transform: rotate(-6deg);
+}
+
+.about-collage-second .about-photo-2 {
+  z-index: 3;
+  top: 8%;
+  left: 35%;
+  width: 31%;
+  height: 70%;
+  transform: rotate(5deg);
+}
+
+.about-collage-second .about-photo-3 {
+  z-index: 4;
+  top: 20%;
+  right: 4%;
+  width: 31%;
+  height: 68%;
+  transform: rotate(-5deg);
+}
+
+.about-collage-second .about-photo img {
+  object-position: 50% 28%;
+}
+
+.about-collage-first .about-photo-1:hover,
+.about-collage-second .about-photo-1:hover {
+  transform: rotate(-2deg) translateY(-0.35rem);
+}
+
+.about-collage-first .about-photo-2:hover,
+.about-collage-second .about-photo-2:hover {
+  transform: rotate(1deg) translateY(-0.35rem);
+}
+
+.about-collage-first .about-photo-3:hover,
+.about-collage-second .about-photo-3:hover {
+  transform: rotate(2deg) translateY(-0.35rem);
+}
+
 .hero-roles span,
 .hero-bio,
 .about-copy,
@@ -1950,5 +2169,73 @@ body::before {
 
   .hero-section::after {
     opacity: 0.4;
+  }
+}
+
+@media (max-width: 980px) {
+  .about-story {
+    gap: 3.5rem;
+  }
+
+  .about-story-row,
+  .about-story-row-reverse {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    min-height: 0;
+  }
+
+  .about-collage {
+    width: min(100%, 46rem);
+    height: 28rem;
+    margin: 0 auto;
+  }
+
+  .about-story-copy {
+    width: min(100%, 46rem);
+    margin: 0 auto;
+  }
+
+  .about-story-divider {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-story {
+    gap: 2.75rem;
+  }
+
+  .about-story-row,
+  .about-story-row-reverse {
+    gap: 1.35rem;
+  }
+
+  .about-collage {
+    height: clamp(18rem, 82vw, 23rem);
+  }
+
+  .about-story-copy {
+    gap: 1.4rem;
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .about-story-divider {
+    margin-block: 0.25rem;
+  }
+
+  .about-photo {
+    border-width: 0.3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.9rem 1.5rem rgba(10, 35, 58, 0.2);
+  }
+
+  .about-collage::before {
+    width: 10rem;
+    height: 15rem;
+  }
+
+  .about-collage-grid {
+    border-radius: 1rem;
   }
 }
