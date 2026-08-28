@@ -52,7 +52,7 @@ export default function Hero() {
           Hi, I&apos;m Victor Poweidei Ogbonna
         </p>
 
-        <h1 className="hero-heading font-serif text-[clamp(3.2rem,5.05vw,5.25rem)] font-normal italic leading-[0.94] tracking-[-0.025em] text-(--text) max-[760px]:text-[clamp(2.65rem,11.5vw,4rem)]">
+        <h1 className="hero-heading font-serif text-[clamp(3.2rem,5.05vw,5.25rem)] font-normal italic leading-[0.94] tracking-tight text-(--text) max-[760px]:text-[clamp(2.65rem,11.5vw,4rem)]">
           I build intuitive interfaces,
           <br className="hero-heading-break" /> seamless experiences &amp; products that{" "}
           <span className="hero-accent text-(--accent)">scale.</span>
@@ -76,6 +76,10 @@ export default function Hero() {
       >
         Scroll to explore ↓
       </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </section>
   );
 }

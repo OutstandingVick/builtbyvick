@@ -186,10 +186,12 @@ export default function About() {
       className="content-section about-section mx-auto w-full max-w-400 px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
-          About Me
+        <span className="font-mono inline-flex min-h-11 items-center text-5xl italic font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+          Who I am (and why that matters)
         </span>
       </div>
+      <br />
+      <br />
       <div className="about-story">
         <div className="about-story-row">
           <StoryCollage photos={aboutPhotos.first} variant="first" />
@@ -217,7 +219,9 @@ export default function About() {
           <StoryCollage photos={aboutPhotos.second} variant="second" />
         </div>
       </div>
-
+      <br/>
+      <br/>
+      <br/>
       <div className="skills-grid mt-24 max-[760px]:mt-16">
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="skill-group">
@@ -229,6 +233,9 @@ export default function About() {
           </div>
         ))}
       </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
   );
 }
