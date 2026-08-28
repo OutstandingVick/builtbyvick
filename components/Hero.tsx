@@ -71,7 +71,7 @@ export default function Hero() {
       </div>
 
       <a
-        href="#about"
+        href="/about"
         className="hero-scroll absolute bottom-7 left-1/2 -translate-x-1/2 font-mono text-[0.62rem] font-semibold tracking-[0.16em] text-(--hero-muted) no-underline transition-colors hover:text-(--text) max-[760px]:bottom-5"
       >
         Scroll to explore ↓

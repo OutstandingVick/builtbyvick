@@ -1,13 +1,15 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Mail, Menu, X } from "lucide-react";
 
 const links = [
-  { label: "HOME", href: "#home" },
-  { label: "ABOUT", href: "#about", hasChevron: true },
-  { label: "PROJECTS", href: "#projects", hasChevron: true },
-  { label: "CONTACT ME", href: "#contact" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/about" },
+  { label: "PROJECTS", href: "/projects" },
+  { label: "CONTACT ME", href: "/contact" },
 ];
 
 function GitHubMark({ size }: { size: number }) {
@@ -26,22 +28,15 @@ function GitHubMark({ size }: { size: number }) {
 }
 
 export default function Nav() {
-  const [active, setActive] = useState("home");
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      const sections = links.map((l) => l.href.slice(1));
-      for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(id);
-          break;
-        }
-      }
     };
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -57,8 +52,8 @@ export default function Nav() {
                       border-(--nav-pill-border) bg-transparent px-0 shadow-none 
                       backdrop-blur-none max-[760px]:min-h-15 max-[760px]:gap-2">
         {/* Logo */}
-        <a
-          href="#home"
+        <Link
+          href="/"
           aria-label="Victor Ogundimu home"
           className="inline-flex size-11 shrink-0 items-center justify-start no-underline max-[760px]:size-9"
         >
@@ -70,16 +65,15 @@ export default function Nav() {
             priority
             className="block size-9 object-contain max-[760px]:size-8"
           />
-        </a>
+        </Link>
 
         <div className="site-nav-pill flex min-h-11 min-w-0 shrink items-center justify-end gap-7 overflow-hidden scrollbar-none max-[760px]:gap-2">
           <div className="site-nav-links flex h-full shrink-0 items-stretch gap-7 max-[760px]:hidden">
             {links.map((l) => {
-              const id = l.href.slice(1);
-              const isActive = active === id;
+              const isActive = pathname === l.href;
 
               return (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   className={`font-mono relative inline-flex min-h-11 items-center gap-[0.4rem] whitespace-nowrap text-[0.72rem] font-medium leading-none tracking-[0.08em] no-underline transition-colors hover:text-(--nav-link-active) ${
@@ -93,7 +87,7 @@ export default function Nav() {
                       className="absolute bottom-0 left-0 right-0 h-px bg-(--nav-link-active)"
                     />
                   )}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -139,16 +133,16 @@ export default function Nav() {
       {menuOpen && (
         <div className="mobile-nav-menu mx-auto hidden w-full max-w-400 flex-col overflow-hidden border-b border-(--nav-pill-border) bg-(--nav-bg) px-0 py-3 shadow-none backdrop-blur-xl max-[760px]:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className={`font-mono flex min-h-11 items-center justify-between border-t border-(--nav-pill-border) px-0 text-[0.75rem] font-medium tracking-[0.08em] no-underline transition-colors hover:text-(--nav-link-active) ${
-                active === link.href.slice(1) ? "text-(--nav-link-active)" : "text-(--nav-link)"
+                pathname === link.href ? "text-(--nav-link-active)" : "text-(--nav-link)"
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
