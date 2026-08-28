@@ -3,39 +3,42 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --primary: #1B7EDA;
-  --secondary: #AB8E73;
+  --secondary: #29339B;
+  /* Contrast pair for the indigo supporting surface. */
+  --supporting-contrast: #F8FBFF;
+  --supporting-muted: color-mix(in srgb, white 76%, var(--secondary));
   --footer-orange: #ff8a3d;
   --footer-blue: #0496FF;
   --footer-ink: #071827;
-  --bg: color-mix(in srgb, var(--secondary) 22%, white);
-  --bg-2: color-mix(in srgb, var(--secondary) 34%, white);
-  --bg-3: color-mix(in srgb, var(--secondary) 14%, white);
-  --surface: color-mix(in srgb, var(--secondary) 10%, white);
-  --border: color-mix(in srgb, var(--primary) 20%, transparent);
-  --border-2: color-mix(in srgb, var(--primary) 34%, transparent);
-  --text: color-mix(in srgb, var(--primary) 48%, black);
-  --text-2: color-mix(in srgb, var(--primary) 34%, black);
-  --text-3: color-mix(in srgb, var(--secondary) 62%, black);
-  --text-4: color-mix(in srgb, var(--primary) 48%, black);
-  --accent: var(--primary);
-  --accent-2: var(--secondary);
+  --bg: var(--primary);
+  --bg-2: color-mix(in srgb, var(--primary) 88%, black);
+  --bg-3: color-mix(in srgb, var(--primary) 84%, white);
+  --surface: color-mix(in srgb, var(--secondary) 84%, white);
+  --border: color-mix(in srgb, var(--secondary) 58%, transparent);
+  --border-2: color-mix(in srgb, var(--secondary) 82%, white);
+  --text: #F8FBFF;
+  --text-2: color-mix(in srgb, white 84%, var(--primary));
+  --text-3: color-mix(in srgb, var(--secondary) 52%, white);
+  --text-4: #F8FBFF;
+  --accent: var(--secondary);
+  --accent-2: var(--primary);
   --tertiary: var(--secondary);
-  --project-card-bg: color-mix(in srgb, var(--primary) 12%, white);
-  --tertiary-soft: color-mix(in srgb, var(--secondary) 22%, transparent);
+  --project-card-bg: color-mix(in srgb, var(--primary) 76%, var(--secondary));
+  --tertiary-soft: color-mix(in srgb, var(--secondary) 38%, transparent);
   --accent-warm: var(--secondary);
-  --nav-bg: color-mix(in srgb, var(--bg) 88%, transparent);
+  --nav-bg: color-mix(in srgb, var(--primary) 88%, transparent);
   --nav-pill-bg: transparent;
-  --nav-pill-border: color-mix(in srgb, var(--primary) 22%, transparent);
+  --nav-pill-border: color-mix(in srgb, white 28%, transparent);
   --nav-link: var(--text-2);
   --nav-link-active: var(--text);
   --nav-link-muted: var(--text-3);
   --nav-icon: var(--text-2);
-  --nav-active-underline: var(--accent);
-  --hero-muted: color-mix(in srgb, var(--text) 48%, transparent);
-  --project-row-hover-bg: var(--primary);
-  --project-row-hover-fg: color-mix(in srgb, var(--secondary) 12%, white);
+  --nav-active-underline: var(--secondary);
+  --hero-muted: color-mix(in srgb, white 72%, transparent);
+  --project-row-hover-bg: var(--secondary);
+  --project-row-hover-fg: var(--supporting-contrast);
 }
 
 * {
@@ -51,8 +54,8 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 32rem),
-    linear-gradient(180deg, color-mix(in srgb, var(--bg-2) 18%, var(--bg)), var(--bg) 28rem);
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, white 11%, transparent), transparent 34rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--primary) 94%, white), var(--primary) 32rem);
   color: var(--text);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -96,8 +99,8 @@ body::before {
   isolation: isolate;
   max-width: none !important;
   background:
-    radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.32), transparent 21rem),
-    linear-gradient(180deg, #b8dcf7 0%, #acd4f1 100%);
+    radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.16), transparent 22rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--primary) 92%, white) 0%, var(--primary) 100%);
 }
 
 .hero-meta {
@@ -123,9 +126,15 @@ body::before {
 
 .site-nav-shell {
   padding-right: 0 !important;
-  background: transparent !important;
+  background: var(--primary) !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+}
+
+/* Solid brand surfaces requested for navigation and content cards. */
+.site-header,
+.mobile-nav-menu {
+  background: var(--primary) !important;
 }
 
 .site-nav-actions {
@@ -183,7 +192,7 @@ body::before {
   overflow: hidden;
   border: 5px solid rgba(255, 255, 255, 0.88);
   border-radius: 1.3rem;
-  background: #dbeaf4;
+  background: color-mix(in srgb, var(--primary) 76%, white);
   box-shadow:
     0 0.45rem 0 rgba(25, 54, 78, 0.16),
     0 1.3rem 2.8rem rgba(28, 59, 83, 0.18);
@@ -225,14 +234,14 @@ body::before {
 
 .hero-kicker {
   margin-bottom: 1.25rem;
-  color: rgba(31, 61, 84, 0.74) !important;
+  color: color-mix(in srgb, white 78%, transparent) !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
 }
 
 .hero-divider {
   width: min(22rem, 58vw);
   margin-top: 1.7rem;
-  border-top: 1px dashed rgba(31, 61, 84, 0.3);
+  border-top: 1px dashed color-mix(in srgb, white 42%, transparent);
 }
 
 .hero-cta {
@@ -242,10 +251,10 @@ body::before {
   min-height: 3.1rem;
   margin-top: 1.25rem;
   padding: 0.8rem 1.4rem;
-  border: 1px solid rgba(9, 26, 39, 0.72);
+  border: 1px solid color-mix(in srgb, var(--secondary) 72%, white);
   border-radius: 999px;
-  background: #142b3e;
-  color: #f4f9fc;
+  background: var(--secondary);
+  color: var(--supporting-contrast);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.72rem;
   font-weight: 700;
@@ -257,7 +266,7 @@ body::before {
 
 .hero-cta:hover {
   transform: translateY(-3px);
-  background: #1b3b53;
+  background: color-mix(in srgb, var(--secondary) 86%, white);
   box-shadow: 0 0.55rem 0 rgba(10, 24, 35, 0.12);
 }
 
@@ -278,8 +287,8 @@ body::before {
   overflow: hidden;
   border: 3px solid #173247;
   border-radius: 0.9rem;
-  background: #fff8dc;
-  box-shadow: 0.7rem 0.7rem 0 #3c8ccc;
+  background: color-mix(in srgb, var(--secondary) 82%, white);
+  box-shadow: 0.7rem 0.7rem 0 color-mix(in srgb, var(--primary) 64%, black);
 }
 
 .hero-window-bar {
@@ -287,7 +296,7 @@ body::before {
   gap: 0.3rem;
   padding: 0.48rem 0.55rem;
   border-bottom: 3px solid #173247;
-  background: #e3f1fb;
+  background: color-mix(in srgb, var(--primary) 38%, white);
 }
 
 .hero-window-bar span {
@@ -298,8 +307,8 @@ body::before {
   background: #ff8b79;
 }
 
-.hero-window-bar span:nth-child(2) { background: #ffd565; }
-.hero-window-bar span:nth-child(3) { background: #7edb98; }
+.hero-window-bar span:nth-child(2) { background: var(--secondary); }
+.hero-window-bar span:nth-child(3) { background: var(--primary); }
 
 .hero-window-face {
   position: relative;
@@ -353,14 +362,14 @@ body::before {
   flex-direction: column;
   gap: 0.55rem;
   padding: 1.1rem;
-  border: 3px solid #173247;
+  border: 3px solid color-mix(in srgb, var(--secondary) 70%, white);
   border-radius: 1.05rem;
-  background: #f7b6ca;
-  box-shadow: -0.7rem 0.7rem 0 #fff2a8;
+  background: var(--secondary);
+  box-shadow: -0.7rem 0.7rem 0 color-mix(in srgb, var(--secondary) 38%, white);
 }
 
 .hero-code-symbol {
-  color: #173247;
+  color: var(--supporting-contrast);
   font-family: 'Instrument Serif', serif;
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-style: italic;
@@ -372,7 +381,7 @@ body::before {
   width: 56%;
   height: 0.34rem;
   border-radius: 999px;
-  background: rgba(23, 50, 71, 0.56);
+  background: color-mix(in srgb, white 58%, transparent);
 }
 
 .hero-code-line-long { width: 82%; }
@@ -393,7 +402,7 @@ body::before {
 }
 
 .hero-bio {
-  color: rgba(31, 61, 84, 0.68) !important;
+  color: color-mix(in srgb, white 78%, transparent) !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.94rem !important;
   text-wrap: balance;
@@ -464,8 +473,17 @@ body::before {
 
 .experience-card {
   padding: 2rem;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--secondary) 72%, white);
+  background: var(--secondary);
+}
+
+.skill-card {
+  border-color: color-mix(in srgb, var(--secondary) 72%, white) !important;
+  background: var(--secondary) !important;
+}
+
+.skill-card > span {
+  color: var(--supporting-contrast) !important;
 }
 
 .experience-logo,
@@ -551,7 +569,7 @@ body::before {
   width: 100%;
   min-width: 0;
   max-width: 760px;
-  background-color: var(--project-card-bg);
+  background: var(--secondary);
 }
 
 .experience-card-header {
@@ -564,10 +582,10 @@ body::before {
 .experience-logo {
   width: 70px;
   height: 70px;
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--secondary) 68%, white);
   border-radius: 4px;
-  background: var(--surface);
-  color: var(--accent);
+  background: color-mix(in srgb, var(--secondary) 78%, white);
+  color: var(--supporting-contrast);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -577,7 +595,7 @@ body::before {
 }
 
 .experience-card .experience-role {
-  color: var(--text);
+  color: var(--supporting-contrast);
   font-size: 1.45rem !important;
   font-weight: 800 !important;
   line-height: 1.1;
@@ -585,13 +603,13 @@ body::before {
 }
 
 .experience-job-title {
-  color: var(--text-2);
+  color: var(--supporting-muted);
   font-size: 1.05rem;
   line-height: 1.4;
 }
 
 .experience-meta {
-  color: var(--text-3);
+  color: var(--supporting-muted);
   font-size: 0.72rem;
   line-height: 1.5;
   margin-top: 0.45rem;
@@ -604,7 +622,7 @@ body::before {
 }
 
 .experience-copy .experience-body {
-  color: var(--text-2);
+  color: var(--supporting-muted);
   font-size: 1rem !important;
   line-height: 1.75 !important;
   padding-left: 0 !important;
@@ -704,9 +722,13 @@ body::before {
   color: var(--footer-ink);
   border-top: 0 !important;
   min-height: 720px;
+  /* Keep interactive content clear of the decorative wave. */
+  padding-top: 11rem !important;
 }
 
 .contact-inner {
+  position: relative;
+  z-index: 2;
   width: min(100% - 2rem, 100rem);
   margin-left: auto;
   margin-right: auto;
@@ -717,7 +739,7 @@ body::before {
   inset: -1px 0 auto;
   height: 122px;
   background: transparent;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -725,8 +747,9 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
+  /* Continue the dominant canvas into the wave before the footer begins. */
   background:
-    url("data:image/svg+xml,%3Csvg width='1440' height='122' viewBox='0 0 1440 122' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1440V60C1326 100 1222 96 1116 50C1025 10 918 8 820 56C716 107 594 108 488 58C388 11 287 11 190 61C121 96 57 87 0 52V0Z' fill='%23d9cbbf'/%3E%3Cpath d='M0 52C57 87 121 96 190 61C287 11 388 11 488 58C594 108 716 107 820 56C918 8 1025 10 1116 50C1222 96 1326 100 1440 60' fill='none' stroke='%23101820' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg width='1440' height='122' viewBox='0 0 1440 122' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1440V60C1326 100 1222 96 1116 50C1025 10 918 8 820 56C716 107 594 108 488 58C388 11 287 11 190 61C121 96 57 87 0 52V0Z' fill='%231B7EDA'/%3E%3Cpath d='M0 52C57 87 121 96 190 61C287 11 388 11 488 58C594 108 716 107 820 56C918 8 1025 10 1116 50C1222 96 1326 100 1440 60' fill='none' stroke='%23101820' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")
     center top / 100% 100% no-repeat;
 }
 
@@ -1643,7 +1666,7 @@ body::before {
   }
 
   .contact-section {
-    padding-top: 7rem;
+    padding-top: 8.5rem !important;
   }
 
   .contact-form-card {

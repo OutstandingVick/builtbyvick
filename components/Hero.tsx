@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="hero-content mx-auto flex w-full max-w-5xl flex-col items-center">
         <div className="hero-portrait-card">
           <Image
-            src="/victor-portrait.jpg"
+            src="/vic-prof.jpg"
             alt="Victor Ogbonna"
             fill
             preload

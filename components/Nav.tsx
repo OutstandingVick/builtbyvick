@@ -63,7 +63,7 @@ export default function Nav() {
           className="inline-flex size-11 shrink-0 items-center justify-start no-underline max-[760px]:size-9"
         >
           <Image
-            src="/vick-light-mode-indigo.png"
+            src="/vick-dark-mode-indigo.png"
             alt="Victor Ogundimu logo"
             width={48}
             height={48}
