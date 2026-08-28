@@ -64,7 +64,7 @@ export default function Hero() {
         </p>
 
         <span className="hero-divider" aria-hidden="true" />
-        <a className="hero-cta" href="#contact">
+        <a className="hero-cta" href="mailto:victor.ogbonna@hotmail.com">
           Let&apos;s build something
           <span aria-hidden="true">↗</span>
         </a>
