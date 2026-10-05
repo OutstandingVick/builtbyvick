@@ -1,6 +1,4 @@
 "use client";
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   SiJavascript,
   SiTypescript,
@@ -46,20 +44,23 @@ const skillIcons: Record<string, IconType> = {
 
 const skillColors: Record<string, string> = {
   JavaScript: "#F7DF1E",
-  TypeScript: "#3178C6",
-  Rust: "#000000",
+  TypeScript: "#5FA7F3",
+  Rust: "#F8FBFF",
   React: "#61DAFB",
-  "Next.js": "#000000",
-  "Node.js": "#339933",
+  "Next.js": "#F8FBFF",
+  "Node.js": "#68C550",
+  "Express.js": "#F8FBFF",
   Angular: "#DD0031",
   "Vue.js": "#4FC08D",
   Svelte: "#FF3E00",
-  Django: "#092E20",
+  Django: "#5FD2A1",
+  Bootstrap: "#A77BF3",
   "Tailwind CSS": "#06B6D4",
   HTML: "#E34F26",
-  "Git / GitHub": "#181717",
+  CSS: "#63A8F5",
+  "Git / GitHub": "#F8FBFF",
   Figma: "#F24E1E",
-  Vercel: "#000000",
+  Vercel: "#F8FBFF",
 };
 
 import Image from "next/image";
@@ -115,66 +116,37 @@ function StoryCollage({
   );
 }
 
-function SkillCarousel({ items }: { items: string[] }) {
-  const scrollerRef = useRef<HTMLDivElement>(null);
+function SkillMarquee({ items }: { items: string[] }) {
+  const renderItems = (copy: "primary" | "duplicate") =>
+    items.map((skill) => {
+      const Icon = skillIcons[skill];
 
-  const scrollByCard = (direction: -1 | 1) => {
-    const scroller = scrollerRef.current;
-    if (!scroller) return;
-
-    const card = scroller.querySelector<HTMLElement>(".skill-card");
-    const gap = 20;
-    const distance = (card?.offsetWidth ?? 172) + gap;
-    scroller.scrollBy({ left: direction * distance, behavior: "smooth" });
-  };
+      return (
+        <div key={`${copy}-${skill}`} className="skill-marquee-item">
+          {Icon ? (
+            <Icon
+              className="skill-marquee-icon"
+              aria-hidden="true"
+              style={{ color: skillColors[skill] ?? "var(--supporting-contrast)" }}
+            />
+          ) : (
+            <span className="skill-marquee-fallback" aria-hidden="true">
+              {skill.slice(0, 1)}
+            </span>
+          )}
+          <span>{skill}</span>
+        </div>
+      );
+    });
 
   return (
-    <div className="skill-carousel relative">
-      <button
-        type="button"
-        onClick={() => scrollByCard(-1)}
-        aria-label="Scroll skills left"
-        className="skill-carousel-arrow absolute top-1/2 left-0 z-2 flex size-11 -translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <div
-        ref={scrollerRef}
-        className="skill-list flex snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain px-1 pb-2 max-[360px]:gap-3"
-      >
-        {items.map((skill) => {
-          const Icon = skillIcons[skill];
-
-          return (
-            <div
-              key={skill}
-              className="skill-card flex min-h-36 w-43 shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-3xl
-                         border border-(--border) bg-(--project-card-bg) px-3 py-5
-                         text-center shadow-[0_20px_50px_rgba(13,44,84,0.06)] transition-[transform,box-shadow,border-color]
-                         hover:-translate-y-1 hover:border-(--accent) hover:shadow-[0_26px_70px_rgba(13,44,84,0.11)] max-[520px]:min-h-30 max-[520px]:w-35 max-[520px]:rounded-2xl"
-            >
-              {Icon ? (
-                <Icon className="text-[3rem] max-[520px]:text-[2.35rem]" style={{ color: skillColors[skill] ?? "var(--text)" }} />
-              ) : (
-                <span className="font-mono text-[2.8rem] font-black text-(--text)">
-                  {skill.slice(0, 1)}
-                </span>
-              )}
-              <span className="font-mono max-w-full text-[0.88rem] font-bold leading-tight text-(--text) max-[520px]:text-[0.78rem]">
-                {skill}
-              </span>
-            </div>
-          );
-        })}
+    <div className="skill-marquee" role="region" aria-label="Technology stack and tools">
+      <div className="skill-marquee-track">
+        <div className="skill-marquee-group">{renderItems("primary")}</div>
+        <div className="skill-marquee-group" aria-hidden="true">
+          {renderItems("duplicate")}
+        </div>
       </div>
-      <button
-        type="button"
-        onClick={() => scrollByCard(1)}
-        aria-label="Scroll skills right"
-        className="skill-carousel-arrow absolute top-1/2 right-0 z-2 flex size-11 translate-x-1/3 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-(--border) text-(--text-2) transition-colors hover:border-(--accent) hover:text-(--accent)"
-      >
-        <ChevronRight size={20} />
-      </button>
     </div>
   );
 }
@@ -225,11 +197,10 @@ export default function About() {
       <div className="skills-grid mt-24 max-[760px]:mt-16">
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="skill-group">
-            <div className="font-mono mb-6 font-bold text-3xl italic uppercase tracking-[0.14em] text-(--accent-warm) max-[760px]:text-2xl max-[520px]:text-xl">
+            <div className="skill-group-title font-mono">
               {category}
             </div>
-            <br />
-            <SkillCarousel items={items} />
+            <SkillMarquee items={items} />
           </div>
         ))}
       </div>

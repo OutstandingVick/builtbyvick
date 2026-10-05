@@ -696,15 +696,6 @@ body::before {
   background: var(--secondary);
 }
 
-.skill-card {
-  border-color: color-mix(in srgb, var(--secondary) 72%, white) !important;
-  background: var(--secondary) !important;
-}
-
-.skill-card > span {
-  color: var(--supporting-contrast) !important;
-}
-
 .experience-logo,
 .experience-arrow {
   border-radius: 999px !important;
@@ -1176,19 +1167,6 @@ body::before {
     linear-gradient(135deg, color-mix(in srgb, var(--bg-3) 74%, transparent), var(--bg));
 }
 
-.skill-list {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.skill-list::-webkit-scrollbar {
-  display: none;
-}
-
-.skill-carousel-arrow {
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-}
-
 .project-row {
   isolation: isolate;
   padding-top: 5.25rem;
@@ -1228,7 +1206,6 @@ body::before {
   min-width: 0;
 }
 
-.skill-card span,
 .experience-card-header > div,
 .collaboration-card-header > div {
   min-width: 0;
@@ -2237,5 +2214,143 @@ body::before {
 
   .about-collage-grid {
     border-radius: 1rem;
+  }
+}
+
+/* Continuous technology marquee */
+.skill-group {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-block: clamp(2rem, 4vw, 3.25rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--primary) 56%, white), transparent 34rem),
+    linear-gradient(100deg, color-mix(in srgb, var(--primary) 58%, var(--secondary)), var(--secondary) 54%, color-mix(in srgb, var(--secondary) 72%, black));
+}
+
+.skill-group-title {
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  padding-inline: 1.5rem;
+  color: color-mix(in srgb, var(--supporting-contrast) 70%, transparent);
+  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.skill-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skill-marquee::before,
+.skill-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: clamp(2rem, 8vw, 9rem);
+  pointer-events: none;
+}
+
+.skill-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--secondary) 50%, var(--primary)), transparent);
+}
+
+.skill-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, color-mix(in srgb, var(--secondary) 72%, black), transparent);
+}
+
+.skill-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: skill-marquee 44s linear infinite;
+}
+
+.skill-marquee:hover .skill-marquee-track {
+  animation-play-state: paused;
+}
+
+.skill-marquee-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 7rem);
+  padding-right: clamp(3rem, 6vw, 7rem);
+}
+
+.skill-marquee-item {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--supporting-contrast);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.55vw, 1.45rem);
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.skill-marquee-icon,
+.skill-marquee-fallback {
+  width: clamp(2rem, 3vw, 3rem);
+  height: clamp(2rem, 3vw, 3rem);
+  flex: none;
+}
+
+.skill-marquee-fallback {
+  display: inline-grid;
+  place-items: center;
+  color: var(--supporting-contrast);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+@keyframes skill-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 760px) {
+  .skill-group {
+    padding-block: 1.75rem 2.1rem;
+  }
+
+  .skill-group-title {
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.22em;
+  }
+
+  .skill-marquee-track {
+    animation-duration: 34s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .skill-marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skill-marquee-track {
+    animation: none;
+  }
+
+  .skill-marquee-group[aria-hidden="true"] {
+    display: none;
   }
 }
