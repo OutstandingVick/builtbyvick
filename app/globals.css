@@ -39,6 +39,8 @@
   --hero-muted: color-mix(in srgb, white 72%, transparent);
   --project-row-hover-bg: var(--secondary);
   --project-row-hover-fg: var(--supporting-contrast);
+  --skill-marquee-bg-start: #292F8B;
+  --skill-marquee-bg-end: #272D83;
 }
 
 * {
@@ -2223,9 +2225,7 @@ body::before {
   margin-left: calc(50% - 50vw);
   padding-block: clamp(2rem, 4vw, 3.25rem);
   overflow: hidden;
-  background:
-    radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--primary) 56%, white), transparent 34rem),
-    linear-gradient(100deg, color-mix(in srgb, var(--primary) 58%, var(--secondary)), var(--secondary) 54%, color-mix(in srgb, var(--secondary) 72%, black));
+  background: linear-gradient(90deg, var(--skill-marquee-bg-start), var(--skill-marquee-bg-end));
 }
 
 .skill-group-title {
@@ -2259,12 +2259,12 @@ body::before {
 
 .skill-marquee::before {
   left: 0;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--secondary) 50%, var(--primary)), transparent);
+  background: linear-gradient(90deg, var(--skill-marquee-bg-start), transparent);
 }
 
 .skill-marquee::after {
   right: 0;
-  background: linear-gradient(270deg, color-mix(in srgb, var(--secondary) 72%, black), transparent);
+  background: linear-gradient(270deg, var(--skill-marquee-bg-end), transparent);
 }
 
 .skill-marquee-track {
