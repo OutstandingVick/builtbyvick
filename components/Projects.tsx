@@ -16,6 +16,16 @@ const featured = [
     stack: ["TypeScript", "PostgreSQL", "Railway", "and More"],
   },
   {
+    name: "Vestail",
+    category: "DeFi / Tokenised Assets",
+    period: "2026",
+    desc: "Vestail reads the legal terms behind every tokenized stock and tells you which version you're actually allowed to hold, before you buy it.",
+    site: "https://vestail.fun/",
+    image: "/vestail.png",
+    imageAlt: "Vestail website preview",
+    stack: ["TypeScript", "PostgreSQL", "Railway", "and More"],
+  },
+  {
     name: "Tutela Markets",
     category: "DeFi / Prediction Market",
     period: "2026",
@@ -24,26 +34,6 @@ const featured = [
     image: "/tutela.png",
     imageAlt: "Tutela Markets website preview",
     stack: ["Next.js", "TypeScript", "Solana", "Tailwind"],
-  },
-  {
-    name: "Edged",
-    category: "Circle Agent Stack × Arc Testnet",
-    period: "2026",
-    desc: "Financial intelligence for prediction markets. Edged scans live Polymarket order books, estimates fair odds, explains its thesis, sizes exposure with Kelly, and settles test USDC through Circle developer-controlled wallets.",
-    site: "https://edged.vercel.app/",
-    image: "/edged.png",
-    imageAlt: "Edged website preview",
-    stack: ["Next.js", "TypeScript", "Circle", "Polymarket"],
-  },
-  {
-    name: "Immunis Protocol",
-    category: "RWA Compliance / ZK",
-    period: "2025",
-    desc: "Privacy-preserving compliance infrastructure for tokenized real-world assets on Stellar. Immunis lets a wallet prove it satisfies a public access policy with zero-knowledge proofs, without exposing raw KYC data on-chain.",
-    site: "https://immunis-protocol.vercel.app/",
-    image: "/immunis.png",
-    imageAlt: "Immunis Protocol website preview",
-    stack: ["Next.js", "TypeScript", "Stellar", "ZK"],
   },
 ];
 
