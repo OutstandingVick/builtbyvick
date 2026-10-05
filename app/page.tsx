@@ -9,8 +9,8 @@ export default function Home() {
     <main className="min-h-screen overflow-x-clip">
       <Hero />
       <About />
-      <Experience />
       <Projects />
+      <Experience />
       <Contact />
     </main>
   );

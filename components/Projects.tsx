@@ -144,7 +144,7 @@ export default function Projects() {
       className="content-section projects-section mx-auto w-full max-w-400 overflow-visible px-6 py-20 max-[760px]:px-5 max-[760px]:py-14"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-5xl font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+        <span className="section-title inline-flex min-h-11 items-center text-5xl text-(--text) max-[520px]:text-4xl">
           My Latest Works
         </span>
       </div>
@@ -170,7 +170,7 @@ export default function Projects() {
 
       <div className="collaboration-section mt-15 border-t-0 pb-4 pt-16 max-[760px]:mt-14 max-[760px]:pt-12">
         <div className="collaboration-heading mx-auto mb-16 max-w-190 text-center max-[760px]:mb-10">
-          <h3 className="font-display mb-5 text-[clamp(1.7rem,4vw,3rem)] font-extrabold leading-[1.05] tracking-tighter text-(--text) max-[760px]:text-[1.65rem]">
+          <h3 className="section-title mb-5 text-[clamp(2.5rem,5vw,4rem)] text-(--text) max-[760px]:text-[2.5rem]">
             Testimonials from <span className="text-(--accent)">remote</span> collaborators
           </h3>
           <p className="font-mono text-[0.95rem] leading-[1.7] text-(--text-3) max-[760px]:text-[0.86rem] max-[760px]:leading-[1.65]">

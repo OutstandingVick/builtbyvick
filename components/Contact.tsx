@@ -40,9 +40,9 @@ export default function Contact() {
         <div className="contact-inner relative z-1 mx-auto w-full">
           <div className="mb-12 flex items-start justify-between gap-8 max-[760px]:mb-9 max-[760px]:flex-col max-[760px]:items-start">
             <div className="min-w-0 max-w-165">
-              <h2 className="font-display max-w-full text-7xl font-black leading-[0.92] text-[#0496FF] tracking-[-0.055em] max-[1100px]:text-6xl max-[760px]:text-5xl max-[520px]:text-[2.5rem]">
+              <h2 className="section-title max-w-full text-7xl text-[#0496FF] max-[1100px]:text-6xl max-[760px]:text-5xl max-[520px]:text-[2.9rem]">
                 Let&apos;s build something{" "}
-                <span className="font-serif italic font-normal text-[#f05f9f]">
+                <span className="text-[#f05f9f]">
                   cool.
                 </span>
               </h2>

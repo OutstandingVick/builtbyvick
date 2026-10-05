@@ -158,7 +158,7 @@ export default function About() {
       className="content-section about-section mx-auto w-full max-w-400 px-6 pb-20 pt-10 max-[760px]:px-5 max-[760px]:pb-14 max-[760px]:pt-8"
     >
       <div className="section-label mb-10 flex items-center gap-4 max-[760px]:mb-9">
-        <span className="font-mono inline-flex min-h-11 items-center text-5xl italic font-extrabold tracking-[0.02em] text-(--text) max-[520px]:text-2xl">
+        <span className="section-title inline-flex min-h-11 items-center text-5xl text-(--text) max-[520px]:text-4xl">
           Who I am (and why that matters)
         </span>
       </div>
