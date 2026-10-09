@@ -23,7 +23,17 @@ const featured = [
     site: "https://vestail.fun/",
     image: "/vestail.png",
     imageAlt: "Vestail website preview",
-    stack: ["TypeScript", "PostgreSQL", "Railway", "and More"],
+    stack: ["Next.js 15","TypeScript", "@solana/web3.js", "Three.js", "Tailwind CSS V4", "and More"],
+  },
+  {
+    name: "Rekor",
+    category: "DeFi / Tokenised Assets",
+    period: "2026",
+    desc: "A design-and-verify tool for Meteora’s Dynamic Bonding Curve on Solana. You set a token launch’s supply, market caps, SOL to raise and curve shape.",
+    site: "https://userekor.vercel.app/",
+    image: "/rekor.png",
+    imageAlt: "Rekor website preview",
+    stack: ["TypeScript", "React 19", "Vite", "@meteora-ag/dynamic-bonding-curve-sdk", "and More"],
   },
   {
     name: "Tutela Markets",
@@ -33,7 +43,7 @@ const featured = [
     site: "https://tutelamarkets.vercel.app/app",
     image: "/tutela.png",
     imageAlt: "Tutela Markets website preview",
-    stack: ["Next.js", "TypeScript", "Solana", "Tailwind"],
+    stack: ["Next.js", "TypeScript", "Solana", "Tailwind", "and More"],
   },
 ];
 
