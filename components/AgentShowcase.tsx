@@ -156,24 +156,23 @@ export default function AgentShowcase() {
                 </span>
               ))}
             </div>
-          </div>
-
-          <div className="agent-actions">
-            {activeAgent.live ? (
-              <a href={activeAgent.live} target="_blank" rel="noopener noreferrer">
-                Explore live
-                <ArrowUpRight aria-hidden="true" size={18} />
+            <div className="agent-actions">
+              {activeAgent.live ? (
+                <a href={activeAgent.live} target="_blank" rel="noopener noreferrer">
+                  Explore live
+                  <ArrowUpRight aria-hidden="true" size={18} />
+                </a>
+              ) : null}
+              <a
+                href={activeAgent.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="agent-action-secondary"
+              >
+                <FaGithub aria-hidden="true" size={18} />
+                View repository
               </a>
-            ) : null}
-            <a
-              href={activeAgent.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="agent-action-secondary"
-            >
-              <FaGithub aria-hidden="true" size={18} />
-              View repository
-            </a>
+            </div>
           </div>
         </div>
 
