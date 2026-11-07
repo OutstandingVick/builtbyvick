@@ -149,14 +149,13 @@ export default function AgentShowcase() {
               <strong>{activeAgent.metric}</strong>
               <span className="font-mono">{activeAgent.metricLabel}</span>
             </div>
-          </div>
-
-          <div className="agent-stack" aria-label={`${activeAgent.name} technology stack`}>
-            {activeAgent.stack.map((technology) => (
-              <span key={technology} className="font-mono">
-                {technology}
-              </span>
-            ))}
+            <div className="agent-stack" aria-label={`${activeAgent.name} technology stack`}>
+              {activeAgent.stack.map((technology) => (
+                <span key={technology} className="font-mono">
+                  {technology}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="agent-actions">
