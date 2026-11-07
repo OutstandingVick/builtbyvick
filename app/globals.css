@@ -2367,14 +2367,14 @@ body::before {
 /* Switchable AI agent showcase */
 .agent-showcase {
   margin-top: clamp(5rem, 9vw, 8rem);
-  padding-block: clamp(4rem, 7vw, 6.5rem);
+  padding-block: clamp(6rem, 10vw, 9rem);
   border-block: 1px solid color-mix(in srgb, var(--supporting-contrast) 18%, transparent);
 }
 
 .agent-showcase-heading {
-  width: min(100%, 52rem);
-  margin-inline: auto;
-  text-align: center;
+  width: min(100%, 60rem);
+  margin-inline: 0;
+  text-align: start;
 }
 
 .agent-showcase-kicker {
