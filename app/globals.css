@@ -2562,47 +2562,26 @@ body::before {
   font-size: 0.72rem;
 }
 
-.agent-steps {
-  display: grid;
-  gap: 0;
-  list-style: none;
+.agent-process-number {
+  color: color-mix(in srgb, var(--supporting-contrast) 44%, transparent);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
-.agent-steps li {
-  display: grid;
-  grid-template-columns: 1.8rem minmax(0, 1fr);
-  gap: 0.85rem;
-  align-items: center;
-  padding-block: 1rem;
-  border-bottom: 1px solid #e3e6ed;
-}
-
-.agent-step-icon {
-  display: grid;
-  width: 1.8rem;
-  height: 1.8rem;
-  place-items: center;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--primary) 12%, white);
-  color: var(--primary);
-}
-
-.agent-panel-dumen .agent-step-icon {
-  background: #def4ed;
-  color: #13775f;
-}
-
-.agent-steps strong {
+.agent-process-card-copy strong {
   display: block;
-  margin-bottom: 0.2rem;
-  color: #18213a;
-  font-size: 0.88rem;
+  margin-bottom: 0.8rem;
+  color: var(--supporting-contrast);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.2;
 }
 
-.agent-steps p {
-  color: #697286;
-  font-size: 0.75rem;
-  line-height: 1.55;
+.agent-process-card-copy p {
+  color: var(--supporting-muted);
+  font-size: clamp(0.82rem, 1.05vw, 0.95rem);
+  line-height: 1.7;
+  text-wrap: pretty;
 }
 
 .agent-stack {
