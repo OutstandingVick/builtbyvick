@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { ArrowUpRight, Bot, Check, Github, ShieldCheck } from "lucide-react";
+import { useState, type KeyboardEvent } from "react";
+import { ArrowUpRight, Bot, Check, ShieldCheck } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 const agents = [
   {
@@ -55,6 +56,21 @@ export default function AgentShowcase() {
   const [activeId, setActiveId] = useState<AgentId>("goowa");
   const activeAgent = agents.find((agent) => agent.id === activeId) ?? agents[0];
 
+  const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let nextIndex = index;
+
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % agents.length;
+    if (event.key === "ArrowLeft") nextIndex = (index - 1 + agents.length) % agents.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = agents.length - 1;
+    if (nextIndex === index) return;
+
+    event.preventDefault();
+    const nextAgent = agents[nextIndex];
+    setActiveId(nextAgent.id);
+    document.getElementById(`agent-tab-${nextAgent.id}`)?.focus();
+  };
+
   return (
     <section className="agent-showcase" aria-labelledby="agent-showcase-title">
       <div className="agent-showcase-heading">
@@ -72,7 +88,7 @@ export default function AgentShowcase() {
       </div>
 
       <div className="agent-switcher" role="tablist" aria-label="Choose an AI agent">
-        {agents.map((agent) => (
+        {agents.map((agent, index) => (
           <button
             key={agent.id}
             id={`agent-tab-${agent.id}`}
@@ -82,6 +98,7 @@ export default function AgentShowcase() {
             aria-controls="agent-showcase-panel"
             tabIndex={activeId === agent.id ? 0 : -1}
             onClick={() => setActiveId(agent.id)}
+            onKeyDown={(event) => onTabKeyDown(event, index)}
             className="agent-switcher-tab font-mono"
           >
             {agent.name}
@@ -145,7 +162,7 @@ export default function AgentShowcase() {
               rel="noopener noreferrer"
               className="agent-action-secondary"
             >
-              <Github aria-hidden="true" size={18} />
+              <FaGithub aria-hidden="true" size={18} />
               View repository
             </a>
           </div>
