@@ -11,6 +11,8 @@ const agents = [
     name: "Goowa",
     category: "Research integrity agent",
     headline: "AI drafts the research. You approve every claim.",
+    processLead:
+      "Goowa keeps evidence attached from the first draft through the final human-approved receipt.",
     description:
       "Goowa turns factual sentences into live, verifiable claims. It ties each claim to supporting evidence, catches laundered citations, lets a human correct the agent in place, and publishes a tamper-evident receipt anyone can check.",
     metric: "Claim-level evidence",
@@ -32,6 +34,8 @@ const agents = [
     name: "Dumen",
     category: "Payment safety agent",
     headline: "Money moves once—even when the confirmation disappears.",
+    processLead:
+      "Dumen checks live financial truth before every retry and escalates anything it cannot prove.",
     description:
       "Dumen protects refund and seller-payout agents from dangerous retries. Before money moves again, its verifier checks the live system of record, reconciles uncertain outcomes, and escalates anything it cannot prove.",
     metric: "0 duplicate payments",
