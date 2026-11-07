@@ -2368,6 +2368,7 @@ body::before {
 .agent-showcase {
   margin-top: clamp(5rem, 9vw, 8rem);
   padding-block: clamp(6rem, 10vw, 9rem);
+  padding-inline: clamp(1.5rem, 5vw, 5rem);
   border-block: 1px solid color-mix(in srgb, var(--supporting-contrast) 18%, transparent);
 }
 
@@ -2657,54 +2658,6 @@ body::before {
   text-transform: uppercase;
 }
 
-.agent-visual {
-  position: relative;
-  grid-area: visual;
-  min-width: 0;
-  min-height: 40rem;
-  overflow: hidden;
-  border-radius: clamp(1.5rem, 3vw, 2.5rem);
-  background: #080713;
-  box-shadow: 0 1.75rem 4.5rem rgba(7, 24, 39, 0.22);
-}
-
-.agent-screenshot {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  overflow: hidden;
-  background: #080713;
-}
-
-.agent-outcome {
-  position: absolute;
-  right: auto;
-  left: clamp(1rem, 3vw, 2rem);
-  bottom: clamp(1rem, 3vw, 2rem);
-  display: flex;
-  max-width: min(80%, 25rem);
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1rem;
-  border: 1px solid color-mix(in srgb, white 28%, transparent);
-  border-radius: 1rem;
-  background: color-mix(in srgb, var(--primary) 88%, transparent);
-  color: #ffffff;
-  font-size: 0.7rem;
-  font-weight: 750;
-  line-height: 1.45;
-  backdrop-filter: blur(12px);
-}
-
-.agent-outcome > span {
-  color: #ffffff;
-}
-
-.agent-panel-dumen .agent-outcome > span {
-  color: #ffffff;
-}
-
 @keyframes agent-panel-enter {
   from {
     opacity: 0;
@@ -2718,49 +2671,57 @@ body::before {
 }
 
 @media (max-width: 980px) {
-  .agent-panel {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "visual"
-      "copy";
-    gap: 2.75rem;
-    padding-block: 3.5rem;
+  .agent-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .agent-panel h4,
-  .agent-panel-description {
-    max-width: 48rem;
+  .agent-process-card:last-child {
+    grid-column: 1 / -1;
   }
 
-  .agent-visual,
-  .agent-screenshot {
-    min-height: 28rem;
+  .agent-process-summary {
+    grid-template-columns: minmax(12rem, 0.8fr) minmax(16rem, 1.2fr);
+  }
+
+  .agent-actions {
+    grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 760px) {
   .agent-showcase {
     margin-top: 4rem;
-    padding-block: 3.5rem;
+    padding-block: 4.5rem;
   }
 
   .agent-showcase-heading h3 {
     font-size: clamp(2.75rem, 15vw, 4rem);
   }
 
-  .agent-panel {
-    gap: 2rem;
-    padding-block: 2.5rem;
-    padding-inline: 0;
-    border-radius: 0;
+  .agent-switcher {
+    width: 100%;
+    margin-bottom: 3.5rem;
   }
 
-  .agent-panel-copy {
-    padding: 0;
+  .agent-process-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 3rem;
   }
 
-  .agent-panel h4 {
-    font-size: clamp(1.85rem, 9.5vw, 2.7rem);
+  .agent-process-card,
+  .agent-process-card:last-child {
+    grid-column: auto;
+    min-height: 17rem;
+  }
+
+  .agent-process-summary {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .agent-summary-outcome,
+  .agent-actions {
+    grid-column: auto;
   }
 
   .agent-actions {
@@ -2771,11 +2732,6 @@ body::before {
   .agent-actions a {
     width: 100%;
   }
-
-  .agent-visual,
-  .agent-screenshot {
-    min-height: 20rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2784,7 +2740,8 @@ body::before {
   }
 
   .agent-actions a,
-  .agent-switcher-tab {
+  .agent-switcher-tab,
+  .agent-process-card {
     transition: none;
   }
 }
