@@ -2473,12 +2473,17 @@ body::before {
   padding: 0;
 }
 
+.agent-process-overview {
+  max-width: 70rem;
+  margin-bottom: 1.25rem;
+}
+
 .agent-panel-meta {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   margin-bottom: 1.25rem;
-  color: var(--primary);
+  color: var(--supporting-muted);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.13em;
@@ -2486,24 +2491,32 @@ body::before {
 }
 
 .agent-panel-dumen .agent-panel-meta {
-  color: #13775f;
+  color: var(--supporting-muted);
 }
 
 .agent-panel h4 {
-  max-width: 15ch;
-  color: #10182f;
-  font-family: 'Instrument Serif', serif;
-  font-size: clamp(2.4rem, 3.8vw, 4rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.04;
+  max-width: 24ch;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
+.agent-process-lead {
+  max-width: 48rem;
+  margin-top: 1rem;
+  color: var(--text-2);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
 .agent-panel-description {
-  max-width: 39rem;
-  margin-top: 1.2rem;
-  color: #5b6478;
+  max-width: 54rem;
+  margin-top: 0;
+  color: var(--text-2);
   font-size: 0.92rem;
   line-height: 1.68;
   text-wrap: pretty;
