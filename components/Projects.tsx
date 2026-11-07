@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import AgentShowcase from "@/components/AgentShowcase";
 
 const featured = [
   {
@@ -155,6 +156,7 @@ export default function Projects() {
           <ProjectRow key={project.name} project={project} index={index + 1} />
         ))}
       </div>
+      <AgentShowcase />
       <div className="projects-github-action mx-auto flex w-full justify-center pb-16 pt-12 max-[760px]:pb-12 max-[760px]:pt-8">
          <a href="https://github.com/outstandingvick"
             target="_blank"
