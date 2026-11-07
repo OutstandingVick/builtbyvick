@@ -130,11 +130,6 @@ export default function AgentShowcase() {
 
           <p className="agent-panel-description font-mono">{activeAgent.description}</p>
 
-          <div className="agent-metric">
-            <strong>{activeAgent.metric}</strong>
-            <span className="font-mono">{activeAgent.metricLabel}</span>
-          </div>
-
           <ol className="agent-process-grid">
             {activeAgent.steps.map((step, index) => (
               <li key={step.title} className="agent-process-card">
@@ -148,6 +143,13 @@ export default function AgentShowcase() {
               </li>
             ))}
           </ol>
+
+          <div className="agent-process-summary">
+            <div className="agent-metric">
+              <strong>{activeAgent.metric}</strong>
+              <span className="font-mono">{activeAgent.metricLabel}</span>
+            </div>
+          </div>
 
           <div className="agent-stack" aria-label={`${activeAgent.name} technology stack`}>
             {activeAgent.stack.map((technology) => (
