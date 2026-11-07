@@ -118,12 +118,16 @@ export default function AgentShowcase() {
         key={activeAgent.id}
       >
         <div className="agent-panel-copy">
-          <div className="agent-panel-meta font-mono">
-            <ShieldCheck aria-hidden="true" size={17} />
-            {activeAgent.category}
-          </div>
+          <header className="agent-process-overview">
+            <div className="agent-panel-meta font-mono">
+              <ShieldCheck aria-hidden="true" size={17} />
+              {activeAgent.category}
+            </div>
 
-          <h4>{activeAgent.headline}</h4>
+            <h4>{activeAgent.headline}</h4>
+            <p className="agent-process-lead font-mono">{activeAgent.processLead}</p>
+          </header>
+
           <p className="agent-panel-description font-mono">{activeAgent.description}</p>
 
           <div className="agent-metric">
