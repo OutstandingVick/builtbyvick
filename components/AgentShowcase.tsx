@@ -22,9 +22,9 @@ const agents = [
     imageAlt: "Goowa editor showing claims, evidence, and verification verdicts",
     stack: ["Agent-Native", "TypeScript", "MCP", "Neon Postgres"],
     steps: [
-      ["Draft", "The agent researches and extracts exact factual claims."],
-      ["Verify", "Evidence is checked and weak or unsupported claims are surfaced."],
-      ["Publish", "Only a human can approve the final draft and proof receipt."],
+      { title: "Draft", detail: "The agent researches and extracts exact factual claims." },
+      { title: "Verify", detail: "Evidence is checked and weak or unsupported claims are surfaced." },
+      { title: "Publish", detail: "Only a human can approve the final draft and proof receipt." },
     ],
     repo: "https://github.com/OutstandingVick/goowa",
     live: "https://goowa.vercel.app",
@@ -45,9 +45,9 @@ const agents = [
     imageAlt: "Dumen operations dashboard comparing safe agent runs with a baseline",
     stack: ["TypeScript", "Nemotron", "Zetaris", "World Model"],
     steps: [
-      ["Inspect", "The agent reads the request and the live financial record."],
-      ["Verify", "Code checks whether each refund or payout already succeeded."],
-      ["Resolve", "Safe actions continue; conflicts move to a human queue."],
+      { title: "Inspect", detail: "The agent reads the request and the live financial record." },
+      { title: "Verify", detail: "Code checks whether each refund or payout already succeeded." },
+      { title: "Resolve", detail: "Safe actions continue; conflicts move to a human queue." },
     ],
     repo: "https://github.com/OutstandingVick/dumen",
     live: null,
@@ -132,14 +132,14 @@ export default function AgentShowcase() {
           </div>
 
           <ol className="agent-steps">
-            {activeAgent.steps.map(([title, detail]) => (
-              <li key={title}>
+            {activeAgent.steps.map((step) => (
+              <li key={step.title}>
                 <span className="agent-step-icon" aria-hidden="true">
                   <Check size={15} strokeWidth={3} />
                 </span>
                 <div>
-                  <strong>{title}</strong>
-                  <p className="font-mono">{detail}</p>
+                  <strong>{step.title}</strong>
+                  <p className="font-mono">{step.detail}</p>
                 </div>
               </li>
             ))}
