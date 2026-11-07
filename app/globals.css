@@ -2441,28 +2441,41 @@ body::before {
 }
 
 .agent-panel {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   grid-template-areas: "visual copy";
-  gap: 0;
-  align-items: stretch;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, #10182f 10%, transparent);
-  border-radius: clamp(1.75rem, 3vw, 2.75rem);
-  background: #f8f9fc;
-  box-shadow: 0 2rem 5rem rgba(7, 24, 39, 0.18);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+  padding-block: clamp(4rem, 7vw, 6rem);
+  padding-inline: clamp(1.5rem, 5vw, 5rem);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   animation: agent-panel-enter 320ms ease-out both;
 }
 
-.agent-panel-dumen {
+.agent-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  inset-inline-start: calc(50% - 50vw);
+  width: 100vw;
   background: #f8f9fc;
+}
+
+.agent-panel-dumen {
+  background: transparent;
 }
 
 .agent-panel-copy {
   grid-area: copy;
   min-width: 0;
-  padding: clamp(2.5rem, 5vw, 5.5rem);
+  padding: 0;
   align-self: center;
 }
 
@@ -2624,9 +2637,11 @@ body::before {
   position: relative;
   grid-area: visual;
   min-width: 0;
-  min-height: 44rem;
+  min-height: 40rem;
   overflow: hidden;
+  border-radius: clamp(1.5rem, 3vw, 2.5rem);
   background: #080713;
+  box-shadow: 0 1.75rem 4.5rem rgba(7, 24, 39, 0.22);
 }
 
 .agent-screenshot {
@@ -2684,6 +2699,8 @@ body::before {
     grid-template-areas:
       "visual"
       "copy";
+    gap: 2.75rem;
+    padding-block: 3.5rem;
   }
 
   .agent-panel h4,
@@ -2708,13 +2725,14 @@ body::before {
   }
 
   .agent-panel {
-    gap: 0;
-    padding: 0;
-    border-radius: 1.5rem;
+    gap: 2rem;
+    padding-block: 2.5rem;
+    padding-inline: 0;
+    border-radius: 0;
   }
 
   .agent-panel-copy {
-    padding: 2rem 1.4rem 2.25rem;
+    padding: 0;
   }
 
   .agent-panel h4 {
