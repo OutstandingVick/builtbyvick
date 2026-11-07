@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type KeyboardEvent } from "react";
-import { ArrowUpRight, Bot, Check, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 const agents = [
@@ -78,7 +78,7 @@ export default function AgentShowcase() {
     <section className="agent-showcase" aria-labelledby="agent-showcase-title">
       <div className="agent-showcase-heading">
         <span className="agent-showcase-kicker font-mono">
-          <Bot aria-hidden="true" size={16} />
+          <span className="agent-kicker-mark" aria-hidden="true" />
           The agent process
         </span>
         <h3 id="agent-showcase-title" className="section-title">
