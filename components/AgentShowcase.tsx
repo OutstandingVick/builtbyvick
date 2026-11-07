@@ -76,7 +76,7 @@ export default function AgentShowcase() {
       <div className="agent-showcase-heading">
         <span className="agent-showcase-kicker font-mono">
           <Bot aria-hidden="true" size={16} />
-          Agentic systems
+          The agent process
         </span>
         <h3 id="agent-showcase-title" className="section-title">
           AI agents built for real consequences.
