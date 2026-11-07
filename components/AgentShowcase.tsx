@@ -79,11 +79,11 @@ export default function AgentShowcase() {
           The agent process
         </span>
         <h3 id="agent-showcase-title" className="section-title">
-          AI agents built for real consequences.
+          From prompt to proven action.
         </h3>
         <p className="font-mono">
-          Two systems where an agent can do meaningful work—but proof, safety,
-          and human control still decide the outcome.
+          Choose an agent and follow how it turns an uncertain request into a
+          result that can be checked, trusted, and handed back to a human.
         </p>
       </div>
 
