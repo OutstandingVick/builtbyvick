@@ -2389,6 +2389,14 @@ body::before {
   text-transform: uppercase;
 }
 
+.agent-kicker-mark {
+  width: 0.6rem;
+  height: 0.6rem;
+  flex: none;
+  background: var(--secondary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--supporting-contrast) 14%, transparent);
+}
+
 .agent-showcase-heading h3 {
   color: var(--text);
   font-size: clamp(3rem, 6vw, 5.5rem);
