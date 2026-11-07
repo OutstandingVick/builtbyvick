@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, type KeyboardEvent } from "react";
 import { ArrowUpRight, Bot, Check, ShieldCheck } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
@@ -176,21 +175,6 @@ export default function AgentShowcase() {
           </div>
         </div>
 
-        <div className="agent-visual">
-          <div className="agent-screenshot">
-            <Image
-              src={activeAgent.image}
-              alt={activeAgent.imageAlt}
-              fill
-              sizes="(max-width: 980px) 92vw, 50vw"
-              className="object-cover object-top"
-            />
-          </div>
-          <div className="agent-outcome font-mono">
-            <span aria-hidden="true">✦</span>
-            {activeAgent.outcome}
-          </div>
-        </div>
       </article>
     </section>
   );
