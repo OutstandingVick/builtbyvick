@@ -2522,6 +2522,25 @@ body::before {
   text-wrap: pretty;
 }
 
+.agent-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  list-style: none;
+}
+
+.agent-process-card {
+  display: flex;
+  min-height: clamp(21rem, 28vw, 27rem);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid color-mix(in srgb, var(--supporting-contrast) 18%, transparent);
+  border-radius: 1rem;
+  background: var(--secondary);
+}
+
 .agent-metric {
   display: flex;
   flex-wrap: wrap;
