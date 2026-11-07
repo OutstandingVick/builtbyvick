@@ -110,6 +110,7 @@ export default function AgentShowcase() {
         role="tabpanel"
         aria-labelledby={`agent-tab-${activeAgent.id}`}
         className={`agent-panel agent-panel-${activeAgent.id}`}
+        data-agent={activeAgent.id}
         key={activeAgent.id}
       >
         <div className="agent-panel-copy">
@@ -140,6 +141,7 @@ export default function AgentShowcase() {
           </ol>
 
           <div className="agent-process-summary">
+            <p className="agent-summary-outcome font-mono">{activeAgent.outcome}</p>
             <div className="agent-metric">
               <strong>{activeAgent.metric}</strong>
               <span className="font-mono">{activeAgent.metricLabel}</span>
