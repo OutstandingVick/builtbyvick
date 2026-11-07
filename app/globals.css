@@ -2450,15 +2450,8 @@ body::before {
 }
 
 .agent-panel {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  grid-template-areas: "visual copy";
-  gap: clamp(3rem, 6vw, 7rem);
-  align-items: center;
-  padding-block: clamp(4rem, 7vw, 6rem);
-  padding-inline: clamp(1.5rem, 5vw, 5rem);
+  display: block;
+  padding: 0;
   overflow: visible;
   border: 0;
   border-radius: 0;
@@ -2468,13 +2461,7 @@ body::before {
 }
 
 .agent-panel::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset-block: 0;
-  inset-inline-start: calc(50% - 50vw);
-  width: 100vw;
-  background: #f8f9fc;
+  content: none;
 }
 
 .agent-panel-dumen {
@@ -2482,10 +2469,8 @@ body::before {
 }
 
 .agent-panel-copy {
-  grid-area: copy;
   min-width: 0;
   padding: 0;
-  align-self: center;
 }
 
 .agent-panel-meta {
