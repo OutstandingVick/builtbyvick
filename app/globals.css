@@ -2399,15 +2399,16 @@ body::before {
 
 .agent-showcase-heading h3 {
   color: var(--text);
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.98;
 }
 
 .agent-showcase-heading > p {
-  max-width: 43rem;
-  margin: 1.25rem auto 0;
+  max-width: 45rem;
+  margin: 1.5rem 0 0;
   color: var(--text-2);
-  font-size: clamp(0.9rem, 1.25vw, 1.05rem);
-  line-height: 1.75;
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  line-height: 1.72;
   text-wrap: pretty;
 }
 
