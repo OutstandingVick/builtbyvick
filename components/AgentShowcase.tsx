@@ -169,12 +169,6 @@ export default function AgentShowcase() {
         </div>
 
         <div className="agent-visual">
-          <div className="agent-browser-bar" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <div>{activeAgent.name.toLowerCase()}.agent</div>
-          </div>
           <div className="agent-screenshot">
             <Image
               src={activeAgent.image}
