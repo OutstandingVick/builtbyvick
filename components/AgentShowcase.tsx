@@ -17,8 +17,6 @@ const agents = [
     metric: "Claim-level evidence",
     metricLabel: "for every factual sentence",
     outcome: "Every published article ships with proof.",
-    image: "/agent-goowa.jpg",
-    imageAlt: "Goowa editor showing claims, evidence, and verification verdicts",
     stack: ["Agent-Native", "TypeScript", "MCP", "Neon Postgres"],
     steps: [
       { title: "Draft", detail: "The agent researches and extracts exact factual claims." },
@@ -40,8 +38,6 @@ const agents = [
     metric: "0 duplicate payments",
     metricLabel: "across published benchmark runs",
     outcome: "Uncertain means verify or escalate—never pay on a guess.",
-    image: "/agent-dumen.png",
-    imageAlt: "Dumen operations dashboard comparing safe agent runs with a baseline",
     stack: ["TypeScript", "Nemotron", "Zetaris", "World Model"],
     steps: [
       { title: "Inspect", detail: "The agent reads the request and the live financial record." },
