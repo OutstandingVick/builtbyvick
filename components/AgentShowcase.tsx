@@ -135,13 +135,13 @@ export default function AgentShowcase() {
             <span className="font-mono">{activeAgent.metricLabel}</span>
           </div>
 
-          <ol className="agent-steps">
-            {activeAgent.steps.map((step) => (
-              <li key={step.title}>
-                <span className="agent-step-icon" aria-hidden="true">
-                  <Check size={15} strokeWidth={3} />
+          <ol className="agent-process-grid">
+            {activeAgent.steps.map((step, index) => (
+              <li key={step.title} className="agent-process-card">
+                <span className="agent-process-number font-mono" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <div>
+                <div className="agent-process-card-copy">
                   <strong>{step.title}</strong>
                   <p className="font-mono">{step.detail}</p>
                 </div>
