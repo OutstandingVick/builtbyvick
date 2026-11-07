@@ -2546,19 +2546,19 @@ body::before {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.45rem 0.75rem;
-  margin-block: 1.75rem 0.5rem;
-  padding-block: 1.15rem;
-  border-block: 1px solid #dfe3ec;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .agent-metric strong {
-  color: #10182f;
+  color: var(--text);
   font-size: clamp(1.15rem, 1.8vw, 1.5rem);
   letter-spacing: -0.025em;
 }
 
 .agent-metric span {
-  color: #697286;
+  color: var(--text-3);
   font-size: 0.72rem;
 }
 
@@ -2588,14 +2588,14 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin: 0;
 }
 
 .agent-stack span {
   padding: 0.45rem 0.65rem;
-  border: 1px solid #d8dde7;
+  border: 1px solid color-mix(in srgb, var(--supporting-contrast) 24%, transparent);
   border-radius: 999px;
-  color: #596276;
+  color: var(--text-2);
   font-size: 0.62rem;
   font-weight: 700;
 }
@@ -2604,7 +2604,7 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin: 0;
 }
 
 .agent-actions a {
@@ -2614,10 +2614,10 @@ body::before {
   justify-content: center;
   gap: 0.55rem;
   padding-inline: 1.1rem;
-  border: 1px solid #10182f;
+  border: 1px solid var(--supporting-contrast);
   border-radius: 999px;
-  background: #10182f;
-  color: #ffffff;
+  background: var(--supporting-contrast);
+  color: var(--secondary);
   font-size: 0.78rem;
   font-weight: 800;
   text-decoration: none;
@@ -2635,7 +2635,26 @@ body::before {
 
 .agent-actions .agent-action-secondary {
   background: transparent;
-  color: #10182f;
+  color: var(--supporting-contrast);
+}
+
+.agent-process-summary {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(18rem, 1.2fr) auto;
+  gap: 1.5rem 2rem;
+  align-items: center;
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-block: 1.75rem;
+  border-block: 1px solid color-mix(in srgb, var(--supporting-contrast) 22%, transparent);
+}
+
+.agent-summary-outcome {
+  grid-column: 1 / -1;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .agent-visual {
